@@ -55,7 +55,6 @@
                 <p>Twoja ankieta została przyjęta</p>
                 <hr>
                 <a href="<?php $_SERVER['DOCUMENT_ROOT']; ?>" class="btn btn-default" role="button">Uzupełnij ankietę jeszcze raz </a>
-   
         </div>
     </div>
 

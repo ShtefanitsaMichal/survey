@@ -35,10 +35,10 @@
    
 
     <?php
+        var_dump($sql) . "<br>" . $e->getMessage();
         }
             catch(PDOException $e)
         {
-            //var_dump($sql) . "<br>" . $e->getMessage();
                 print_r($sql) . "<br>" . $e->getMessage();
             //require_once "alert.php";
         }
@@ -48,6 +48,6 @@
 
     <?php    
 
-         echo "<script> window.location = '../source_rate.php'</script>"; 
+        // echo "<script> window.location = '../source_rate.php'</script>"; 
 
     ?>

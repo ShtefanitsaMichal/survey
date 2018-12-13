@@ -5,11 +5,11 @@
 
     <div class="container" >
       <div class="form-group ">
-      <label class="control-label bold">
-        <h5>
-            Oceń w %  skąd czerpiesz  informacje potrzebne Ci  w pracy  (suma ma wynieść 100%) 
-        </h5>
-      </label>
+        <label class="control-label bold">
+            <h5>
+                Oceń w %  skąd czerpiesz  informacje potrzebne Ci  w pracy  (suma ma wynieść 100%) 
+            </h5>
+        </label>
       <br>
         <div id="el">
         <div class="row">
@@ -43,15 +43,15 @@
         </div>
 
         <div class="row">
-        <div class="col-md-4">
-            <label ><h5   class="text-secondary">Współpracownicy w dziale/sekcji  </h5></label>
-        </div>
-          <div class="col-md-2">
+            <div class="col-md-4">
+                <label ><h5   class="text-secondary">Współpracownicy w dziale/sekcji  </h5></label>
+            </div>
+            <div class="col-md-2">
                 <span vclass="badge" value="20">{{ form.dzial + "%" }}</span>
             </div>
-        <div class="col-md-6">        
-            <input v-model.number="form.dzial" value="20" type="range" class="custom-range" name="dzial" id="dzial">
-        </div>
+            <div class="col-md-6">        
+                <input v-model.number="form.dzial" value="20" type="range" class="custom-range" name="dzial" id="dzial">
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -82,23 +82,21 @@
             </div> 
 
             <br>
-        <form action="post/post_source.php" method="post">
-            <input type="hidden" name="zarzad" v-model="form.zarzad">
-            <input type="hidden" name="przylozony" v-model="form.przylozony">
-            <input type="hidden" name="dzial" v-model="form.dzial">
-            <input type="hidden" name="inny_dzial" v-model="form.inny_dzial">
-            <input type="hidden" name="baza_danych" v-model="form.baza_danych">
-            <input type="hidden" name="total" v-model="total">
-            
-            <h3>{{total + '%'}}</h3>
+            <!-- Formularz metody post -> wysyłanie danych o ródle. 
+                Parametr name nie moze być zmieniony--> 
+                <form action="post/post_source.php" method="post">
+                    <input type="hidden" name="zarzad" v-model="form.zarzad">
+                    <input type="hidden" name="przylozony" v-model="form.przylozony">
+                    <input type="hidden" name="dzial" v-model="form.dzial">
+                    <input type="hidden" name="inny_dzial" v-model="form.inny_dzial">
+                    <input type="hidden" name="baza_danych" v-model="form.baza_danych">
+                    <input type="hidden" name="total" v-model="total">
 
-
-            <input v-if="total == 100" value="Pzejdź dalej"   type="submit"  class="btn btn-outline-success" >
-
-        </form>
-             
-            
-        </div>
+                    <h3>{{total + '%'}}</h3>
+                    
+                    <input v-if="total == 100" value="Pzejdź dalej"   type="submit"  class="btn btn-outline-success" >
+                </form>
+            </div>
         </div> 
     </div> 
     
@@ -125,12 +123,10 @@
             computed: {
                 udzial: function (){
                     let udzial = 100 - (this.form.zarzad + this.form.przylozony  + this.form.dzial + this.form.inny_dzial + this.form.baza_danych);
-
                     return udzial;
                 },
 
                 total: function () {
-
                     let calculatedTotal = this.form.zarzad + this.form.przylozony  + this.form.dzial + this.form.inny_dzial + this.form.baza_danych;
                     this.form.total = calculatedTotal;
                     return calculatedTotal;

@@ -1,11 +1,4 @@
 <?php 
-
-define('ROOTPATH', __DIR__);
-
-echo $_SERVER["HTTP_HOST"];
-
-
-
-echo dirname(__FILE__);
+echo $_SERVER['DOCUMENT_ROOT'];
 
 ?>

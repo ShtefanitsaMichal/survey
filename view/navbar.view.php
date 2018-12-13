@@ -2,12 +2,8 @@
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <span class="text-muted">Poprawa komunikacji w SMP</span>
-
-      
        <p class="text-white h4"><?php echo session_id() ?> </p>
-       <p class="text-white h4"><?php /* echo  $_SESSION["source_number"] */ ?> </p>
-       
-       
+       <p class="text-white h4"><?php var_dump($_SESSION["HTTP_HOST"])  ?> </p>      
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
@@ -26,12 +22,6 @@
 </nav>
 <div class="container">
 <?php 
-
-  //var_dump($_SERVER['REQUEST_URI']);
-
-  $page = substr($_SERVER['REQUEST_URI'], -5,1);
-
-  //var_dump($page)
 
 ?> 
 <hr>

@@ -1,12 +1,8 @@
 
-      <?php require_once "db_connection.php" ?>
-      <?php require_once "head.php" ?>
-      <?php require_once "view/navbar.view.php" ?>
+    <?php require_once "db_connection.php" ?>
+    <?php require_once "head.php" ?>
+    <?php require_once "view/navbar.view.php" ?>
  
-      
-
-
-
       <div class="App col-12 ">
                 <!-- <label  class="text-primary">{{ Typ + ' / ' + Stanowisko + ' / ' + Wiek }}</label>  -->
                 <div class="container">
@@ -46,23 +42,23 @@
                   </div>
 
                   <br>
+
+                  <!-- Formularz z metodą post--> 
+                  
                     <form action="post/post_employee.php" method="post">
                       <input type="hidden" name="typ" v-model="Typ" > 
                       <input type="hidden" name="wiek" v-model="Wiek" > 
                       <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
                       <input type="submit" class="btn btn-outline-success" value="Pzejdż dalej" name="send">
                     </form>
+
+
                 </div>  
             </div>
           </form> 
-      <hr> 
-
-
-        
+      <hr>      
     </div>
   </div>    
-
-
            
 <script>
 

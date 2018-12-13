@@ -1,0 +1,46 @@
+.bold {
+    font-weight: bold;
+    color: black;
+}
+
+.table th {
+    vertical-align: bottom;
+    border-bottom: 2px solid rgba(217, 255, 78, 0.192);
+    font-size: 15px;
+}
+
+body {
+
+    background-color: white;
+}
+
+.h4, h4 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: black;
+    text-shadow: 0 0 10px #faf5f5
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .1s ease;
+}
+
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 3rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+}

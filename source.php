@@ -3,6 +3,7 @@
 <?php require_once "head.php" ?>
 <?php require_once "view/navbar.view.php" ?>
 
+
     <div class="container" >
       <div class="form-group ">
         <label class="control-label bold">
@@ -92,7 +93,7 @@
                     <input type="hidden" name="baza_danych" v-model="form.baza_danych">
                     <input type="hidden" name="total" v-model="total">
 
-                    <h3>{{total + '%'}}</h3>
+                        <h3>{{total + '%'}}</h3>
                     
                     <input v-if="total == 100" value="Pzejdź dalej"   type="submit"  class="btn btn-outline-success" >
                 </form>
@@ -118,7 +119,6 @@
                     }
                 }
             },
-
             
             computed: {
                 udzial: function (){

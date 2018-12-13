@@ -54,7 +54,7 @@
             <h4 class="alert-heading">Dziękujemy za wypełnienie ankiety!</h4>
                 <p>Twoja ankieta została przyjęta</p>
                 <hr>
-                <a href="<?php $_SERVER['DOCUMENT_ROOT']; ?>" class="btn btn-default" role="button">Uzupełnij ankietę jeszcze raz </a>
+                <a href="<?php $_SERVER['HTTP_HOST']; ?>/improvement_of_communication" class="btn btn-default" role="button">Uzupełnij ankietę jeszcze raz </a>
         </div>
     </div>
 

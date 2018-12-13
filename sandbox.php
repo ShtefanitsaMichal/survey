@@ -1,34 +1,31 @@
 
     <?php  ?>
 <?php 
-    function session_check(){
 
+class SESSION_CHECK 
+{
+    public function session_check(){
+        
         require "db_connection.php";
         require "head.php";
 
         $sql = "select * from smp_communication_survey.employee where session_id = '$session_id'";
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
         
-        $result = $conn->query($sql);
+        $stmt = $conn -> prepare( $sql );
+        $stmt -> bindParam(1, $_GET['id'], PDO::PARAM_INT);
+        $stmt -> execute();
+        $row = $stmt -> fetch(PDO::FETCH_ASSOC);
 
-        echo '<br>';
-
-        if ($result->num_rows > 0) {
-            echo "at least 1 result";
-            // while($row = $result->fetch_assoc()) {
-            //     echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-            // }
-        } else {
-            echo "0 results";
+        if ( ! $row )
+        {
+            die('nothing found');
         }
-        $conn->close();
+        echo 'sesja z danym indytyficatorem istnieje -> ' . $row['session_id'];
+    }    
+}
 
-    }
+    $session_check = new SESSION_CHECK;   
+    $session_check -> session_check();
 
-    session_check();
-   
-?>
-
-<?php 
-   // echo $_SERVER['DOCUMENT_ROOT'];
 ?>

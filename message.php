@@ -9,7 +9,7 @@
                          width: 100%;
                          background-color: #ddd;
                     }
-
+                    
         #myBar      {
                         width: 1%;
                         height: 1px;

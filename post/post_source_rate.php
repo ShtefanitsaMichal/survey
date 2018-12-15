@@ -3,7 +3,8 @@
     require_once "../db_connection.php";
 ?>
 
-<?php    
+<?php
+        
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
 

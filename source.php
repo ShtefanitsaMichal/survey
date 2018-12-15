@@ -92,12 +92,21 @@
                     <input type="hidden" name="inny_dzial" v-model="form.inny_dzial">
                     <input type="hidden" name="baza_danych" v-model="form.baza_danych">
                     <input type="hidden" name="total" v-model="total">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input v-if="total == 100" value="Pzejdź dalej" type="submit"  class="btn btn-outline-success btn-lg" >
+                            <input v-else="total != 100" value="Pzejdź dalej" type="submit" class="btn btn-outline-secondary btn-lg disabled" >
+                            
+                        </div>
+                        <div class="col-md-2">
+                            <h3 v-if="total == 100" class="text-success">{{total + '%'}}</h3>
+                            <h3 v-else-if="total > 100" class="text-danger">{{total + '%'}}</h3>
+                            <h3 v-else="total < 100" class="text-danger">{{total + '%'}}</h3>
+                        </div>
 
-                        <h3>{{total + '%'}}</h3>
-                    
-                    <input v-if="total == 100" value="Pzejdź dalej"   type="submit"  class="btn btn-outline-success" >
+                    </div>
                 </form>
-            </div>
+            </div>        
         </div> 
     </div> 
     

@@ -1,11 +1,10 @@
 
-    <?php  ?>
 <?php 
 
 class SESSION_CHECK 
 {
     public function session_check(){
-        
+
         require "db_connection.php";
         require "head.php";
 
@@ -17,11 +16,16 @@ class SESSION_CHECK
         $stmt -> execute();
         $row = $stmt -> fetch(PDO::FETCH_ASSOC);
 
-        if ( ! $row )
+        if ( !$row )
         {
-            die('nothing found');
+            false;
+            echo 'sesja z danym indytyficatorem nie istnieje' ;
+        } 
+            else
+        {
+            true;
+            echo 'sesja z danym indytyficatorem <b>' . $row['session_id'] .  '</b> istnieje' ;
         }
-        echo 'sesja z danym indytyficatorem istnieje -> ' . $row['session_id'];
     }    
 }
 

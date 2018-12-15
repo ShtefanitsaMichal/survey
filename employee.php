@@ -58,7 +58,7 @@
 
                   <!-- Formularz z metodą post--> 
 
-                    <form action="post/post_employee.php?<?php post_employee()?>" method="post">
+                    <form action="post/post_employee.php? <?php post_employee() ?>" method="post">
                       <input type="hidden" name="typ" v-model="Typ" > 
                       <input type="hidden" name="wiek" v-model="Wiek" > 
                       <input type="hidden" name="stanowisko" v-model="Stanowisko"> 

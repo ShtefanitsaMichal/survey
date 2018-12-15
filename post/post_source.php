@@ -5,9 +5,8 @@
 
     <?php
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
+        global $conn;
         
-  
         $zarzad = $_POST['zarzad'];
         $przylozony = $_POST['przylozony'];  
         $dzial = $_POST['dzial'];
@@ -18,8 +17,6 @@
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = $conn->prepare("INSERT INTO source ( session_id ,zarzad, przylozony, dzial, inny_dzial, baza_danych, total)  VALUES ( '$session_id' ,'$zarzad', '$przylozony', '$dzial', '$inny_dzial', '$baza_danych', '$total')");
-
-  
      
         $sql->execute(array(    
             "session_id" => $session_id, 

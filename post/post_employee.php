@@ -30,7 +30,6 @@
                     require_once "alert.php";
                 }
                 $conn = null;
-                echo 'done';        
             }    
         }
     ?>

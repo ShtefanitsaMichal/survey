@@ -94,10 +94,10 @@
                     <input type="hidden" name="total" v-model="total">
                     <div class="row">
                         <div class="col-md-10">
-                            <input v-if="total == 100" value="Pzejdź dalej" type="submit"  class="btn btn-outline-success btn-lg" >
+                            <input v-if="total == 100" value="Pzejdź dalej" type="submit" name="send"  class="btn btn-outline-success btn-lg" >
 
                                 <!-- !zabronic wysyłanie formy na klick przycisku z clasem disabled --> 
-                            <input v-else="total != 100" value="Pzejdź dalej" type="submit" class="btn btn-outline-secondary btn-lg disabled" > 
+                            <input v-else="total != 100" value="Pzejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" > 
                         </div>
 
                         <div class="col-md-2">

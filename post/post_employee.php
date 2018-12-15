@@ -28,12 +28,11 @@
             $conn = null;
         }    
         }
+    // if form was posted run function post_employee()
 
     if (isset($_POST['send'])) { post_employee();}  
     else { echo "error";}     
 
 ?>
-
-
 
 <?php echo "<script> window.location = '../source.php'</script>"; ?>

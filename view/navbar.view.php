@@ -12,7 +12,8 @@
               <li class="page-item"><a class="page-link" href="main_tool_2_rate.php">5b</a></li>
               <li class="page-item"><a class="page-link" href="main_source_expect.php">6</a></li>
       </ul>
-      <span class="text-secondary "> <?php echo $session_id ?> </span>
+      <span class="text-secondary "> <?php echo $session_id ?> </span> <br>
+      <span class="text-secondary"> <?php echo 'source #' . $_SESSION['source_number'] ?></span>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">

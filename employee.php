@@ -2,8 +2,9 @@
     <?php require_once "db_connection.php" ?>
     <?php require_once "head.php" ?>
     <?php require_once "view/navbar.view.php" ?>
+    
  
-      <div class="App col-12 ">
+    <div class="App col-12 ">
                 <!-- <label  class="text-primary">{{ Typ + ' / ' + Stanowisko + ' / ' + Wiek }}</label>  -->
                 <div class="container">
                   <div class="row">
@@ -57,7 +58,7 @@
 
                   <!-- Formularz z metodą post--> 
 
-                    <form action="post/post_employee.php" method="post">
+                    <form action="post/post_employee.php?<?php post_employee()?>" method="post">
                       <input type="hidden" name="typ" v-model="Typ" > 
                       <input type="hidden" name="wiek" v-model="Wiek" > 
                       <input type="hidden" name="stanowisko" v-model="Stanowisko"> 

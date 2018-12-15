@@ -1,10 +1,11 @@
+
 <?php  
     require_once "head.php";
     require_once "db_connection.php";
     require_once "view/navbar.view.php"; 
     
-    //Zmienna domyślna która się zmienia po odpowiedziach uzytkownika na pierwsze źródło 
     $_SESSION["source_number"] = 1;
+    //Zmienna domyślna która się zmienia po odpowiedziach uzytkownika na pierwsze źródło 
 ?>
 
 <div class="jumbotron">

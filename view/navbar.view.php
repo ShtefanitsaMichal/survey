@@ -1,9 +1,17 @@
+<?php include "../controller/session_check_class.php"; ?>
+
+
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
       <span class="text-muted">Poprawa komunikacji w SMP</span>
-       <p class="text-white h4"><?php echo session_id() ?> </p>
-       <p class="text-white h4"><?php var_dump($_SESSION["HTTP_HOST"])  ?> </p>      
+       <p class="text-white h4">
+       <?php 
+       
+       
+        ?> 
+      </p>
+      <p class="text-white h4"><?php var_dump($_SESSION["HTTP_HOST"])  ?> </p>      
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
@@ -35,9 +43,7 @@
               <li class="page-item"><a class="page-link" href="main_tool_1_rate.php">4b</a></li>
               <li class="page-item"><a class="page-link" href="main_tool_2.php">5a</a></li>
               <li class="page-item"><a class="page-link" href="main_tool_2_rate.php">5b</a></li>
-               <li class="page-item"><a class="page-link" href="main_source_expect.php">6</a></li>
-
-              
+              <li class="page-item"><a class="page-link" href="main_source_expect.php">6</a></li>
             </ul>
     </div>
   </div>

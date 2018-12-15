@@ -8,13 +8,25 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12">
-                      <button v-if="Typ == 'Direct'" class="btn btn-primary" value="Direct" v-on:click="Typ = 'Direct'" data-toggle="tooltip" data-placement="top" title="PR, UR, PE, QC">Bez pośrednia produkcja</button>
-                      <button v-else class="btn btn-outline-primary" value="Direct" v-on:click="Typ = 'Direct'" data-toggle="tooltip" data-placement="top" title="PR, UR, PE, QC">Bez pośrednia produkcja</button>
+                      <button v-if="Typ == 'Direct'" class="btn btn-primary" value="Direct" v-on:click="Typ = 'Direct'" 
+                              data-toggle="tooltip" 
+                              data-placement="top" title="PR, UR, PE, QC">Bez pośrednia produkcja</button>
 
-                      <button v-if="Typ == 'Indirect'"  class="btn btn-primary" value="Indirect" v-on:click="Typ = 'Indirect'" data-toggle="tooltip" data-placement="top" title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Pośrednia produkcja</button>
-                      <button v-else class="btn btn-outline-primary" value="Indirect" v-on:click="Typ = 'Indirect'" data-toggle="tooltip" data-placement="top" title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Pośrednia produkcja</button>
+                      <button v-else class="btn btn-outline-primary" value="Direct" v-on:click="Typ = 'Direct'" 
+                              data-toggle="tooltip" data-placement="top" 
+                              title="PR, UR, PE, QC">Bez pośrednia produkcja</button>
+
+                      <button v-if="Typ == 'Indirect'"  class="btn btn-primary" value="Indirect" v-on:click="Typ = 'Indirect'" 
+                              data-toggle="tooltip" data-placement="top" 
+                              title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Pośrednia produkcja</button>
+
+                      <button v-else class="btn btn-outline-primary" value="Indirect" v-on:click="Typ = 'Indirect'" 
+                              data-toggle="tooltip" data-placement="top" 
+                              title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Pośrednia produkcja
+                      </button>
                     </div>
                   </div>  
+
                   <br>
 
                   <div class="row">
@@ -44,19 +56,19 @@
                   <br>
 
                   <!-- Formularz z metodą post--> 
-                  
+
                     <form action="post/post_employee.php" method="post">
                       <input type="hidden" name="typ" v-model="Typ" > 
                       <input type="hidden" name="wiek" v-model="Wiek" > 
                       <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
-                      <input type="submit" class="btn btn-outline-success" value="Pzejdż dalej" name="send">
+                    <hr>                      
+                      <input v-if="Stanowisko != '' && Wiek != '' && Typ != '' " value="Pzejdź dalej" type="submit" name="send"   class="btn btn-outline-success" >
                     </form>
 
 
                 </div>  
             </div>
           </form> 
-      <hr>      
     </div>
   </div>    
            

@@ -3,7 +3,7 @@
 
 class SESSION_CHECK 
 {
-    public function session_check(){
+    public function __construct(){
 
         require "db_connection.php";
         require "head.php";
@@ -29,7 +29,6 @@ class SESSION_CHECK
     }    
 }
 
-    $session_check = new SESSION_CHECK;   
-    $session_check -> session_check();
+new SESSION_CHECK;   
 
-?>
+

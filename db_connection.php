@@ -2,8 +2,8 @@
 
 //require_once "head.php"; 
 
-	function globals(){
-	 global $username, $servername, $password, $dbname, $conn;	
+	function glob_vars(){
+     global $username, $servername, $password, $dbname, $conn;	
 	} ;
 	
 

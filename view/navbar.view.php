@@ -44,6 +44,6 @@
 
 
   <!-- <div class="progress" style="height: 10px;">
-    <div class="progress-bar" role="progressbar" style="width: <?php echo $page * 13 ?>%; " aria-valuenow="1" aria-valuemin="0" aria-valuemax="8"></div>
+    <div class="progress-bar" role="progressbar" style="width: <?php //echo $page * 13 ?>%; " aria-valuenow="1" aria-valuemin="0" aria-valuemax="8"></div>
   </div> -->
 

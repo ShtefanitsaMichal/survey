@@ -1,38 +1,37 @@
-<?php include_once "$base_dir/db_connection.php"; ?>
-<?php include_once "$base_dir/head.php"; ?>
+<?php include_once "../db_connection.php"; ?>
+<?php include_once "../head.php"; ?>
 
 <?php
-
     //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   
     define(0, "zarządem SMP");
     define(1, "bezpośrednim przyłożonym");
     define(2, "swoim działem");
     define(3, "innym działem SMP");
     define(4, "bazą danych");   
-
 ?>
 
 
 <?php 
+    try {
+        global $conn;
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
+        $get_all_data = $conn->prepare($sql);
+        $get_all_data -> execute(array($sql));
+        $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
+        $source = $all_row;
 
-    global $conn;
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
-    $get_all_data = $conn->prepare($sql);
-    $get_all_data -> execute(array($sql));
-    $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
-    $source = $all_row;
+        $odpowiedz_2 = array_slice($source, 2, 5);
+        $odpowiedz_2_int = array();
 
-    $odpowiedz_2 = array_slice($source, 2, 5);
-    $odpowiedz_2_int = array();
-
-    foreach ($odpowiedz_2 as $value) 
-        {
-            $value = intval($value); 
-            $odpowiedz_2_int[] = $value;
-        }
-
-    $conn = null;            	
+        foreach ($odpowiedz_2 as $value) 
+            {
+                $value = intval($value); 
+                $odpowiedz_2_int[] = $value;
+            }
+        $conn = null;
+    }   catch (PDOException $e) { print_r($sql) . "<br>" . $e->getMessage(); }
+                	
 ?>
 
 <?php 
@@ -55,10 +54,8 @@
         {
             $value = intval($value); 
             $odpowiedz_3_int[] = $value;
-        }
-        
-    // Mnożenia odpowiedzi na pytania 2 i wage poszczegolnych żrodlo
-            
+        }     
+   
     $conn = null					 
 ?>
 

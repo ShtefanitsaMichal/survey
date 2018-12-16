@@ -1,7 +1,9 @@
 <?php 
-    require_once "../head.php";
-    require_once "../db_connection.php";
-    require_once "../view/get_main_source.view.php";
+    define('__ROOT__', dirname(dirname(__FILE__))); 
+    
+    require_once(__ROOT__.'/head.php');
+    require_once(__ROOT__.'/db_connection.php');
+    require_once(__ROOT__.'/view/get_main_source.view.php');
 ?>
 
 <?php    
@@ -52,18 +54,16 @@
             "own" => $own,
             "total" => $total    
     )); 
-      
     ?>
    
     <?php
         }
         catch(PDOException $e)
         {
-        print_r($sql) . "<br>" . $e->getMessage();
+            print_r($sql) . "<br>" . $e->getMessage();
         }
-        $conn = null;
-    
-        ?>
+            $conn = null;
+    ?>
 
     <?php
 

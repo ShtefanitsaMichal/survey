@@ -1,5 +1,7 @@
-<?php require_once "./head.php"; ?> 
-<?php require_once "./db_connection.php"; ?>
+<?php  define('__ROOT__', dirname(dirname(__FILE__)));  ?>
+
+<?php require_once( __ROOT__ . '/head.php' ); ?> 
+<?php require_once( __ROOT__ . '/db_connection.php' ); ?>
 
 <?php
     //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   

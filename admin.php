@@ -2,7 +2,6 @@
 
 <!-- Podłaczenie bazy danych -->
 <?php require_once "db_connection.php" ?>
-<?php $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );	 ?> 
 
 <!-- podłączenie pliku z kwerendami -->
 <?php require_once "queries/queries.php"?>
@@ -12,19 +11,17 @@
 <!-- Wykonywanie kwerend -->
 <?php 
 		try {
-			
+			global $conn;
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = $question1 ;
  			$get_all_data = $conn->prepare($sql);
  			$get_all_data -> execute(array($sql));
- 			//$all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
-        	//$all = $all_row;
+
             }
         	 catch(PDOException $e)
                             {
                             echo $sql . "<br>" . $e->getMessage();
                             }
-
             $conn = null;                 
 ?>
 

@@ -1,7 +1,9 @@
-<?php   
-    require_once "../head.php";
-    require_once "../db_connection.php" ;
-    require_once "../view/get_main_source.view.php"     
+<?php  
+    define('__ROOT__', dirname(dirname(__FILE__)));  
+
+    require_once( __ROOT__ . '/head.php');
+    require_once( __ROOT__ . '/db_connection.php') ;
+    require_once( __ROOT__ . '/view/get_main_source.view.php');     
 ?> 
 
 <?php 
@@ -20,9 +22,10 @@
 <?php global $main_tool; ?>
 
 <?php
+    //global $conn;
     function post_source_rate(){    
         try {
-            global $conn;
+            
 
             $opcja_1 = $_POST['opcja_1'];
             $opcja_2 = $_POST['opcja_2'];  
@@ -37,6 +40,7 @@
             $opcja_5_title = $_POST['opcja_5_title'];
 
             // set the PDO error mode to exception
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = $conn->prepare("INSERT INTO $db_source (session_id, source ,opcja_1, opcja_2, opcja_3, opcja_4, opcja_5, opcja_1_title, opcja_2_title, opcja_3_title, opcja_4_title, opcja_5_title)  
                                 VALUES ('$session_id','$source' , '$opcja_1', '$opcja_2', '$opcja_3', '$opcja_4', '$opcja_5', '$opcja_1_title', '$opcja_2_title', '$opcja_3_title', '$opcja_4_title', '$opcja_5_title')");

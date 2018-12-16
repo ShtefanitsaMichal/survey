@@ -2,7 +2,7 @@
 <?php $_SESSION['source_number'] = 1 ?>
 <?php require_once "view/navbar.view.php" ?>
 <?php require_once "view/get_main_source.view.php" ?> 
-
+ 
 
 
 <?php  global $FirstMainSource, $SecondMainSource; ?>

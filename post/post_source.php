@@ -1,13 +1,13 @@
     <?php 
-        require_once "../head.php";
-        require_once "../db_connection.php";
+        require "../head.php";
+        require "../db_connection.php";
     ?>
 
     <?php
         function post_source(){
             try {
-            global $conn;
-            
+            global $conn, $session_id;
+
             $zarzad = $_POST['zarzad'];
             $przylozony = $_POST['przylozony'];  
             $dzial = $_POST['dzial'];

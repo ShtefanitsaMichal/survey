@@ -1,12 +1,12 @@
 <?php 
-    require_once "../head.php";
-    require_once "../db_connection.php";
+    require "../head.php";
+    require "../db_connection.php";
 ?>
 
 <?php
-        
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
+    function post_source_rate(){  
+        try {
+        global $conn, $session_id;
 
         $zarzad = $_POST['zarzad'];
         $przylozony = $_POST['przylozony'];  
@@ -26,22 +26,20 @@
             "inny_dzial" => $inny_dzial,
             "baza_danych" => $baza_danych
         )); 
-      //var_dump($sql);
-    ?>
 
-    <?php
         }
             catch(PDOException $e)
         {
-            //var_dump($sql) . "<br>" . $e->getMessage();
-            print_r($sql) . "<br>" . $e->getMessage();
-            //require_once "alert.php";
+            print_r($sql) . "<br>" . $e->getMessage();  
         }
             $conn = null;
-
+    }
     ?>
 
-    <?php   
-        // Przekierowanie do pliku
-       echo "<script> window.location = '../main_tool_1.php'</script>";  
+    <?php 
+        if (isset($_POST['send'])) { post_source_rate() ;}  
+        else { echo "error";}  
     ?>
+
+    <!-- Przekierowanie do pliku -->
+    <?php   echo "<script> window.location = '../main_tool_1.php'</script>";  ?>

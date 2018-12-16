@@ -1,70 +1,66 @@
-    <?php 
-        $ds = DIRECTORY_SEPARATOR;
-        $base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
-    ?> 
-    
-    
-    <?php include_once "$base_dir/db_connection.php"; ?>
-    <?php include_once "$base_dir/head.php"; ?>
+<?php include_once "$base_dir/db_connection.php"; ?>
+<?php include_once "$base_dir/head.php"; ?>
 
-    <?php
+<?php
 
-        //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   
-        define(0, "zarządem SMP");
-        define(1, "bezpośrednim przyłożonym");
-        define(2, "swoim działem");
-        define(3, "innym działem SMP");
-        define(4, "bazą danych");   
+    //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   
+    define(0, "zarządem SMP");
+    define(1, "bezpośrednim przyłożonym");
+    define(2, "swoim działem");
+    define(3, "innym działem SMP");
+    define(4, "bazą danych");   
 
-    ?>
+?>
 
 
-    <?php 
+<?php 
 
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );	
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
-        $get_all_data = $conn->prepare($sql);
-        $get_all_data -> execute(array($sql));
-        $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
-        $source = $all_row;
+    global $conn;
+    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
+    $get_all_data = $conn->prepare($sql);
+    $get_all_data -> execute(array($sql));
+    $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
+    $source = $all_row;
 
-        $odpowiedz_2 = array_slice($source, 2, 5);
-        $odpowiedz_2_int = array();
+    $odpowiedz_2 = array_slice($source, 2, 5);
+    $odpowiedz_2_int = array();
 
-            foreach ($odpowiedz_2 as $value) {
-                $value = intval($value); 
-                $odpowiedz_2_int[] = $value;
-            }
+    foreach ($odpowiedz_2 as $value) 
+        {
+            $value = intval($value); 
+            $odpowiedz_2_int[] = $value;
+        }
 
-        $conn = null;            	
-    ?>
+    $conn = null;            	
+?>
 
-    <?php 
+<?php 
 
-        //Pobranie danych dla 2 pytanie 
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );	
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM source_rate WHERE `source_rate`.`session_id` = '$session_id' ORDER BY `source_rate`.`id` DESC" ;
-        $get_all_data = $conn->prepare($sql);
-        $get_all_data -> execute(array($sql));
-        $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
-        $source_rate = $all_row;
+    //Pobranie danych dla 2 pytanie 
+    global $conn;
+    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM source_rate WHERE `source_rate`.`session_id` = '$session_id' ORDER BY `source_rate`.`id` DESC" ;
+    $get_all_data = $conn->prepare($sql);
+    $get_all_data -> execute(array($sql));
+    $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
+    $source_rate = $all_row;
         
-        // pobrania tylko samych odpowiedzi z bazy danych 
-        $odpowiedz_3 = array_slice($source_rate, 2, 5);
-        $odpowiedz_3_int = array();
+    // pobrania tylko samych odpowiedzi z bazy danych 
+    $odpowiedz_3 = array_slice($source_rate, 2, 5);
+    $odpowiedz_3_int = array();
         
-        // przerobienia strig na integer
-        foreach ($odpowiedz_3 as $value) {
+    // przerobienia strig na integer
+    foreach ($odpowiedz_3 as $value) 
+        {
             $value = intval($value); 
             $odpowiedz_3_int[] = $value;
         }
         
-        // Mnożenia odpowiedzi na pytania 2 i wage poszczegolnych żrodlo
+    // Mnożenia odpowiedzi na pytania 2 i wage poszczegolnych żrodlo
             
-        $conn = null					 
-    ?>
+    $conn = null					 
+?>
 
     <hr>
 
@@ -72,7 +68,7 @@
         global $main_source;
 
         $main_source = [];
-        //Procedura mnożenia odpowiedzi na pytania #2 i Pytania #3
+        //Procedura mnożenia odpowiedzi na pytania "source.php" i Pytania "rate_source.php"
         for ($i=0; $i < count($odpowiedz_2_int); $i++)         
             { 
                 $main_source[] = $odpowiedz_2_int[$i] * $odpowiedz_3_int[$i];

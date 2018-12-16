@@ -136,7 +136,11 @@
             
         </div> 
 
-        <div class="row">
+       
+                <?php  
+                    define('__ROOT__', dirname(dirname(__FILE__))); 
+                ?>
+                <!-- check the action -->
                 <form action="./post/post_apps.php" method="POST">
                     <input type="hidden" name="intranet" v-model="form.intranet">
                     <input type="hidden" name="comarch" v-model="form.comarch">
@@ -155,7 +159,7 @@
                     <input type="hidden" name="own" v-model="form.own">
                     <input type="hidden" name="own_title" v-model="form.own_title">
                     <input type="hidden" name="total" v-model="total">
-                 </div>   
+                
                     <div class="row">
                         <div class="col-md-10">
                             <input type="submit" value="Przejdź dalej" class="btn btn-outline-success" name="send">

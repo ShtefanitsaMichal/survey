@@ -8,13 +8,21 @@
 
 <?php  global $FirstMainSource, $SecondMainSource; ?>
 
-<div class="ap"> 
-    <h5>Ktore z form informowania najczęściej wykorzystujesz w komunikacji z <b> <?php print main_source_1() ?> ? </b></h5>
-    <hr>
+<div class="app"> 
+    <h5>
+        Ktore z form informowania najczęściej wykorzystujesz w komunikacji z 
+        <b> <?php print main_source_1() ?> ? </b> 
+    </h5>
+
     <?php 
-            if (main_source_1() == 'bazą danych') {
-                require "view/get_apps.view.php";
-            } else { require "view/get_tools.view.php" ;}
+            if (main_source_1() == 'bazą danych') 
+                {
+                    require "view/get_apps.view.php";
+                } 
+            else 
+                { 
+                    require "view/get_tools.view.php";
+                }
     ?>
 </div>    
        

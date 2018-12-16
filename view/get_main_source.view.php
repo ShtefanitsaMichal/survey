@@ -1,5 +1,5 @@
-<?php include_once "../db_connection.php"; ?>
-<?php include_once "../head.php"; ?>
+<?php require_once "./head.php"; ?> 
+<?php require_once "./db_connection.php"; ?>
 
 <?php
     //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   
@@ -13,7 +13,7 @@
 
 <?php 
     try {
-        global $conn;
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
         $get_all_data = $conn->prepare($sql);
@@ -32,13 +32,11 @@
         $conn = null;
     }   catch (PDOException $e) { print_r($sql) . "<br>" . $e->getMessage(); }
                 	
-?>
 
-<?php 
 
     //Pobranie danych dla 2 pytanie 
-    global $conn;
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM source_rate WHERE `source_rate`.`session_id` = '$session_id' ORDER BY `source_rate`.`id` DESC" ;
     $get_all_data = $conn->prepare($sql);
     $get_all_data -> execute(array($sql));
@@ -74,7 +72,7 @@
         $SecondMainSource = '';
         
 
-        //var_dump($main_source);
+       
 
         function main_source_1()
             {

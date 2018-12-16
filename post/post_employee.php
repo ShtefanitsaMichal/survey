@@ -1,5 +1,5 @@
 <?php
-    require_once "../head.php";
+    //require_once "../head.php";
     require "../db_connection.php";
  
     function post_employee(){ 

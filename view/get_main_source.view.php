@@ -1,22 +1,24 @@
+<?php 
+  $ds = DIRECTORY_SEPARATOR;
+  $base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
+?>
+
 <?php include_once "$base_dir/db_connection.php"; ?>
 <?php include_once "$base_dir/head.php"; ?>
 
 <?php
-
     //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   
     define(0, "zarządem SMP");
     define(1, "bezpośrednim przyłożonym");
     define(2, "swoim działem");
     define(3, "innym działem SMP");
     define(4, "bazą danych");   
-
 ?>
 
-
-<?php 
-
-    global $conn;
-    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<?php  
+    
+    global $conn;     
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
     $get_all_data = $conn->prepare($sql);
     $get_all_data -> execute(array($sql));

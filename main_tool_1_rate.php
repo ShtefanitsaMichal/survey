@@ -4,6 +4,7 @@
 <?php require_once "view/get_main_source.view.php" ?> 
 
 
+
 <?php 
         //var_dump(main_source());
     
@@ -37,9 +38,22 @@
       <div class="row">
         <div class="col-md-4">
           <label class="control-label bold">
+          
             <?php 
                   $opcja_1 = key($main);
-                  print($opcja_1);
+
+                  switch ($opcja_1) {
+                  case "intranet":
+                      echo "Intranet";
+                      break;
+                  case "sanden_vision":
+                      echo "Sanden Vision";
+                      break;
+                  case "comarch":
+                      echo "Comarch ECM";
+                      break;
+                  }
+
                   next($main);
             ?>
 
@@ -80,7 +94,17 @@
             <label class="control-label bold"> 
               <?php 
                     $opcja_2 = key($main);
-                    print($opcja_2);
+                      switch ($opcja_2) {
+                    case "intranet":
+                      echo "Intranet portal";
+                      break;
+                    case "sanden_vision":
+                      echo "Sanden Vision";
+                      break;
+                    case "comarch":
+                      echo "Comarch ECM";
+                      break;
+                  }
                     next($main);
               ?> 
             </label>

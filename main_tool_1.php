@@ -1,4 +1,5 @@
 <?php require_once "head.php" ?>
+<?php require_once "db_connection.php";?>
 <?php $_SESSION['source_number'] = 1 ?>
 <?php require_once "view/navbar.view.php" ?>
 <?php require_once "view/get_main_source.view.php" ?> 

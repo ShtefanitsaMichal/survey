@@ -1,6 +1,6 @@
 <?php 
-    require_once "../db_connection.php";
-    require_once "../view/get_main_source.view.php";
+    //require_once "./db_connection.php";
+    //require_once "./view/get_main_source.view.php";
 ?>
 
 <?php    

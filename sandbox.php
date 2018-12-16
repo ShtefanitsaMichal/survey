@@ -29,6 +29,46 @@ class SESSION_CHECK
     }    
 }
 
-new SESSION_CHECK;   
+//new SESSION_CHECK;   
+
+$opcja_1 = "comarch";
+
+    function change_name($opcja_1) {
+
+                        switch ($opcja_1) {
+                        case "intranet":
+                            echo "Intranet portal";
+                        break;
+                        case "sanden_vision":
+                            echo "Sanden Vision";
+                        break;
+                        case "comarch":
+                            echo "Comarch ECM";
+                        break;
+
+                                intranet: 0, 
+                                comarch: 0,
+                                bpcs: 0,
+                                qms: 0,
+                                sap: 0,
+                                asseco: 0,
+                                sanden_vision: 0,
+                                facebook: 0,
+                                smp_web_page: 0,
+                                baza_sugestii: 0,
+                                sanden_month_news: 0, 
+                                zmt: 0,
+                                parcel_warehouse: 0,
+                                lessons_learned: 0,
+                                own_title: '',
+                                own: 0
+                    }
+
+    }
+
+change_name($opcja_1);
+
+
+
 
 

@@ -83,7 +83,7 @@
             </div> 
 
             <br>
-            <!-- Formularz metody post -> wysyłanie danych o ródle. 
+            <!--Formularz metody post -> wysyłanie danych o ródle. 
                 Parametr name nie moze być zmieniony--> 
                 <form action="post/post_source.php" method="post">
                     <input type="hidden" name="zarzad" v-model="form.zarzad">
@@ -94,16 +94,17 @@
                     <input type="hidden" name="total" v-model="total">
                     <div class="row">
                         <div class="col-md-10">
-                            <input v-if="total == 100" value="Pzejdź dalej" type="submit"  class="btn btn-outline-success btn-lg" >
-                            <input v-else="total != 100" value="Pzejdź dalej" type="submit" class="btn btn-outline-secondary btn-lg disabled" >
-                            
+                            <input v-if="total == 100" value="Pzejdź dalej" type="submit" name="send"  class="btn btn-outline-success btn-lg" >
+
+                                <!-- !zabronic wysyłanie formy na klick przycisku z clasem disabled --> 
+                            <input v-else="total != 100" value="Pzejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" > 
                         </div>
+
                         <div class="col-md-2">
                             <h3 v-if="total == 100" class="text-success">{{total + '%'}}</h3>
                             <h3 v-else-if="total > 100" class="text-danger">{{total + '%'}}</h3>
                             <h3 v-else="total < 100" class="text-danger">{{total + '%'}}</h3>
                         </div>
-
                     </div>
                 </form>
             </div>        

@@ -199,7 +199,7 @@
               <input type="hidden" name="dzial" v-model="dzial">
               <input type="hidden" name="inny_dzial" v-model="inny_dzial">
               <input type="hidden" name="baza_danych" v-model="baza_danych"> 
-              <input type="submit" name="send" value="Pzejdź dalej" class="btn btn-outline-success"> 
+              <input type="submit" name="send" value="Pzejdź dalej" value="send" class="btn btn-outline-success"> 
             </form>
         </div>
       </div>

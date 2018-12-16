@@ -1,11 +1,5 @@
     <div class="app">
-    <h6>Maksymalna liczba % powinna wynieśc 100 !</h6>  
-        <div class="row">
-            <div align="center">
-                <h2>{{total + '%'}}</h2>
-            </div>
-        </div>
-          
+    <h6>Maksymalna liczba % powinna wynieśc 100 !</h6>     
         <div class="row">
             <div class="col-4">
                 <label>1.Intranet (Santouch, help desk, etc) <b> {{form.intranet}} </b> </label>
@@ -161,8 +155,15 @@
                     <input type="hidden" name="own" v-model="form.own">
                     <input type="hidden" name="own_title" v-model="form.own_title">
                     <input type="hidden" name="total" v-model="total">
-
-                    <input type="submit" value="Przejdź dalej" class="btn btn-outline-success" name="send" class="btn btn-outline-success" > 
+                 </div>   
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input type="submit" value="Przejdź dalej" class="btn btn-outline-success" name="send">
+                        </div> 
+                        <div class="col-md-2">
+                            <h2>{{total + '%'}}</h2>
+                        </div>
+                    </div>
                 </form>
            
         </div>

@@ -134,17 +134,7 @@
             <label class="control-label bold"> 
               <?php 
                     $opcja_2 = key($main);
-                      switch ($opcja_2) {
-                    case "intranet":
-                      echo "Intranet portal";
-                      break;
-                    case "sanden_vision":
-                      echo "Sanden Vision";
-                      break;
-                    case "comarch":
-                      echo "Comarch ECM";
-                      break;
-                  }
+                    echo change_name($opcja_2);
                     next($main);
               ?> 
             </label>
@@ -183,7 +173,7 @@
             <label class="control-label bold"> 
               <?php 
                     $opcja_3 = key($main);
-                    print($opcja_3);
+                    echo change_name($opcja_3);
                     next($main);
               ?> 
             </label>
@@ -226,7 +216,7 @@
         <label class="control-label bold"> 
           <?php 
                 $opcja_4 = key($main);
-                print($opcja_4);
+                echo change_name($opcja_4);
                 next($main);
           ?> 
         </label>
@@ -263,7 +253,7 @@
         <label class="control-label bold"> 
           <?php 
                 $opcja_5 = key($main);
-                print($opcja_5);
+                echo change_name($opcja_5);
                 next($main);
           ?> 
         </label>

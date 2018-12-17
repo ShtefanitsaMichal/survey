@@ -3,6 +3,58 @@
 <?php require_once "view/navbar.view.php" ?>
 <?php require_once "view/get_main_source.view.php" ?> 
 
+<?php
+  function change_name($opcja_1) {
+            switch ($opcja_1) {
+            case "intranet":
+                echo "Intranet portal";
+            break;
+            case "sanden_vision":
+                echo "Sanden Vision";
+            break;
+            case "comarch":
+                echo "Comarch ECM";
+            break;
+            case "bpcs":
+                echo"BPCS";
+                break;
+            case "qms":
+                echo"QMS";
+                break;
+            case "sap":
+                echo"SAP";
+                break;
+            case "asseco":
+                echo"Asseco";
+                break;
+            case "facebook":
+                echo"Facebook";
+                break;
+            case "smp_web_page":
+                echo"Strona Internetowa";
+                break;
+            case "baza_sugestii":
+                echo"Baza sugestii";
+                break;
+            case "sanden_month_news":
+                echo"Sanden monthly news";
+                break; 
+            case "zmt":
+                echo"ZMT";
+                break;
+            case "parcel_warehouse":
+                echo"";
+                break;
+            case "lessons_learned":
+                echo"Baza doświadczeń ";
+                break;
+            case "own_title":
+                echo"Opcją własna";
+                break;
+        }
+
+    }
+  ?>
 
 
 <?php 
@@ -41,19 +93,7 @@
           
             <?php 
                   $opcja_1 = key($main);
-
-                  switch ($opcja_1) {
-                  case "intranet":
-                      echo "Intranet";
-                      break;
-                  case "sanden_vision":
-                      echo "Sanden Vision";
-                      break;
-                  case "comarch":
-                      echo "Comarch ECM";
-                      break;
-                  }
-
+                  echo change_name($opcja_1);
                   next($main);
             ?>
 

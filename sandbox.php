@@ -31,7 +31,7 @@ class SESSION_CHECK
 
 //new SESSION_CHECK;   
 
-$opcja_1 = "comarch";
+$opcja_1 = "own_title";
 
     function change_name($opcja_1) {
 
@@ -45,23 +45,42 @@ $opcja_1 = "comarch";
                         case "comarch":
                             echo "Comarch ECM";
                         break;
-
-                                intranet: 0, 
-                                comarch: 0,
-                                bpcs: 0,
-                                qms: 0,
-                                sap: 0,
-                                asseco: 0,
-                                sanden_vision: 0,
-                                facebook: 0,
-                                smp_web_page: 0,
-                                baza_sugestii: 0,
-                                sanden_month_news: 0, 
-                                zmt: 0,
-                                parcel_warehouse: 0,
-                                lessons_learned: 0,
-                                own_title: '',
-                                own: 0
+                        case "bpcs":
+                            echo"BPCS";
+                            break;
+                        case "qms":
+                            echo"QMS";
+                            break;
+                        case "sap":
+                            echo"SAP";
+                            break;
+                        case "asseco":
+                            echo"Asseco";
+                            break;
+                        case "facebook":
+                            echo"Facebook";
+                            break;
+                        case "smp_web_page":
+                            echo"Strona Internetowa";
+                            break;
+                        case "baza_sugestii":
+                            echo"Baza sugestii";
+                            break;
+                        case "sanden_month_news":
+                            echo"Sanden monthly news";
+                            break; 
+                        case "zmt":
+                            echo"ZMT";
+                            break;
+                        case "parcel_warehouse":
+                            echo"";
+                            break;
+                        case "lessons_learned":
+                            echo"Baza doświadczeń ";
+                            break;
+                        case "own_title":
+                            echo"Opcją własna";
+                            break;
                     }
 
     }

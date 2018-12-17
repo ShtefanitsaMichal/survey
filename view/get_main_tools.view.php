@@ -3,7 +3,6 @@
     
 
     <?php 
-
         
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );	
         $conn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -28,12 +27,6 @@
 
 <hr>
 
-<!-- 
-    SELECT `session_id`,`typ`, `wiek`, stanowisko 
-    FROM `employee` GROUP BY  session_id  
-    ORDER BY `employee`.`date`  DESC 
-
--->
 
 
 

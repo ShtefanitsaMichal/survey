@@ -1,11 +1,11 @@
 <?php 
-    //require_once "./db_connection.php";
-    //require_once "./view/get_main_source.view.php";
-?>
-
-<?php    
+    require_once '../head.php'; 
+    require_once '../db_connection.php';
+    require_once '../view/get_main_source.view.php';
+   
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
+        
+       // global $conn;
         
         if($_SESSION['source_number'] == '1')
             {
@@ -15,8 +15,6 @@
             {
                 $main_source = main_source_2();
             }
-        
-        //var_dump($main_source);
 
         $phone = $_POST['phone'];  
         $write = $_POST['write'];
@@ -34,12 +32,12 @@
         $total = $_POST['total'];
      
         // set the PDO error mode to exception
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );    
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = $conn->prepare("INSERT INTO main_tools (`session_id`,`main_source`, `write`, `phone`, `face_to_face`, `dept_meet`, `prod_meet`, `proj_meet`, `budget_meet`, `smp_d`, `smp_w`,`cs`, `unformal_meet`, `own`, `own_title`, `total` )  
                                 VALUES ('$session_id','$main_source' , '$write', '$phone', '$face_to_face', '$dept_meet', '$prod_meet', '$proj_meet', '$budget_meet', '$smp_d', '$smp_w','$cs' ,'$unformal_meet', '$own', '$own_title', '$total')");
 
         $sql->execute(array(
-         
             
             "session_id" => $session_id,
             "main_source" => $main_source,    
@@ -59,16 +57,11 @@
             "total" => $total,
             
         ));       
-        //var_dump($sql);    
-        ?>
-
-    <?php
+       
         }
             catch(PDOException $e)
         {
-            //var_dump($sql) . "<br>" . $e->getMessage();
-                print_r($sql) . "<br>" . $e->getMessage();
-            //require_once "alert.php";
+            print_r($sql) . "<br>" . $e->getMessage();
         }
             $conn = null;
 

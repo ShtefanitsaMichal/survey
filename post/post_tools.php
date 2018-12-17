@@ -5,8 +5,9 @@
    
     try {
         
-       // global $conn;
-        
+        //Check if source first or second and depend of this load function from get_main_source.view.php
+
+
         if($_SESSION['source_number'] == '1')
             {
                 $main_source = main_source_1();
@@ -71,6 +72,8 @@
 
     
 <?php
+
+   
 
     if($_SESSION['source_number'] == 2) 
     {    

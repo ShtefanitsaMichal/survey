@@ -9,7 +9,7 @@
     define(1, "bezpośrednim przyłożonym");
     define(2, "swoim działem");
     define(3, "pracownikami innego działu SMP");
-    define(4, "bazą danych");   
+    define(4, "podanymi poniżej systemami informatycznymi");   
 ?>
 
 

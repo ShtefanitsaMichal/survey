@@ -12,7 +12,10 @@
     <h5>Ktore z form informowania najczęściej wykorzystujesz w komunikacji z <b> <?php print main_source_1() ?> ? </b></h5>
     <hr>
     <?php 
-            if (main_source_1() == 'bazą danych') 
+            // Condition: If main_source_1() == 'systems' load view with applications
+            
+            // Attention !!! current string must be the same like in get_main_source.view.php -> line-12 
+            if (main_source_1() == 'podanymi poniżej systemami informatycznymi') 
                 {
                     require "view/get_apps.view.php" ;
                 } 

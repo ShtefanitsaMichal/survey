@@ -1,5 +1,5 @@
 <?php
-    //require_once "../head.php";
+    require_once "../head.php";
     require "../db_connection.php";
  
     function post_employee(){ 
@@ -18,8 +18,9 @@
                 "session_id" => $session_id, 
                 "typ" => $typ,
                 "wiek" => $wiek,
-                "stanowisko" => $stanowisko,)); 
+                "stanowisko" => $stanowisko,));
         }
+        
         catch(PDOException $e)
         {
             var_dump($sql) . "<br>" . $e->getMessage();
@@ -29,10 +30,12 @@
         }    
         }
     // if form was posted run function post_employee()
-
-    if (isset($_POST['send'])) { post_employee();}  
-    else { echo "error";}     
+         
+    if (
+        isset($_POST['send'])) { post_employee();
+        echo "<script> window.location = '../source.php'</script>";
+        }
+    else { echo "Forma nie została wysłana ponieważ - ponieważ wysyłanie nie zostało ukończone właściwy sposób";}     
 
 ?>
 
-<?php echo "<script> window.location = '../source.php'</script>"; ?>

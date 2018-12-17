@@ -8,31 +8,33 @@
     define(0, "zarządem SMP");
     define(1, "bezpośrednim przyłożonym");
     define(2, "swoim działem");
-    define(3, "innym działem SMP");
+    define(3, "pracownikami innego działu SMP");
     define(4, "bazą danych");   
 ?>
 
 
 <?php 
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
-        $get_all_data = $conn->prepare($sql);
-        $get_all_data -> execute(array($sql));
-        $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
-        $source = $all_row;
+    try 
+        {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "SELECT * FROM source WHERE `source`.`session_id` = '$session_id' ORDER BY `source`.`id` DESC" ;
+            $get_all_data = $conn->prepare($sql);
+            $get_all_data -> execute(array($sql));
+            $all_row = $get_all_data->fetch(PDO::FETCH_ASSOC); 
+            $source = $all_row;
 
-        $odpowiedz_2 = array_slice($source, 2, 5);
-        $odpowiedz_2_int = array();
+            $odpowiedz_2 = array_slice($source, 2, 5);
+            $odpowiedz_2_int = array();
 
-        foreach ($odpowiedz_2 as $value) 
-            {
-                $value = intval($value); 
-                $odpowiedz_2_int[] = $value;
-            }
-        $conn = null;
-    }   catch (PDOException $e) { print_r($sql) . "<br>" . $e->getMessage(); }
+            foreach ($odpowiedz_2 as $value) 
+                {
+                    $value = intval($value); 
+                    $odpowiedz_2_int[] = $value;
+                }
+            $conn = null;
+        }   
+    catch (PDOException $e) { print_r($sql) . "<br>" . $e->getMessage(); }
                 	
 
 

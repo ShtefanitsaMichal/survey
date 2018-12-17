@@ -37,9 +37,12 @@
     ?>
 
     <?php 
-        if (isset($_POST['send'])) { post_source_rate() ;}  
+        if (isset($_POST['send'])) 
+            { 
+                //Przekierowanie do pliku 
+                post_source_rate();
+                echo "<script> window.location = '../main_tool_1.php'</script>";  
+            }  
         else { echo "error";}  
     ?>
 
-    <!-- Przekierowanie do pliku -->
-    <?php   echo "<script> window.location = '../main_tool_1.php'</script>";  ?>

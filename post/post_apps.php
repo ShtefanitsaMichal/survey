@@ -6,7 +6,7 @@
     require_once(__ROOT__.'/view/get_main_source.view.php');
 ?>
 
-<?php    
+<?php     
     try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
            

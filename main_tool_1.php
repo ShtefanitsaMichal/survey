@@ -10,26 +10,15 @@
 
 <div class="ap"> 
 
-<?php 
-
-    /*  
-    
-    function change_name($main_source_1()) {
-            switch ($main_source_1()) {
-            case "Zarząd" :echo "Intranet portal"; break;
-            case "Przełożony" :echo  "Sanden Vision"; break;
-            case "Dział" :echo  "Comarch ECM"; break;
-            case "Inny Dział" :echo "BPCS"; break;
-            case "System informatyczny" :echo "Które <php>systemy informatyczne<php> najczęściej wykorzystujesz w pracy ?"; break;   
-        }
-    } 
-    
-    */
-
-?>
     <!-- Które <php>systemy informatyczne<php> najczęściej wykorzystujesz w pracy ? -->
-    <h5>Które<b><?php print main_source_1() ?></b> najczęściej wykorzystujesz w pracy ? </h5>
-    
+    <div id="choose_source">
+        <h5 v-if="source === 'zarządem SMP' ">zarządem SMP </h5>
+        <h5 v-else-if="source == 'bezpośrednim przyłożonym'">bezpośrednim przyłożonym </h5>
+        <h5 v-else-if="source == 'swoim działem'">swoim działem </h5>
+        <h5 v-else-if="source == 'pracownikami innego działu SMP'">pracownikami innego działu SMP </h5>
+        <h5 v-else="source == 'systemy informatyczne'">Które systemy informatyczne najczęściej wykorzystujesz w pracy ? </h5> 
+    </div>
+
     <hr>
 
     <?php 
@@ -45,7 +34,15 @@
                     require "view/get_tools.view.php" ;
                 }
     ?>
-</div>    
+</div>
+<script>
+    new Vue({
+      el: '#choose_source',
+      data: {
+        source: '<?php print main_source_1()?>'
+        }
+    })
+</script>    
        
       
 

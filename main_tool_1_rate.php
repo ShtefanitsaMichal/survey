@@ -6,10 +6,7 @@
 
 
 <?php 
-        var_dump(main_source_1());
-        var_dump(main_source_2());
     
-
        if (main_source_1() == 'systemy informatyczne') {
           require "view/get_main_apps.view.php";
           $main = $main_apps;
@@ -18,19 +15,21 @@
         { 
           require "view/get_main_tools.view.php"; 
           $main = $main_tools; 
-
         ;}
         
         ?> 
 
   <?php global $main_tool; ?>
-       
+
   <div id="App">
-      <label class="control-label"  >
-        <h5> 
-          Jak oceniasz efektywnoś komunikacji z <b><?php echo main_source_1(); ?></b> ?
-        </h5>
-      </label>
+
+    <label v-if="source1 == 'systemy informatyczne'" class="control-label"><b>{{ source1 }} </b>?</label>
+    <label v-else-if="source1 == 'zarządem SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
+    <label v-else-if="source1 == 'swoim działem'" class="control-label"><b>{{ source1 }} </b>?</label>
+    <label v-else-if="source1 == 'pracownikami innego działu SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
+    <label v-else="source1 == 'bezpośrednim przyłożonym" class="control-label"><b>{{ source1 }} </b>?</label>
+
+  
     <div class="form-group ">
       <label class="control-label bold">
         
@@ -42,7 +41,15 @@
           
             <?php 
                   $opcja_1 = key($main);
-                  echo change_name($opcja_1);
+                  if($opcja_1 = 'own') 
+                  {
+                    $opcja_1 = $main_apps['own_title'];
+                    echo $opcja_1;
+                  } 
+                    else 
+                  {
+                    echo change_name($opcja_1);
+                  }
                   next($main);
             ?>
 
@@ -82,9 +89,9 @@
           <div class="col-auto col-4">
             <label class="control-label bold"> 
               <?php 
-                    $opcja_2 = key($main);
-                    echo change_name($opcja_2);
-                    next($main);
+                $opcja_2 = key($main);
+                echo change_name($opcja_2);
+                next($main);
               ?> 
             </label>
           </div>
@@ -121,9 +128,9 @@
           <div class="col-auto col-4">
             <label class="control-label bold"> 
               <?php 
-                    $opcja_3 = key($main);
-                    echo change_name($opcja_3);
-                    next($main);
+                $opcja_3 = key($main);
+                echo change_name($opcja_3);
+                next($main);
               ?> 
             </label>
           </div>
@@ -164,9 +171,9 @@
       <div class="col-auto col-4">
         <label class="control-label bold"> 
           <?php 
-                $opcja_4 = key($main);
-                echo change_name($opcja_4);
-                next($main);
+            $opcja_4 = key($main);
+            echo change_name($opcja_4);
+            next($main);
           ?> 
         </label>
       </div>
@@ -201,9 +208,9 @@
       <div class="col-auto col-4">
         <label class="control-label bold"> 
           <?php 
-                $opcja_5 = key($main);
-                echo change_name($opcja_5);
-                next($main);
+            $opcja_5 = key($main);
+            echo change_name($opcja_5);
+            next($main);
           ?> 
         </label>
       </div>
@@ -263,14 +270,18 @@
    new Vue({
           el: '#App',
             data: {
-              opcja_1: '',
-              opcja_2: '',          
-              opcja_3: '',
-              opcja_4: '',
-              opcja_5: ''
-              }
-        })
-</script>  
+                    opcja_1: '',
+                    opcja_2: '',          
+                    opcja_3: '',
+                    opcja_4: '',
+                    opcja_5: '',
+                    source1: '<?php echo main_source_1(); ?>',
+                    source2: '<?php echo main_source_2(); ?>'
+                  }  
+        }) 
+</script>   
+
+
 
 
       

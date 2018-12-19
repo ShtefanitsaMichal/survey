@@ -5,16 +5,23 @@
 ?> 
 
 <?php 
-        if($_SESSION['source_number'] == 1){
+        if($_SESSION['source_number'] == 1)
+        {
             $source = main_source_1();   
-        } else { $source = main_source_2(); }
-        var_dump($source);
-        if ($source == 'podanymi poniżej systemami informatycznymi') {
-          $db_source = 'main_apps_rate';
         } 
-          else 
-        {  $db_source = 'main_tools_rate'; }
-        var_dump($db_source);
+        else 
+        { 
+            $source = main_source_2(); 
+        }
+        
+        if ($source == 'systemy informatyczne') 
+        {
+            $db_source = 'main_apps_rate';
+        } 
+        else 
+        {  
+            $db_source = 'main_tools_rate'; 
+        }
         
 ?> 
 
@@ -23,8 +30,7 @@
 <?php
     function post_source_rate(){    
         try {
-            
-            global $servername, $dbname, $username, $password, $conn;
+            global $servername, $dbname, $username, $password, $conn, $source, $db_source, $session_id;
 
             $opcja_1 = $_POST['opcja_1'];
             $opcja_2 = $_POST['opcja_2'];  
@@ -46,7 +52,6 @@
                                 VALUES ('$session_id','$source' , '$opcja_1', '$opcja_2', '$opcja_3', '$opcja_4', '$opcja_5', '$opcja_1_title', '$opcja_2_title', '$opcja_3_title', '$opcja_4_title', '$opcja_5_title')");
         
             $sql->execute(array(
-            
                 "session_id" => $session_id,
                 "source" => $source,   
                 "opcja_1" => $opcja_1,
@@ -62,12 +67,12 @@
             )); 
         
         }
-                catch(PDOException $e) { print_r($sql) . "<br>" . $e->getMessage(); }
-
-                $conn = null;
+            catch(PDOException $e) { print_r($sql) . "<br>" . $e->getMessage(); }
+        
+        $conn = null;
     }
     
-    if (isset($_POST['send'])) { post_source_rate();}  
+    if (isset($_POST['send'])) { post_source_rate(); }  
     else { echo "error";}   
     
     ?>
@@ -75,8 +80,8 @@
 
 
     <?php
-        /* if($_SESSION['source_number'] == 2) 
+         if($_SESSION['source_number'] == 2) 
         { echo "<script> window.location = '../main_source_expect.php'</script>"; }
         else 
-        { echo "<script> window.location = '../main_tool_2.php'</script>"; } */
+        { echo "<script> window.location = '../main_tool_2.php'</script>"; } 
     ?>

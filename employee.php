@@ -1,8 +1,8 @@
 
-    <?php require_once "db_connection.php" ?>
+    <?php require_once "db_connection.php"; ?>
     <?php require_once "head.php" ?>
     <?php require_once "view/navbar.view.php" ?>
- 
+
       <div class="App col-12 ">
                 <!-- <label  class="text-primary">{{ Typ + ' / ' + Stanowisko + ' / ' + Wiek }}</label>  -->
                 <div class="container">

@@ -20,7 +20,7 @@
 
     <div class="row">
       <div class="col-md-4 ">
-        <label class="control-label">1. Zarząd/Dyrektorzy</label>
+        <label class="text-secondary"><h5> 1. Zarząd/Dyrektorzy</h5></label>
       </div>
       <div class="col-md-8">
         <div class="form-group ">
@@ -33,10 +33,10 @@
               <button v-if="zarzad =='4'" type="button" v-on:click="zarzad = '4'" v-bind="zarzad" class="btn btn-warning">Raczej źle</button>
               <button v-else type="button" v-on:click="zarzad = '4'" v-bind="zarzad" class="btn btn-outline-warning">Raczej źle</button>
             </div> 
-            <div class="btn-group mr-2" role="group" aria-label="First group"> 
+            <!-- <div class="btn-group mr-2" role="group" aria-label="First group"> 
               <button v-if="zarzad =='3'" type="button" v-on:click="zarzad = '3'" v-bind="zarzad" class="btn btn-primary">Ani dobrze ani źle </button>
               <button v-else type="button" v-on:click="zarzad = '3'" v-bind="zarzad" class="btn btn-outline-primary">Ani dobrze ani źle </button>
-            </div>
+            </div> -->
             <div class="btn-group mr-2" role="ghiddenroup" aria-label="First group">  
               <button v-if="zarzad =='2'" type="button" v-on:click="zarzad = '2'" v-bind="zarzad" class="btn btn-info">Raczej dobrze</button>
               <button v-else type="button" v-on:click="zarzad = '2'" v-bind="zarzad" class="btn btn-outline-info">Raczej dobrze</button>
@@ -52,7 +52,7 @@
   
     <div class="row">
       <div class="col-md-4">            
-        <label class="control-label">2.	Bezpośredni przełożony</label>
+        <label class="text-secondary"><h5> 2.	Bezpośredni przełożony</h5></label>
       </div>
           <div class="col-md-8"> 
             <div class="form-group ">
@@ -68,10 +68,10 @@
                     <button v-else type="button" v-on:click="przylozony = '4'" v-bind="przylozony" class="btn btn-outline-warning">Raczej źle</button>
                   </div>
 
-                  <div class="btn-group mr-2" role="group" aria-label="First group"przylozony> 
+                  <!-- <div class="btn-group mr-2" role="group" aria-label="First group"przylozony> 
                     <button v-if="przylozony == '3'"type="button" v-on:click="przylozony = '3'" v-bind="przylozony" class="btn btn-primary">Ani dobrze ani źle </button>
                     <button v-else type="button" v-on:click="przylozony = '3'" v-bind="przylozony" class="btn btn-outline-primary">Ani dobrze ani źle </button>
-                  </div>
+                  </div> -->
 
                   <div class="btn-group mr-2" role="group" aria-label="First group">  
                     <button v-if="przylozony == '2'"type="button" v-on:click="przylozony = '2'" v-bind="przylozony"  class="btn btn-info">Raczej dobrze</button>
@@ -90,7 +90,7 @@
 
         <div class="row">       
           <div class="col-md-4">
-            <label class="control-label">3.	Współpracownicy w dziale / sekcji</label>
+            <label class="text-secondary"><h5>  3.	Współpracownicy w dziale / sekcji</h5></label>
           </div>
           <div class="col-md-8">  
             <div class="form-group ">
@@ -106,10 +106,10 @@
                   <button v-else type="button" v-on:click="dzial = '4'" v-bind="dzial" class="btn btn-outline-warning">Raczej źle</button>
                 </div>
 
-                <div class="btn-group mr-2" role="group" aria-label="First group"> 
+<!--                 <div class="btn-group mr-2" role="group" aria-label="First group"> 
                   <button v-if="dzial == '3'" type="button" v-on:click="dzial = '3'" v-bind="dzial" class="btn btn-primary">Ani dobrze ani źle </button>
                   <button v-else type="button" v-on:click="dzial = '3'" v-bind="dzial" class="btn btn-outline-primary">Ani dobrze ani źle </button>
-                </div>
+                </div> -->
 
                 <div class="btn-group mr-2" role="group" aria-label="First group">  
                   <button v-if="dzial == '2'" type="button" v-on:click="dzial = '2'" v-bind="dzial"  class="btn btn-info">Raczej dobrze</button>
@@ -129,7 +129,7 @@
 
         <div class="row">
           <div class="col-md-4">
-            <label class="control-label">4.	Pracownicy innych działów /sekcji</label>
+            <label class="text-secondary"><h5>4.	Pracownicy innych działów /sekcji</h5></label>
           </div>
           <div class="col-md-8">
             <div class="form-group ">
@@ -142,10 +142,10 @@
                   <button v-if="inny_dzial == '4'" type="button" v-on:click="inny_dzial = '4'" v-bind="inny_dzial" class="btn btn-warning">Raczej źle</button> 
                   <button v-else type="button" v-on:click="inny_dzial = '4'" v-bind="inny_dzial" class="btn btn-outline-warning">Raczej źle</button>
                   </div> 
-                <div class="btn-group mr-2" role="group" aria-label="First group"> 
+                <!-- <div class="btn-group mr-2" role="group" aria-label="First group"> 
                   <button v-if="inny_dzial == '3'" type="button" v-on:click="inny_dzial = '3'" v-bind="inny_dzial" class="btn btn-primary">Ani dobrze ani źle </button>
                   <button v-else type="button" v-on:click="inny_dzial = '3'" v-bind="inny_dzial" class="btn btn-outline-primary">Ani dobrze ani źle </button>
-                  </div>
+                  </div> -->
                 <div class="btn-group mr-2" role="group" aria-label="First group">  
                   <button v-if="inny_dzial == '2'" type="button" v-on:click="inny_dzial = '2'" v-bind="inny_dzial" class="btn btn-info">Raczej dobrze</button> 
                   <button v-else type="button" v-on:click="inny_dzial = '2'" v-bind="inny_dzial" class="btn btn-outline-info">Raczej dobrze</button>
@@ -153,7 +153,7 @@
                 <div class="btn-group mr-2" role="group" aria-label="First group"> 
                   <button v-if="inny_dzial == '1'" type="button" v-on:click="inny_dzial = '1'" v-bind="inny_dzial" class="btn btn-success">Dobrze</button>    
                   <button v-else type="button" v-on:click="inny_dzial = '1'" v-bind="inny_dzial" class="btn btn-outline-success">Dobrze</button>
-                  </div>    
+                </div>    
                 </div> 
               </div>
             </div>
@@ -163,7 +163,7 @@
 
         <div class="row">
           <div class="col-md-4">
-            <label class="control-label">5. Bazy danych / systemy</label>
+            <label data-toggle="popover" data-placement="bottom" title="Co znaczy?" data-content="Bazy danych / systemy informatyczne /ogłoszenia/bliuletyny/( Comarch, ASSECO, QMS, BPCS, strona www, tablice, Excell, etc.)" style="cursor: pointer;"><h5 class="text-secondary">5. System informatyczny<span > "?"</span></h5></label> 
           </div> 
           <div class="col-md-8"> 
             <div class="form-group ">
@@ -176,10 +176,10 @@
                   <button v-if="baza_danych == '4'" type="button" v-on:click="baza_danych = '4'" v-bind="baza_danych" class="btn btn-warning">Raczej źle</button>
                   <button v-else type="button" v-on:click="baza_danych = '4'" v-bind="baza_danych" class="btn btn-outline-warning">Raczej źle</button>
                 </div> 
-                <div class="btn-group mr-2" role="group" aria-label="First group"> 
+                <!-- <div class="btn-group mr-2" role="group" aria-label="First group"> 
                   <button v-if="baza_danych == '3'" type="button" v-on:click="baza_danych = '3'" v-bind="baza_danych" class="btn btn-primary">Ani dobrze ani źle </button>
                   <button v-else type="button" v-on:click="baza_danych = '3'" v-bind="baza_danych" class="btn btn-outline-primary">Ani dobrze ani źle </button>
-                </div>
+                </div> -->
                 <div class="btn-group mr-2" role="group" aria-label="First group">  
                   <button v-if="baza_danych == '2'" type="button" v-on:click="baza_danych = '2'" v-bind="baza_danych"  class="btn btn-info">Raczej dobrze</button>
                   <button v-else type="button" v-on:click="baza_danych = '2'" v-bind="baza_danych"  class="btn btn-outline-info">Raczej dobrze</button>
@@ -199,7 +199,8 @@
               <input type="hidden" name="dzial" v-model="dzial">
               <input type="hidden" name="inny_dzial" v-model="inny_dzial">
               <input type="hidden" name="baza_danych" v-model="baza_danych"> 
-              <input type="submit" name="send" value="Pzejdź dalej" value="send" class="btn btn-outline-success"> 
+              <input v-if="zarzad != '' && przylozony != '' && dzial != '' && inny_dzial != '' && baza_danych != '' "  type="submit" name="send" value="Przejdź dalej" value="send" class="btn btn-outline-success">
+              <input v-else  type="submit" name="send" value="Przejdź dalej" value="send" class="btn btn disabled" > 
             </form>
         </div>
       </div>

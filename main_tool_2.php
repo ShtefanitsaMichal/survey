@@ -10,9 +10,14 @@
 <hr>    
    
     <?php 
-            if (main_source_2() == 'bazą danych') {
-            require "view/get_apps.view.php";
-            } else { require "view/get_tools.view.php" ;}
+        if (main_source_2() == 'podanymi poniżej systemami informatycznymi') 
+            {
+                require "view/get_apps.view.php";
+            }   
+        else 
+            { 
+                require "view/get_tools.view.php" ;
+            }
     ?>
        
 </div>      

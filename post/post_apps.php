@@ -1,5 +1,4 @@
 <?php 
-    
     require_once('../head.php');
     require_once('../db_connection.php');
     require_once('../view/get_main_source.view.php');
@@ -34,7 +33,7 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = $conn->prepare("INSERT INTO main_apps (`session_id` ,`intranet`, `comarch`, `bpcs`, `qms`, `sap`, `asseco`, `sanden_vision`, `facebook`, `smp_web_page`, `baza_sugestii`, `zmt`, `parcel_warehouse`, `lessons_learned`, `own_title` , `own`, `sanden_month_news`, `total` )  
                                     VALUES ('$session_id' ,'$intranet', '$comarch', '$bpcs', '$qms', '$sap', '$asseco', '$sanden_vision', '$facebook', '$smp_web_page', '$baza_sugestii', '$zmt', '$parcel_warehouse', '$lessons_learned', '$own_title', '$own', '$sanden_month_news', '$total')");
-     
+
             $sql->execute( array(
             "session_id" => $session_id,    
             "intranet" => $intranet,
@@ -54,30 +53,30 @@
             "own_title" => $own_title,
             "own" => $own,
             "total" => $total )); 
-  
-        }
-        catch(PDOException $e)
-        {
-            print_r($sql) . "<br>" . $e->getMessage();
-        }
-            $conn = null;
-    }        
+            }
 
-    if (isset($_POST['send'])) 
-        { 
-            post_apps();
-            if($_SESSION['source_number'] == 2) 
-                {    
-                    echo "<script> window.location = '../main_tool_2_rate.php'</script>";
+            catch(PDOException $e)
+            {
+                print_r($sql) . "<br>" . $e->getMessage();
+            }
+                $conn = null;
+            }        
+
+            if (isset($_POST['send'])) 
+                { 
+                    post_apps();
+                    if($_SESSION['source_number'] == 2) 
+                        {    
+                            echo "<script> window.location = '../main_tool_2_rate.php'</script>";
+                        }
+                        else 
+                        {
+                            echo "<script> window.location = '../main_tool_1_rate.php'</script>";
+                        }
                 }
-                else 
-                {
-                    echo "<script> window.location = '../main_tool_1_rate.php'</script>";
-                }
-        }
-    else { echo "Forma nie została wysłana ponieważ - ponieważ wysyłanie nie zostało ukończone właściwy sposób";}      
+            else { echo "Forma nie została wysłana ponieważ - ponieważ wysyłanie nie zostało ukończone właściwy sposób";}      
     
-    ?>
+?>
 
 
 

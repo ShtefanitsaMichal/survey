@@ -5,7 +5,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-5">
-                        <label class="">1.pisemna – e-mail , sametime- chat</label>
+                        <label class="">1. pisemna – e-mail , sametime- chat</label>
                     </div>   
                     <div class="col-6">
                         <input v-model.number="form.write" type="range" class="custom-range" name="write" id="write">
@@ -17,7 +17,7 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <label class="">2.telefoniczna rozmowa +  SMS </label>
+                        <label class="">2. telefoniczna rozmowa +  SMS </label>
                     </div>                        
                     <div class="col-6">
                         <input v-model.number="form.phone" type="range" class="custom-range" name="phone" id="phone"> 
@@ -29,7 +29,7 @@
                 
                 <div class="row">
                     <div class="col-5">               
-                        <label class="">3.bezpośrednie rozmowy „face to face” </label>
+                        <label class="">3. bezpośrednie rozmowy „face to face” </label>
                     </div>
                     <div class="col-6">    
                         <input v-model.number="form.face_to_face" type="range" class="custom-range" name="face_to_face" id="face_to_face">
@@ -41,7 +41,7 @@
 
                 <div class="row">
                     <div class="col-5">                                           
-                        <label class="">4.spotkania wydziałowe /produkcyjne ( regularne/ nieregularne)</label>
+                        <label class="">4. spotkania wydziałowe /produkcyjne ( regularne/ nieregularne)</label>
                     </div>
                     <div class="col-6">    
                         <input v-model.number="form.dept_meet" type="range" class="custom-range" name="dept_meet" id="dept_meet"> 
@@ -52,7 +52,7 @@
                 </div> 
                 <div class="row">
                     <div class="col-5">               
-                        <label class="">5.codzienne spotkania produkcyjne z Zarządem/Dyrektorami</label>
+                        <label class="">5.spotkania działow dzienne lub okresowych</label>
                     </div>
                     <div class="col-6">    
                         <input v-model.number="form.prod_meet" type="range" class="custom-range" name="prod_meet" id="prod_meet"> 
@@ -64,7 +64,7 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <label class="">6.spotkania zespołu/grupy projektowej – mix dyskusja + prezentacja</label>
+                        <label class="">6. spotkania zespołów / grup projektowych</label>
                     </div>
                     <div class="col-6">
                         <input v-model.number="form.proj_meet" type="range" class="custom-range" name="proj_meet" id="proj_meet">
@@ -76,7 +76,7 @@
 
                 <div class="row">
                     <div class="col-5">                        
-                        <label class="">7.spotkania – przesłuchania budżetowe</label>
+                        <label class="">7. spotkania – przesłuchania budżetowe</label>
                     </div>
                     <div class="col-6">
                         <input v-model.number="form.budget_meet" type="range" class="custom-range" name="budget_meet" id="budget_meet"> 
@@ -88,7 +88,7 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <label class="">8.spotkania SMP-D</label>
+                        <label class="">8. spotkania SMP-D</label>
                     </div>
                     <div class="col-6">
                         <input v-model.number="form.smp_d" type="range" class="custom-range" name="smp_d" id="smp_d">               
@@ -100,7 +100,7 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <label class="">9.spotkania SMP-W</label>
+                        <label class="">9. spotkania SMP-W</label>
                     </div>
                     <div class="col-6">
                         <input v-model.number="form.smp_w" type="range" class="custom-range" name="smp_w" id="smp_w">                  
@@ -112,7 +112,7 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <label class="">10.rozmowy oceniające z przełożonym ( półroczna CS, roczna kompetencje)</label>
+                        <label class="">10. rozmowy oceniające z przełożonym ( półroczna CS, roczna kompetencje)</label>
                     </div>
                     <div class="col-6">
                         <input v-model.number="form.cs" type="range" class="custom-range" name="cs" id="cs">
@@ -124,7 +124,7 @@
 
                 <div class="row">
                     <div class="col-5">
-                        <label class="">11.nieformalne spotkania/ rozmowy w kuchni / kantynie, palarni , itp.</label>
+                        <label class="">11. nieformalne spotkania/ rozmowy w kuchni / kantynie, palarni , itp.</label>
                     </div>
                     <div class="col-6">
                         <input v-model.number="form.unformal_meet" type="range" class="custom-range" name="unformal_meet" id="unformal_meet">

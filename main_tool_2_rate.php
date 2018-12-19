@@ -1,6 +1,7 @@
 <?php require_once "head.php" ?>
 
 <?php $_SESSION['source_number'] = 2 ?>
+<?php require_once 'functions.php' ?>
 
 <?php require_once "view/navbar.view.php" ?>
 <?php require_once "view/get_main_source.view.php" ?> 
@@ -36,7 +37,7 @@
           <label class="control-label bold">
             <?php 
                   $opcja_1 = key($main);
-                  print($opcja_1);
+                  echo change_name($opcja_1);
                   next($main);
             ?>
           </label>
@@ -73,7 +74,7 @@
         <label class="control-label bold"> 
           <?php 
                 $opcja_2 = key($main);
-                print($opcja_2);
+                echo change_name($opcja_2);
                 next($main);
           ?> 
         </label>
@@ -116,7 +117,7 @@
         <label class="control-label bold"> 
           <?php 
                 $opcja_3 = key($main);
-                print($opcja_3);
+                echo change_name($opcja_3);
                 next($main);
           ?> 
         </label>
@@ -153,7 +154,7 @@
         <label class="control-label bold"> 
           <?php 
                 $opcja_4 = key($main);
-                print($opcja_4);
+                echo change_name($opcja_4);
                 next($main);
           ?> 
         </label>
@@ -191,7 +192,7 @@
         <label class="control-label bold"> 
           <?php 
                 $opcja_5 = key($main);
-                print($opcja_5);
+                echo change_name($opcja_5);
                 next($main);
           ?> 
         </label>

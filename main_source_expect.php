@@ -21,21 +21,20 @@
 <?php global $main_tool; ?>
 
         <div id="App">
-        
-                <div class="form-group">
-                  
+
+                <div class="form-group">                  
                   <div class="col bg-white" >
                       <div class="row">
                       <div class="col-md-12">
                         <label class="control-label "  >
-                          <h5> 
-                            Jakich informacji oczekujesz od poszczególnych żródeł w komunikacji z <?php print main_source_2() ?>
+                          <h5>
+                            Jakich informacji oczekujesz od poszczególnych żródeł ?
                           </h5>
                         </label>
                       </div>
-                      <div class="col-md-8">  
+                    <div class="col-md-8">  
                      
-                      </div>
+                    </div>
                   </div>    
                 <br>         
 
@@ -96,9 +95,9 @@
                 <!--  opcja 3  -->
                 <div class="row">
                   <div class="col-md-2">
-                     <label class="control-label bold" >
-                    Bazy danych 
-                  </label>
+                    <label class="control-label bold" >
+                      Systemy informatzcyne
+                    </label>
                   </div>
                   <div class="col-md-10">
                     <input class="form-control" v-model="bazy_danych" type="text">
@@ -114,7 +113,7 @@
           <input type="hidden" name="baza_danych" v-model="baza_danych">
 
           
-          <input type="submit" name="send" class="btn btn-outline-success" value="Zakocz anketowanie "> 
+          <input type="submit" name="send" class="btn btn-outline-success" value="Zakocz"> 
         </form>
       </div>
       

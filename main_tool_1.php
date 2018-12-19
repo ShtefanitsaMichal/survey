@@ -9,13 +9,34 @@
 <?php  global $FirstMainSource, $SecondMainSource; ?>
 
 <div class="ap"> 
-    <h5>Ktore z form informowania najczęściej wykorzystujesz w komunikacji z <b> <?php print main_source_1() ?> ? </b></h5>
+
+<?php 
+
+    /*  
+    
+    function change_name($main_source_1()) {
+            switch ($main_source_1()) {
+            case "Zarząd" :echo "Intranet portal"; break;
+            case "Przełożony" :echo  "Sanden Vision"; break;
+            case "Dział" :echo  "Comarch ECM"; break;
+            case "Inny Dział" :echo "BPCS"; break;
+            case "System informatyczny" :echo "Które <php>systemy informatyczne<php> najczęściej wykorzystujesz w pracy ?"; break;   
+        }
+    } 
+    
+    */
+
+?>
+    <!-- Które <php>systemy informatyczne<php> najczęściej wykorzystujesz w pracy ? -->
+    <h5>Które<b><?php print main_source_1() ?></b> najczęściej wykorzystujesz w pracy ? </h5>
+    
     <hr>
+
     <?php 
             // Condition: If main_source_1() == 'systems' load view with applications
             
             // Attention !!! current string must be the same like in get_main_source.view.php -> line-12 
-            if (main_source_1() == 'podanymi poniżej systemami informatycznymi') 
+            if (main_source_1() == 'systemy informatyczne') 
                 {
                     require "view/get_apps.view.php" ;
                 } 

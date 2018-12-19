@@ -1,31 +1,30 @@
 <?php  
-    define('__ROOT__', dirname(dirname(__FILE__)));  
-
-    require_once( __FILE__ . '/head.php');
-    require_once( __FILE__ . '/db_connection.php') ;
-    require_once( __FILE__ . '/view/get_main_source.view.php');     
+    require('../head.php');
+    require('../db_connection.php') ;
+    require('../view/get_main_source.view.php'); 
 ?> 
 
 <?php 
         if($_SESSION['source_number'] == 1){
             $source = main_source_1();   
         } else { $source = main_source_2(); }
-       
-        if ($source == 'bazą danych') {
+        var_dump($source);
+        if ($source == 'podanymi poniżej systemami informatycznymi') {
           $db_source = 'main_apps_rate';
         } 
           else 
         {  $db_source = 'main_tools_rate'; }
+        var_dump($db_source);
         
-        ?> 
+?> 
 
 <?php global $main_tool; ?>
 
 <?php
-    //global $conn;
     function post_source_rate(){    
         try {
             
+            global $servername, $dbname, $username, $password, $conn;
 
             $opcja_1 = $_POST['opcja_1'];
             $opcja_2 = $_POST['opcja_2'];  
@@ -38,6 +37,7 @@
             $opcja_3_title = $_POST['opcja_3_title'];
             $opcja_4_title = $_POST['opcja_4_title'];
             $opcja_5_title = $_POST['opcja_5_title'];
+
 
             // set the PDO error mode to exception
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
@@ -75,8 +75,8 @@
 
 
     <?php
-        if($_SESSION['source_number'] == 2) 
+        /* if($_SESSION['source_number'] == 2) 
         { echo "<script> window.location = '../main_source_expect.php'</script>"; }
         else 
-        { echo "<script> window.location = '../main_tool_2.php'</script>"; }
+        { echo "<script> window.location = '../main_tool_2.php'</script>"; } */
     ?>

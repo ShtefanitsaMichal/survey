@@ -1,7 +1,6 @@
-<?php  define('__ROOT__', dirname(dirname(__FILE__)));  ?>
-
-<?php require_once( __ROOT__ . '/head.php' ); ?> 
-<?php require_once( __ROOT__ . '/db_connection.php' ); ?>
+<?php define('__ROOT__', dirname(dirname(__FILE__)));  ?>
+<?php require_once(__ROOT__."/head.php"); ?> 
+<?php require_once(__ROOT__."/db_connection.php"); ?>
 
 <?php
     //Ktore z narzedzi / form informowania najczęściej wykorzystujesz w komunikacji z   
@@ -9,7 +8,7 @@
     define(1, "bezpośrednim przyłożonym");
     define(2, "swoim działem");
     define(3, "pracownikami innego działu SMP");
-    define(4, "podanymi poniżej systemami informatycznymi");   
+    define(4, "systemy informatyczne");   
 ?>
 
 

@@ -1,67 +1,16 @@
-<?php require_once "head.php" ?>
+<?php require_once 'head.php' ?>
 <?php $_SESSION['source_number'] = 1 ?>
-<?php require_once "view/navbar.view.php" ?>
-<?php require_once "view/get_main_source.view.php" ?> 
-
-<?php
-  function change_name($opcja_1) {
-            switch ($opcja_1) {
-            case "intranet":
-                echo "Intranet portal";
-            break;
-            case "sanden_vision":
-                echo "Sanden Vision";
-            break;
-            case "comarch":
-                echo "Comarch ECM";
-            break;
-            case "bpcs":
-                echo"BPCS";
-                break;
-            case "qms":
-                echo"QMS";
-                break;
-            case "sap":
-                echo"SAP";
-                break;
-            case "asseco":
-                echo"Asseco";
-                break;
-            case "facebook":
-                echo"Facebook";
-                break;
-            case "smp_web_page":
-                echo"Strona Internetowa";
-                break;
-            case "baza_sugestii":
-                echo"Baza sugestii";
-                break;
-            case "sanden_month_news":
-                echo"Sanden monthly news";
-                break; 
-            case "zmt":
-                echo"ZMT";
-                break;
-            case "parcel_warehouse":
-                echo"";
-                break;
-            case "lessons_learned":
-                echo"Baza doświadczeń ";
-                break;
-            case "own_title":
-                echo"Opcją własna";
-                break;
-        }
-
-    }
-  ?>
+<?php require_once 'view/navbar.view.php' ?>
+<?php require_once 'functions.php' ?>
+<?php require_once 'view/get_main_source.view.php' ?> 
 
 
 <?php 
-        //var_dump(main_source());
+        var_dump(main_source_1());
+        var_dump(main_source_2());
     
 
-       if (main_source_1() == 'bazą danych') {
+       if (main_source_1() == 'systemy informatyczne') {
           require "view/get_main_apps.view.php";
           $main = $main_apps;
         } 
@@ -288,11 +237,11 @@
       <div class="row">
         <div class="col-md-5 offset-4">
           <form action="post/post_rate.php" method="POST">
-            <input type="hidden" name="opcja_1" v-bind="opcja_1">
-            <input type="hidden" name="opcja_2" v-bind="opcja_2">
-            <input type="hidden" name="opcja_3" v-bind="opcja_3">
-            <input type="hidden" name="opcja_4" v-bind="opcja_4">
-            <input type="hidden" name="opcja_5" v-bind="opcja_5">
+            <input type="hidden" name="opcja_1" v-model="opcja_1">
+            <input type="hidden" name="opcja_2" v-model="opcja_2">
+            <input type="hidden" name="opcja_3" v-model="opcja_3">
+            <input type="hidden" name="opcja_4" v-model="opcja_4">
+            <input type="hidden" name="opcja_5" v-model="opcja_5">
             <input type="hidden" name="opcja_1_title" value="<?php print $opcja_1 ?>">
             <input type="hidden" name="opcja_2_title" value="<?php print $opcja_2 ?>">
             <input type="hidden" name="opcja_3_title" value="<?php print $opcja_3 ?>">

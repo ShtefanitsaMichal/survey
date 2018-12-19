@@ -5,10 +5,10 @@
 
 
     <div class="container" >
-      <div class="form-group ">
+      <div class="form-group">
         <label class="control-label bold">
             <h5>
-                Oceń w %  skąd czerpiesz  informacje potrzebne Ci  w pracy  (suma ma wynieść 100%) 
+                Oceń w % skąd czerpiesz  informacje potrzebne Ci  w pracy  (suma ma wynieść 100%) 
             </h5>
         </label>
       <br>
@@ -22,58 +22,60 @@
                     </h5>    
                 </label>
             </div>
-            <div class="col-md-2">
-                <span vclass="badge" :value="20">{{ form.zarzad + "%" }}</span>
-            </div>
 
             <div class="col-md-6">
                 <input v-model.number="form.zarzad" type="range" class="custom-range" name="zarzad" id="zarzad">
             </div>   
+            <div class="col-md-2">
+                <span vclass="badge" :value="20">{{ form.zarzad + "%" }}</span>
+            </div>
         </div>    
         
         <div class="row">
             <div class="col-md-4">    
                 <label><h5   class="text-secondary">Bezpośredni przełożony  </h5></label>
             </div>
-            <div class="col-md-2">
-                    <span vclass="badge" :value="20">{{ form.przylozony  + "%" }}</span>
-            </div>
             <div class="col-md-6">    
                 <input v-model.number="form.przylozony " type="range"  class="custom-range " name="przylozony " id="przylozony "> 
+            </div>
+            <div class="col-md-2">
+                    <span vclass="badge" :value="20">{{ form.przylozony  + "%" }}</span>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-4">
-                <label ><h5   class="text-secondary">Współpracownicy w dziale/sekcji  </h5></label>
-            </div>
-            <div class="col-md-2">
-                <span vclass="badge" value="20">{{ form.dzial + "%" }}</span>
+                <label ><h5   class="text-secondary">Współpracownicy w dziale / sekcji  </h5></label>
             </div>
             <div class="col-md-6">        
                 <input v-model.number="form.dzial" value="20" type="range" class="custom-range" name="dzial" id="dzial">
             </div>
+            <div class="col-md-2">
+                <span vclass="badge" value="20">{{ form.dzial + "%" }}</span>
+            </div>
         </div>
+
         <div class="row">
             <div class="col-md-4">
                 <label><h5  class="text-secondary">Pracownicy innych działów / sekcji  </h5></label>
             </div>
-            <div class="col-md-2">
-                <span vclass="badge" >{{ form.inny_dzial + "%" }}</span>
-            </div>
             <div class="col-md-6">
                 <input v-model.number="form.inny_dzial" type="range" class="custom-range" name="inny_dzial" id="inny_dzial"> 
             </div>
+            <div class="col-md-2">
+                <span vclass="badge" >{{ form.inny_dzial + "%" }}</span>
+            </div>
         </div>
+
         <div class="row">
             <div class="col-md-4">
-                <label data-toggle="popover" data-placement="bottom" title="Co znaczy?" data-content="Bazy danych / systemy informatyczne /ogłoszenia/bliuletyny/( Comarch, ASSECO, QMS, BPCS, strona www, tablice, Excell, etc.)"><h5 class="text-secondary">Bazy danych</h5></label> 
-            </div>
-            <div class="col-md-2">
-                <span vclass="badge" value="baza_danych">{{ form.baza_danych + "%" }}</span>
+                <label data-toggle="popover" data-placement="bottom" title="Co znaczy?" data-content="Bazy danych / systemy informatyczne /ogłoszenia/bliuletyny/( Comarch, ASSECO, QMS, BPCS, strona www, tablice, Excell, etc.)" style="cursor: pointer;"><h5 class="text-secondary">System informatyczny<span > "?"</span></h5></label> 
             </div>
             <div class="col-md-6">
                 <input v-model.number="form.baza_danych" :style=""  type="range" class="custom-range" name="baza_danych" id="baza_danych"> 
+            </div>
+            <div class="col-md-2">
+                <span vclass="badge" value="baza_danych">{{ form.baza_danych + "%" }}</span>
             </div>
         </div>
             
@@ -94,10 +96,10 @@
                     <input type="hidden" name="total" v-model="total">
                     <div class="row">
                         <div class="col-md-10">
-                            <input v-if="total == 100" value="Pzejdź dalej" type="submit" name="send"  class="btn btn-outline-success btn-lg" >
+                            <input v-if="total == 100" value="Przejdź dalej" type="submit" name="send"  class="btn btn-outline-success btn-lg" >
 
                                 <!-- !zabronic wysyłanie formy na klick przycisku z clasem disabled --> 
-                            <input v-else="total != 100" value="Pzejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" > 
+                            <input v-else="total != 100" value="Przejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" > 
                         </div>
 
                         <div class="col-md-2">
@@ -115,7 +117,6 @@
 
 <script>  
     new Vue({
-            
             el: "#el",
             data() {
                 return {

@@ -10,20 +10,23 @@
                     <div class="col-md-12">
                       <button v-if="Typ == 'Direct'" class="btn btn-primary" value="Direct" v-on:click="Typ = 'Direct'" 
                               data-toggle="tooltip" 
-                              data-placement="top" title="PR, UR, PE, QC">Bez pośrednia produkcja</button>
+                              data-placement="top" title="PR, UR, PE, QC">Produkcja </button>
 
                       <button v-else class="btn btn-outline-primary" value="Direct" v-on:click="Typ = 'Direct'" 
                               data-toggle="tooltip" data-placement="top" 
-                              title="PR, UR, PE, QC">Bez pośrednia produkcja</button>
-
+                              title="PR, UR, PE, QC">Produkcja</button>
+                              <label for="">PR, UR, PE, QC</label>
+                      <br>
+                      <br>
                       <button v-if="Typ == 'Indirect'"  class="btn btn-primary" value="Indirect" v-on:click="Typ = 'Indirect'" 
                               data-toggle="tooltip" data-placement="top" 
-                              title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Pośrednia produkcja</button>
+                              title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Administracja</button>
 
                       <button v-else class="btn btn-outline-primary" value="Indirect" v-on:click="Typ = 'Indirect'" 
                               data-toggle="tooltip" data-placement="top" 
-                              title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Pośrednia produkcja
+                              title="QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.">Administracja
                       </button>
+                      <label for="">QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.</label>
                     </div>
                   </div>  
 
@@ -43,13 +46,20 @@
                   </div>
 
                   <br>
+
                   <div class="row">
                     <div class="col-md-12">
-                      <button v-if="Stanowisko == 'Pracownik'" class="btn btn-primary" value="Stanowisko" v-on:click="Stanowisko = 'Pracownik'" > pracownik / specjalista</button>
-                      <button v-else class="btn btn-outline-primary" value="Stanowisko" v-on:click="Stanowisko = 'Pracownik'" > pracownik / specjalista</button>
+                      <button v-if="Stanowisko == 'Pracownik'" class="btn btn-primary" value="Stanowisko" v-on:click="Stanowisko = 'Pracownik'" > pracownik </button>
+                      <button v-else class="btn btn-outline-primary" value="Stanowisko" v-on:click="Stanowisko = 'Pracownik'" > pracownik </button>
 
-                      <button v-if="Stanowisko == 'Supervisor'" class="btn btn-primary" value="Stanowisko" v-on:click="Stanowisko = 'Supervisor'"> supervisor / kierownik </button>
-                      <button v-else class="btn btn-outline-primary" value="Stanowisko" v-on:click="Stanowisko = 'Supervisor'"> supervisor / kierownik </button>
+                      <button v-if="Stanowisko == 'Pracownik'" class="btn btn-primary" value="Stanowisko" v-on:click="Stanowisko = 'Pracownik'" >  specjalista</button>
+                      <button v-else class="btn btn-outline-primary" value="Stanowisko" v-on:click="Stanowisko = 'Pracownik'" >  specjalista</button>
+
+                      <button v-if="Stanowisko == 'Supervisor'" class="btn btn-primary" value="Stanowisko" v-on:click="Stanowisko = 'Supervisor'"> supervisor </button>
+                      <button v-else class="btn btn-outline-primary" value="Stanowisko" v-on:click="Stanowisko = 'Supervisor'"> supervisor </button>
+
+                      <button v-if="Stanowisko == 'Supervisor'" class="btn btn-primary" value="Stanowisko" v-on:click="Stanowisko = 'Supervisor'">  kierownik </button>
+                      <button v-else class="btn btn-outline-primary" value="Stanowisko" v-on:click="Stanowisko = 'Supervisor'">  kierownik </button>
                     </div>
                   </div>
 

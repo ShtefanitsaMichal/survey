@@ -37,9 +37,13 @@
                 $conn = null;
         }
 
-        if (isset($_POST['send'])) { post_source();}  
+        if (isset($_POST['send'])) 
+            { 
+                post_source();
+                echo "<script> window.location = '../source_rate.php'</script>";
+            }  
         else { echo "error";}     
     ?>
 
 
-    <?php echo "<script> window.location = '../source_rate.php'</script>"; ?>
+    <?php ?>

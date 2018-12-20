@@ -1,7 +1,19 @@
 
 <?php 
 
-class SESSION_CHECK 
+session_start();
+    
+    $_COOKIE["SMP_imp_survey"] = session_id();
+    $_SESSION["session_id"] = session_id();
+            
+    var_dump($_SESSION) ;
+        echo "<hr>" ;
+    var_dump($_COOKIE) ;
+
+session_destroy(); 
+
+
+/* class SESSION_CHECK 
 {
     public function __construct(){
 
@@ -27,48 +39,113 @@ class SESSION_CHECK
             echo 'sesja z danym indytyficatorem <b>' . $row['session_id'] .  '</b> istnieje' ;
         }
     }    
-}
+} */
 
 //new SESSION_CHECK;   
 
-$opcja_1 = "comarch";
+/* $opcja_1 = "own_title";
 
     function change_name($opcja_1) {
 
-                        switch ($opcja_1) {
-                        case "intranet":
-                            echo "Intranet portal";
-                        break;
-                        case "sanden_vision":
-                            echo "Sanden Vision";
-                        break;
-                        case "comarch":
-                            echo "Comarch ECM";
-                        break;
+        switch ($opcja_1) {
+        case "intranet":
+            echo "Intranet portal";
+        break;
 
-                                intranet: 0, 
-                                comarch: 0,
-                                bpcs: 0,
-                                qms: 0,
-                                sap: 0,
-                                asseco: 0,
-                                sanden_vision: 0,
-                                facebook: 0,
-                                smp_web_page: 0,
-                                baza_sugestii: 0,
-                                sanden_month_news: 0, 
-                                zmt: 0,
-                                parcel_warehouse: 0,
-                                lessons_learned: 0,
-                                own_title: '',
-                                own: 0
+        case "sanden_vision":
+            echo "Sanden Vision";
+        break;
+
+        case "comarch":
+            echo "Comarch ECM";
+        break;
+
+        case "bpcs":
+            echo"BPCS";
+        break;
+
+        case "qms":
+            echo"QMS";
+        break;
+
+        case "sap":
+            echo"SAP";
+        break;
+
+        case "asseco":
+            echo"Asseco";
+        break;
+
+        case "facebook":
+            echo"Facebook";
+        break;
+
+        case "smp_web_page":
+            echo"Strona Internetowa";
+        break;
+
+        case "baza_sugestii":
+            echo"Baza sugestii";
+        break;
+
+        case "sanden_month_news":
+            echo"Sanden monthly news";
+        break; 
+
+        case "zmt":
+            echo"ZMT";
+        break;
+
+        case "parcel_warehouse":
+            echo"";
+        break;
+
+        case "lessons_learned":
+            echo"Baza doświadczeń ";
+        break;
+        
+        case "own_title":
+            echo"Opcją własna";
+        break;
                     }
 
     }
 
-change_name($opcja_1);
+change_name($opcja_1); */
 
 
+//kolejnośc systemów informatycznych / Aplikacje ;
+//0. IBM Lotus Notes / Sametime ;
+//1. Excel ;
+//2. Bazy danych Access;
+//3. BPCS;
+//4. Intranet (system);
+//4. Comarch ;
+//5. ZMT;
+//6. Asseco / Portal przełożonego
+//7. QMS;
+//8. Visualisation (Wizualizajca dancyh pomiarowych)
+//9. Sanden Vision 
+//10. Strona internetowa (sandesmp.pl)
+//11. Facebook
+//12. WF-MAG
+//13. SAP
+//14. QDA
+//15. Magazyn przesyłek 
+//16. Baza sugestii 
+//17. Lessons learned
+//18. 3D Expirience 
+//19. Helpdesk 
+//20. Inventory range
+//21. System udostępniania plików 
+//22. Sadec / Intrastat */
+
+
+
+/* Marcin gajdziński
+Zarząd  - W jaki sposób komunikujesz się z "Zarządem SMP"
+Przełożony - W jaki sposób komunikujesz się z
+ */
 
 
 

@@ -1,7 +1,14 @@
 <?php
-    //require_once "../head.php";
+    require_once "../head.php";
     require "../db_connection.php";
- 
+
+    function employee_session(){
+        $_SESSION["survey_id"] = '';
+        $_SESSION["source_number"] = 0;
+        $_SESSION["employee"] = array('typ' =>  $_POST['typ'], 'wiek' =>  $_POST['wiek'], 'stanowisko' =>  $_POST['stanowisko'], 'data' => date());
+    }
+
+
     function post_employee(){ 
         try {
             global $conn;            
@@ -18,8 +25,9 @@
                 "session_id" => $session_id, 
                 "typ" => $typ,
                 "wiek" => $wiek,
-                "stanowisko" => $stanowisko,)); 
+                "stanowisko" => $stanowisko,));
         }
+        
         catch(PDOException $e)
         {
             var_dump($sql) . "<br>" . $e->getMessage();
@@ -29,10 +37,12 @@
         }    
         }
     // if form was posted run function post_employee()
-
-    if (isset($_POST['send'])) { post_employee();}  
-    else { echo "error";}     
+         
+    if (
+        isset($_POST['send'])) { post_employee();
+        echo "<script> window.location = '../source.php'</script>";
+        }
+    else { echo "Forma nie została wysłana ponieważ - ponieważ wysyłanie nie zostało ukończone właściwy sposób";}     
 
 ?>
 
-<?php echo "<script> window.location = '../source.php'</script>"; ?>

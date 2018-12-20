@@ -1,13 +1,14 @@
 <?php 
-    define('__ROOT__', dirname(dirname(__FILE__))); 
-    
-    require_once(__ROOT__.'/head.php');
-    require_once(__ROOT__.'/db_connection.php');
-    require_once(__ROOT__.'/view/get_main_source.view.php');
+    require_once('../head.php');
+    require_once('../db_connection.php');
+    require_once('../view/get_main_source.view.php');
 ?>
 
-<?php    
-    try {
+<?php   
+    function post_apps(){
+        global $servername, $dbname, $username, $password, $session_id; 
+        try 
+            {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
            
             $intranet = $_POST['intranet'];
@@ -28,13 +29,12 @@
             $own = $_POST['own'];
             $total = $_POST['total'];
 
+            // set the PDO error mode to exception
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = $conn->prepare("INSERT INTO main_apps (`session_id` ,`intranet`, `comarch`, `bpcs`, `qms`, `sap`, `asseco`, `sanden_vision`, `facebook`, `smp_web_page`, `baza_sugestii`, `zmt`, `parcel_warehouse`, `lessons_learned`, `own_title` , `own`, `sanden_month_news`, `total` )  
+                                    VALUES ('$session_id' ,'$intranet', '$comarch', '$bpcs', '$qms', '$sap', '$asseco', '$sanden_vision', '$facebook', '$smp_web_page', '$baza_sugestii', '$zmt', '$parcel_warehouse', '$lessons_learned', '$own_title', '$own', '$sanden_month_news', '$total')");
 
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = $conn->prepare("INSERT INTO main_apps (`session_id` ,`intranet`, `comarch`, `bpcs`, `qms`, `sap`, `asseco`, `sanden_vision`, `facebook`, `smp_web_page`, `baza_sugestii`, `zmt`, `parcel_warehouse`, `lessons_learned`, `own_title` , `own`, `sanden_month_news`, `total` )  
-                                VALUES ('$session_id' ,'$intranet', '$comarch', '$bpcs', '$qms', '$sap', '$asseco', '$sanden_vision', '$facebook', '$smp_web_page', '$baza_sugestii', '$zmt', '$parcel_warehouse', '$lessons_learned', '$own_title', '$own', '$sanden_month_news', '$total')");
-     
-            $sql->execute(array(
+            $sql->execute( array(
             "session_id" => $session_id,    
             "intranet" => $intranet,
             "comarch" => $comarch,
@@ -52,28 +52,31 @@
             "lessons_learned" => $lessons_learned,
             "own_title" => $own_title,
             "own" => $own,
-            "total" => $total    
-    )); 
-    ?>
-   
-    <?php
-        }
-        catch(PDOException $e)
-        {
-            print_r($sql) . "<br>" . $e->getMessage();
-        }
-            $conn = null;
-    ?>
+            "total" => $total )); 
+            }
 
-    <?php
+            catch(PDOException $e)
+            {
+                print_r($sql) . "<br>" . $e->getMessage();
+            }
+                $conn = null;
+            }        
 
-    if($_SESSION['source_number'] == 2) 
-    {    
-        echo "<script> window.location = '../main_tool_2_rate.php'</script>";
-    }
-    else 
-    {
-        echo "<script> window.location = '../main_tool_1_rate.php'</script>";
-    }
-?> 
+            if (isset($_POST['send'])) 
+                { 
+                    post_apps();
+                    if($_SESSION['source_number'] == 2) 
+                        {    
+                            echo "<script> window.location = '../main_tool_2_rate.php'</script>";
+                        }
+                        else 
+                        {
+                            echo "<script> window.location = '../main_tool_1_rate.php'</script>";
+                        }
+                }
+            else { echo "Forma nie została wysłana ponieważ - ponieważ wysyłanie nie zostało ukończone właściwy sposób";}      
+    
+?>
+
+
 

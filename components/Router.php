@@ -22,7 +22,7 @@
         {
             // Get URL of request
             $uri = $this->getURI();
-
+            echo $uri;
             //compare $uriPattern and $uri
             foreach ($this->routes as $uriPattern => $path) {
                 if (preg_match("~$uriPattern~", $uri)) {

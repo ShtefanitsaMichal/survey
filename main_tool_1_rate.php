@@ -66,10 +66,7 @@
                 <button v-if="opcja_1 == '4'" type="button" v-on:click="opcja_1 = '4'" v-bind="opcja_1" class="btn btn-warning">Raczej źle</button>
                 <button v-else type="button" v-on:click="opcja_1 = '4'" v-bind="opcja_1" class="btn btn-outline-warning">Raczej źle</button>
               </div> 
-              <div class="btn-group mr-2"> 
-                <button v-if="opcja_1 == '3'" type="button" v-on:click="opcja_1 = '3'" v-bind="opcja_1" class="btn btn-primary">Ani dobrze, ani źle </button>
-                <button v-else type="button" v-on:click="opcja_1 = '3'" v-bind="opcja_1" class="btn btn-outline-primary">Ani dobrze, ani źle </button>
-              </div>
+
               <div class="btn-group mr-2">  
                 <button v-if="opcja_1 == '2'" type="button" v-on:click="opcja_1 = '2'" v-bind="opcja_1"  class="btn btn-info">Raczej Dpbrze</button>
                 <button v-else type="button" v-on:click="opcja_1 = '2'" v-bind="opcja_1"  class="btn btn-outline-info">Raczej Dobrze</button>
@@ -107,10 +104,7 @@
                   <button v-if="opcja_2 == '4'" type="button" v-on:click="opcja_2 = '4'" v-bind="opcja_2" class="btn btn-warning">Raczej źle</button>
                   <button v-else type="button" v-on:click="opcja_2 = '4'" v-bind="opcja_2" class="btn btn-outline-warning">Raczej źle</button>  
                 </div> 
-                <div class="btn-group mr-2" role="group" aria-label="First group"> 
-                  <button v-if="opcja_2 == '3'" type="button" v-on:click="opcja_2 = '3'" v-bind="opcja_2" class="btn btn-primary">Ani dobrze, ani źle </button>
-                  <button v-else type="button" v-on:click="opcja_2 = '3'" v-bind="opcja_2" class="btn btn-outline-primary">Ani dobrze, ani źle </button>  
-                </div>
+
                 <div class="btn-group mr-2" role="group" aria-label="First group">  
                   <button v-if="opcja_2 == '2'" type="button" v-on:click="opcja_2 = '2'" v-bind="opcja_2" class="btn btn-info">Raczej dobrze</button>
                   <button v-else type="button" v-on:click="opcja_2 = '2'" v-bind="opcja_2" class="btn btn-outline-info">Raczej dobrze</button>  
@@ -145,13 +139,9 @@
                 <div class="btn-group mr-2" role="group" aria-label="First group">
                   <button v-if="opcja_3 == '4'" type="button" v-on:click="opcja_3 = '4'" v-bind="opcja_3" class="btn btn-warning">Raczej źle</button>
                   <button v-else type="button" v-on:click="opcja_3 = '4'" v-bind="opcja_3" class="btn btn-outline-warning">Raczej źle</button>
-                  
-                  </div> 
-                <div class="btn-group mr-2" role="group" aria-label="First group"> 
-                  <button v-if="opcja_3 == '3'" type="button" v-on:click="opcja_3 = '3'" v-bind="opcja_3" class="btn btn-primary">Ani dobrze, ani źle </button>
-                  <button v-else type="button" v-on:click="opcja_3 = '3'" v-bind="opcja_3" class="btn btn-outline-primary">Ani dobrze, ani źle </button>
-                  
-                  </div>
+                </div> 
+
+
                 <div class="btn-group mr-2" role="group" aria-label="First group">  
                   <button v-if="opcja_3 == '2'" type="button" v-on:click="opcja_3 = '2'" v-bind="opcja_3" class="btn btn-info">Raczej dobrze</button>
                   <button v-else type="button" v-on:click="opcja_3 = '2'" v-bind="opcja_3" class="btn btn-outline-info">Raczej dobrze</button>
@@ -188,10 +178,7 @@
               <button v-if="opcja_4 == '4'" type="button" v-on:click="opcja_4 = '4'" v-bind="opcja_4" class="btn btn-warning">Raczej źle</button>
               <button v-else type="button" v-on:click="opcja_4 = '4'" v-bind="opcja_4" class="btn btn-outline-warning">Raczej źle</button>
            </div> 
-            <div class="btn-group mr-2" role="group" aria-label="First group"> 
-              <button v-if="opcja_4 == '3'" type="button" v-on:click="opcja_4 = '3'" v-bind="opcja_4" class="btn btn-primary">Ani dobrze, ani źle </button>
-              <button v-else type="button" v-on:click="opcja_4 = '3'" v-bind="opcja_4" class="btn btn-outline-primary">Ani dobrze, ani źle </button>
-           </div>
+
             <div class="btn-group mr-2" role="group" aria-label="First group">  
               <button v-if="opcja_4 == '2'" type="button" v-on:click="opcja_4 = '2'" v-bind="opcja_4" class="btn btn-info">Raczej dobrze</button>
               <button v-else type="button" v-on:click="opcja_4 = '2'" v-bind="opcja_4" class="btn btn-outline-info">Raczej dobrze</button>
@@ -224,11 +211,8 @@
             <div class="btn-group mr-2" role="group" aria-label="First group">
               <button v-if="opcja_5 == '4'" type="button" v-on:click="opcja_5 = '4'" v-bind="opcja_5" class="btn btn-warning">Raczej źle</button>
               <button v-else type="button" v-on:click="opcja_5 = '4'" v-bind="opcja_5" class="btn btn-outline-warning">Raczej źle</button>
-              </div> 
-            <div class="btn-group mr-2" role="group" aria-label="First group"> 
-              <button v-if="opcja_5 == '3'" type="button" v-on:click="opcja_5 = '3'" v-bind="opcja_5" class="btn btn-primary">Ani dobrze, ani źle </button>
-              <button v-else type="button" v-on:click="opcja_5 = '3'" v-bind="opcja_5" class="btn btn-outline-primary">Ani dobrze, ani źle </button>
-              </div>
+            </div> 
+
             <div class="btn-group mr-2" role="group" aria-label="First group">  
               <button v-if="opcja_5 == '2'" type="button" v-on:click="opcja_5 = 'Raczej_dobrze'" v-bind="opcja_5" class="btn btn-info">Raczej dobrze</button>
               <button v-else type="button" v-on:click="opcja_5 = '2'" v-bind="opcja_5" class="btn btn-outline-info">Raczej dobrze</button>

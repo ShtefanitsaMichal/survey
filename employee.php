@@ -62,8 +62,10 @@
                       <input type="hidden" name="typ" v-model="Typ" > 
                       <input type="hidden" name="wiek" v-model="Wiek" > 
                       <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
-                    <hr>                      
-                      <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-outline-success"> </span>
+                    <hr> 
+                                           
+                      <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-success"> </span>
+                      <span v-else> <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-outline-secondary disabled" disabled> </span>
                     </form>
                 </div>  
             </div>

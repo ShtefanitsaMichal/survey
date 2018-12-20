@@ -4,15 +4,17 @@
 <?php require_once "view/navbar.view.php" ?>
 
 
+     <div id="el">
     <div class="container" >
-      <div class="form-group">
-        <label class="control-label bold">
+    <div class="card border-primary mb-3" >
+        <div class="card-header">
             <h5>
                 Oceń w % skąd czerpiesz  informacje potrzebne Ci  w pracy  (suma ma wynieść 100%) 
             </h5>
-        </label>
-      <br>
-        <div id="el">
+        </div>
+
+        <div class="card-body text-primary">
+           
         <div class="row">
                 <label for="customRange1"></label>
             <div class="col-md-4">
@@ -80,8 +82,11 @@
         </div>
             
         <br>
-            <div class="progress" style="height: 2px;">
-                <div class="progress-bar" role="progressbar" :style="{width:+ total + '%'}" ></div>
+            <div  v-if="total == 100" class="progress" style="height: 5px;">
+                <div class="progress-bar bg-success" role="progressbar" :style="{width:+ total + '%'}" ></div>
+            </div> 
+            <div  v-else class="progress" style="height: 5px;">
+                <div class="progress-bar bg-danger" role="progressbar" :style="{width:+ total + '%'}" ></div>
             </div> 
 
             <br>
@@ -95,22 +100,27 @@
                     <input type="hidden" name="baza_danych" v-model="form.baza_danych">
                     <input type="hidden" name="total" v-model="total">
                     <div class="row">
-                        <div class="col-md-10">
-                            <input v-if="total == 100" value="Przejdź dalej" type="submit" name="send"  class="btn btn-outline-success btn-lg" >
 
-                                <!-- !zabronic wysyłanie formy na klick przycisku z clasem disabled --> 
+                        <div class="col-md-10">
+                            <input v-if="total == 100" value="Przejdź dalej" type="submit" name="send"  class="btn btn-success btn-lg" >
                             <input v-else="total != 100" value="Przejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" > 
                         </div>
-
+                        
                         <div class="col-md-2">
                             <h3 v-if="total == 100" class="text-success">{{total + '%'}}</h3>
                             <h3 v-else-if="total > 100" class="text-danger">{{total + '%'}}</h3>
                             <h3 v-else="total < 100" class="text-danger">{{total + '%'}}</h3>
                         </div>
+
                     </div>
                 </form>
             </div>        
         </div> 
+        </div>
+    </div>
+
+      
+    
     </div> 
     
    

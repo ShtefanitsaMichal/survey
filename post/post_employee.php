@@ -1,7 +1,14 @@
 <?php
     require_once "../head.php";
     require "../db_connection.php";
- 
+
+    function employee_session(){
+        $_SESSION["survey_id"] = '';
+        $_SESSION["source_number"] = 0;
+        $_SESSION["employee"] = array('typ' =>  $_POST['typ'], 'wiek' =>  $_POST['wiek'], 'stanowisko' =>  $_POST['stanowisko'], 'data' => date());
+    }
+
+
     function post_employee(){ 
         try {
             global $conn;            

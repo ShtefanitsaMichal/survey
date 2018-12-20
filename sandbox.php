@@ -1,7 +1,19 @@
 
 <?php 
 
-class SESSION_CHECK 
+session_start();
+    
+    $_COOKIE["SMP_imp_survey"] = session_id();
+    $_SESSION["session_id"] = session_id();
+            
+    var_dump($_SESSION) ;
+        echo "<hr>" ;
+    var_dump($_COOKIE) ;
+
+session_destroy(); 
+
+
+/* class SESSION_CHECK 
 {
     public function __construct(){
 
@@ -27,65 +39,79 @@ class SESSION_CHECK
             echo 'sesja z danym indytyficatorem <b>' . $row['session_id'] .  '</b> istnieje' ;
         }
     }    
-}
+} */
 
 //new SESSION_CHECK;   
 
-$opcja_1 = "own_title";
+/* $opcja_1 = "own_title";
 
     function change_name($opcja_1) {
 
-                        switch ($opcja_1) {
-                        case "intranet":
-                            echo "Intranet portal";
-                        break;
-                        case "sanden_vision":
-                            echo "Sanden Vision";
-                        break;
-                        case "comarch":
-                            echo "Comarch ECM";
-                        break;
-                        case "bpcs":
-                            echo"BPCS";
-                            break;
-                        case "qms":
-                            echo"QMS";
-                            break;
-                        case "sap":
-                            echo"SAP";
-                            break;
-                        case "asseco":
-                            echo"Asseco";
-                            break;
-                        case "facebook":
-                            echo"Facebook";
-                            break;
-                        case "smp_web_page":
-                            echo"Strona Internetowa";
-                            break;
-                        case "baza_sugestii":
-                            echo"Baza sugestii";
-                            break;
-                        case "sanden_month_news":
-                            echo"Sanden monthly news";
-                            break; 
-                        case "zmt":
-                            echo"ZMT";
-                            break;
-                        case "parcel_warehouse":
-                            echo"";
-                            break;
-                        case "lessons_learned":
-                            echo"Baza doświadczeń ";
-                            break;
-                        case "own_title":
-                            echo"Opcją własna";
-                            break;
+        switch ($opcja_1) {
+        case "intranet":
+            echo "Intranet portal";
+        break;
+
+        case "sanden_vision":
+            echo "Sanden Vision";
+        break;
+
+        case "comarch":
+            echo "Comarch ECM";
+        break;
+
+        case "bpcs":
+            echo"BPCS";
+        break;
+
+        case "qms":
+            echo"QMS";
+        break;
+
+        case "sap":
+            echo"SAP";
+        break;
+
+        case "asseco":
+            echo"Asseco";
+        break;
+
+        case "facebook":
+            echo"Facebook";
+        break;
+
+        case "smp_web_page":
+            echo"Strona Internetowa";
+        break;
+
+        case "baza_sugestii":
+            echo"Baza sugestii";
+        break;
+
+        case "sanden_month_news":
+            echo"Sanden monthly news";
+        break; 
+
+        case "zmt":
+            echo"ZMT";
+        break;
+
+        case "parcel_warehouse":
+            echo"";
+        break;
+
+        case "lessons_learned":
+            echo"Baza doświadczeń ";
+        break;
+        
+        case "own_title":
+            echo"Opcją własna";
+        break;
                     }
 
     }
 
-change_name($opcja_1);
+change_name($opcja_1); */
 
 
 //kolejnośc systemów informatycznych / Aplikacje ;

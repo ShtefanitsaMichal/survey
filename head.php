@@ -1,10 +1,10 @@
-
-
 <?php 
   // Start the session
   session_start();
-  $session_id = session_id();   
+  
+    $session_id = session_id(); 
 ?>
+
 
 <?php 
   $ds = DIRECTORY_SEPARATOR;

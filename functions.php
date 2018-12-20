@@ -1,4 +1,5 @@
 <?php 
+     global $main_apps;
 
     function db_connection()
         {
@@ -41,20 +42,17 @@
                 case "unformal_meet" :echo "Spotkanie nie formalne"; break;  
             }
         }
-    function if_own($variable, $string){
-        global $main_apps;
 
-        if($opcja_1 = $string) 
-            {
-                $opcja_1 = $main_apps['own_title'];
-                echo $opcja_1;
-            } 
-                else 
-            {
-                echo change_name($opcja_1);
-            }
-    }   
-    
-
-
+    function if_own($opcja_1, $string)
+        { 
+            if($opcja_1 = $string) 
+                {
+                    $opcja_1 = $main_apps['own_title'];
+                    echo $opcja_1;
+                } 
+                    else 
+                {
+                    echo change_name($opcja_1);
+                }
+        }   
 ?>

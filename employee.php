@@ -11,6 +11,7 @@
                         Featured
               </div>
                 <div class="card-body">
+
                   <div class="row">
                     <div v-if="Typ == 'Direct'" class="col-6">
                       <button  
@@ -24,43 +25,47 @@
                           PR, UR, PE, QC
                         <footer>
                       </blockquote>
+
                     </div>
 
                     <div v-else class="col-6">
-                      <button 
-                              class="btn btn-outline-primary  btn-block" value="Direct" v-on:click="Typ = 'Direct'" 
-                              data-toggle="tooltip"
-                              title="PR, UR, PE, QC">Produkcja
-                      </button>
+                    
+                    <button 
+                            class="btn btn-outline-primary  btn-block" value="Direct" v-on:click="Typ = 'Direct'" 
+                            data-toggle="tooltip"
+                            title="PR, UR, PE, QC">Produkcja
+                    </button>
 
-                      <blockquote class="blockquote mb-0">
-                        <footer class="blockquote-footer">
-                          PR, UR, PE, QC
-                        <footer>
-                      </blockquote>
-                    </div>
+                    <blockquote class="blockquote mb-0">
+                      <footer class="blockquote-footer">
+                        PR, UR, PE, QC
+                      <footer>
+                    </blockquote>
+                  </div>
               
-                    <div class="col-6"  v-if="Typ == 'Indirect'"  >         
-                      <button class="btn btn-primary btn-lg  btn-block" value="Indirect" v-on:click="Typ = 'Indirect'" 
-                              data-toggle="tooltip" data-placement="top" >Administracja
-                      </button>
-                      <blockquote class="blockquote mb-0">
-                        <footer class="blockquote-footer">
-                          QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.
-                        </footer>
-                      </blockquote>
-                    </div>
+                  <div class="col-6"  v-if="Typ == 'Indirect'"  >         
+                    <button class="btn btn-primary btn-lg  btn-block" value="Indirect" v-on:click="Typ = 'Indirect'" 
+                            data-toggle="tooltip" data-placement="top" >Administracja
+                    </button>
 
-                    <div class="col-6"  v-else>          
-                      <button class="btn btn-outline-primary btn-block" value="Indirect" v-on:click="Typ = 'Indirect'" 
-                              data-toggle="tooltip" data-placement="top" >Administracja
-                      </button>
-                      <blockquote class="blockquote mb-0">
-                        <footer class="blockquote-footer">
-                          QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.
-                        </footer>
-                      </blockquote>     
-                    </div>         
+                    <blockquote class="blockquote mb-0">
+                      <footer class="blockquote-footer">
+                        QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.
+                      </footer>
+                    </blockquote>
+                  </div>
+
+                  <div class="col-6"  v-else>          
+                    <button class="btn btn-outline-primary btn-block" value="Indirect" v-on:click="Typ = 'Indirect'" 
+                            data-toggle="tooltip" data-placement="top" >Administracja
+                    </button>
+
+                    <blockquote class="blockquote mb-0">
+                      <footer class="blockquote-footer">
+                        QA, Log, GA&HR, CP, FA, R&D, GP, IT, HSE, STQM, NPI, Building Maint.
+                      </footer>
+                    </blockquote>     
+                  </div>         
                      
                   </div>  
 
@@ -108,9 +113,10 @@
                       <button v-if="Stanowisko == 'Kierownik'" class="btn btn-primary btn-block btn-lg" value="Stanowisko" v-on:click="Stanowisko = 'Kierownik'">  kierownik </button>
                       <button v-else class="btn btn-outline-primary btn-block" value="Stanowisko" v-on:click="Stanowisko = 'Kierownik'">  kierownik </button>
                     </div>
+
                   </div>
                  
-                  </div>
+                </div>
 
                   <div class="card-footer  text-dark">
                         
@@ -119,17 +125,16 @@
 
                   <!-- Formularz z metodą post--> 
 
-                    <form action="post/post_employee.php" method="post">
-                  
-                      <input type="hidden" name="typ" v-model="Typ" > 
-                      <input type="hidden" name="wiek" v-model="Wiek" > 
-                      <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
-                      <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-success btn-lg btn-block"> </span>
-                      <span v-else> <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-secondary btn-lg btn-block disabled"> </span>
-                    </form>
+                  <form action="post/post_employee.php" method="post">
+                    <input type="hidden" name="typ" v-model="Typ" > 
+                    <input type="hidden" name="wiek" v-model="Wiek" > 
+                    <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
+                    <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-success btn-lg btn-block"> </span>
+                    <span v-else> <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-secondary btn-lg btn-block disabled"> </span>
+                  </form>
         
-                  </div>  
-                </div>
+                </div>  
+              </div>
 
  
            

@@ -4,10 +4,11 @@
 <?php require_once 'functions.php' ?>
 <?php require_once 'view/get_main_source.view.php' ?> 
 
-
-<?php 
-    
-       if (main_source_1() == 'systemy informatyczne') {
+<div id="App">
+  <div class="card border-dark mb-3" style="max-width: 100%;">
+    <div class="card-header">
+      <?php  
+        if (main_source_1() == 'systemy informatyczne') {
           require "view/get_main_apps.view.php";
           $main = $main_apps;
         } 
@@ -15,46 +16,53 @@
         { 
           require "view/get_main_tools.view.php"; 
           $main = $main_tools; 
-        ;}
-        
-        ?> 
+        ;}    
+      ?>
+      <?php global $main_tool; ?>
 
-  <?php global $main_tool; ?>
+        <label v-if="source1 == 'systemy informatyczne'" class="control-label"><b>{{ source1 }} </b>?</label>
+        <label v-else-if="source1 == 'zarządem SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
+        <label v-else-if="source1 == 'swoim działem'" class="control-label"><b>{{ source1 }} </b>?</label>
+        <label v-else-if="source1 == 'pracownikami innego działu SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
+        <label v-else="source1 == 'bezpośrednim przyłożonym" class="control-label"><b>{{ source1 }} </b>?</label>
+    </div>
+    <div class="card-body text-dark">
+     
 
-  <div id="App">
+   
 
-    <label v-if="source1 == 'systemy informatyczne'" class="control-label"><b>{{ source1 }} </b>?</label>
-    <label v-else-if="source1 == 'zarządem SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
-    <label v-else-if="source1 == 'swoim działem'" class="control-label"><b>{{ source1 }} </b>?</label>
-    <label v-else-if="source1 == 'pracownikami innego działu SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
-    <label v-else="source1 == 'bezpośrednim przyłożonym" class="control-label"><b>{{ source1 }} </b>?</label>
+  
+
+ 
+
+   
 
   
     <div class="form-group ">
       <label class="control-label bold">
         
       </label>
-        <br>
+        
       <div class="row">
-        <div class="col-md-4">
-          <label class="control-label bold">
-          
+        <div class="col-md-4">      
+          <label class="control-label bold">  
             <?php 
-                  $opcja_1 = key($main);
-                  if($opcja_1 = 'own') 
-                  {
-                    $opcja_1 = $main_apps['own_title'];
-                    echo $opcja_1;
-                  } 
-                    else 
-                  {
-                    echo change_name($opcja_1);
-                  }
-                  next($main);
+              $opcja_1 = key($main);
+                 if($opcja_1 = 'own') 
+              {
+                $opcja_1 = $main_apps['own_title'];
+                echo $opcja_1;
+              } 
+                else 
+              {
+                echo change_name($opcja_1);
+              }
+               
+              next($main);
             ?>
-
           </label>
         </div>  
+
         <div class="col-md-8">
           <div class="form-group ">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -227,7 +235,13 @@
           </div>           
         </div>
       </div>     
-
+        <?php 
+          var_dump($opcja_1);
+          var_dump($opcja_2);
+          var_dump($opcja_3);
+          var_dump($opcja_4);
+          var_dump($opcja_5);
+        ?>          
       <div class="row">
         <div class="col-md-12 ">
           <form action="post/post_rate.php" method="POST">
@@ -249,6 +263,9 @@
         </div>
       </div>
     </div>
+    
+    </div>
+  </div>
   </div>  
 
 

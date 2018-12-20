@@ -8,7 +8,7 @@
         <div class="container">
           <div class="card text-center">
               <div class="card-header">
-                        Featured
+                  <h2> Metryczka </h2>
               </div>
                 <div class="card-body">
 
@@ -29,7 +29,7 @@
                     </div>
 
                     <div v-else class="col-6">
-                    
+
                     <button 
                             class="btn btn-outline-primary  btn-block" value="Direct" v-on:click="Typ = 'Direct'" 
                             data-toggle="tooltip"

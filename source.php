@@ -103,7 +103,7 @@
 
                         <div class="col-md-10">
                             <input v-if="total == 100" value="Przejdź dalej" type="submit" name="send"  class="btn btn-success btn-lg" >
-                            <input v-else="total != 100" value="Przejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" > 
+                            <input v-else="total != 100" value="Przejdź dalej" type="submit" name="send" class="btn btn-outline-secondary btn-lg disabled" disabled > 
                         </div>
                         
                         <div class="col-md-2">

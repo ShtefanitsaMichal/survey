@@ -27,19 +27,8 @@
         <label v-else="source1 == 'bezpośrednim przyłożonym" class="control-label"><b>{{ source1 }} </b>?</label>
     </div>
     <div class="card-body text-dark">
-     
-
-   
-
-  
-
- 
-
-   
-
-  
-    <div class="form-group ">
-      <label class="control-label bold">
+      <div class="form-group ">
+        <label class="control-label bold">
         
       </label>
         
@@ -165,7 +154,7 @@
                 </div>
               </div>           
             </div>
-        </div>
+          </div>
 
     <div class="row">
       <div class="col-auto col-4">
@@ -236,11 +225,13 @@
         </div>
       </div>     
         <?php 
-          var_dump($opcja_1);
-          var_dump($opcja_2);
-          var_dump($opcja_3);
-          var_dump($opcja_4);
-          var_dump($opcja_5);
+          /* 
+            var_dump($opcja_1);
+            var_dump($opcja_2);
+            var_dump($opcja_3);
+            var_dump($opcja_4);
+            var_dump($opcja_5); 
+          */
         ?>          
       <div class="row">
         <div class="col-md-12 ">
@@ -250,6 +241,7 @@
             <input type="hidden" name="opcja_3" v-model="opcja_3">
             <input type="hidden" name="opcja_4" v-model="opcja_4">
             <input type="hidden" name="opcja_5" v-model="opcja_5">
+
             <input type="hidden" name="opcja_1_title" value="<?php print $opcja_1 ?>">
             <input type="hidden" name="opcja_2_title" value="<?php print $opcja_2 ?>">
             <input type="hidden" name="opcja_3_title" value="<?php print $opcja_3 ?>">
@@ -262,9 +254,8 @@
           </form>
         </div>
       </div>
-    </div>
-    
-    </div>
+    </div>  
+  </div>
   </div>
   </div>  
 

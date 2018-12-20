@@ -126,6 +126,7 @@
                   <!-- Formularz z metodą post--> 
 
 
+<<<<<<< HEAD
                   <form action="post/post_employee.php" method="post">
                     <input type="hidden" name="typ" v-model="Typ" > 
                     <input type="hidden" name="wiek" v-model="Wiek" > 
@@ -134,6 +135,14 @@
                     <span v-else> <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-secondary btn-lg btn-block disabled"> </span>
                   </form>
        
+=======
+                      <input type="hidden" name="typ" v-model="Typ" > 
+                      <input type="hidden" name="wiek" v-model="Wiek" > 
+                      <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
+                    <hr>                      
+                      <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-outline-success"> </span>
+                    </form>
+>>>>>>> parent of 2c116ae... Merge pull request #3 from ShtefanitsaMichal/MVC
                 </div>  
               </div>
 

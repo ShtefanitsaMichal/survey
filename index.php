@@ -1,5 +1,24 @@
+<?php 
+
+    ini_set('display_errors',1);
+    //error_reporting(E_All); 
+
+?>
+
+
+<?php 
+  define('ROOT', dirname(__FILE__));
+  require_once(ROOT.'/components/Router.php');
+?>
+
+
+<?php 
+  $router = new Router();
+  $router -> run();
+?>
 
 <?php  
+
     require_once "head.php";
     require_once "db_connection.php"; 
     require_once "view/navbar.view.php";  

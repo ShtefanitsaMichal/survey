@@ -38,14 +38,9 @@
             ?>
         </div>
     </div>
-
-
-    
-
- 
-
     
 </div>
+
 <script>
     new Vue({
       el: '#choose_source',
@@ -54,6 +49,7 @@
         }
     })
 </script>    
+
        
       
 

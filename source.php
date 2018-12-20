@@ -4,7 +4,7 @@
 <?php require_once "view/navbar.view.php" ?>
 
 
-     <div id="el">
+    <div id="el">
     <div class="container" >
     <div class="card border-primary mb-3" >
         <div class="card-header">
@@ -100,6 +100,7 @@
                     <input type="hidden" name="baza_danych" v-model="form.baza_danych">
                     <input type="hidden" name="total" v-model="total">
                     <div class="row">
+
 
                         <div class="col-md-10">
                             <input v-if="total == 100" value="Przejdź dalej" type="submit" name="send"  class="btn btn-success btn-lg" >

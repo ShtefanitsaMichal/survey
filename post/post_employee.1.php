@@ -7,10 +7,15 @@
     function employee_session(){
         $_SESSION["survey_id"] = '';
         $_SESSION["source_number"] = 0;
-        $_SESSION["employee"] = array('typ' =>  $_POST['typ'], 'wiek' =>  $_POST['wiek'], 'stanowisko' =>  $_POST['stanowisko'], 'data' => date());
+        $_SESSION["employee"] = array(
+                                    'typ' =>  $_POST['typ'], 
+                                    'wiek' =>  $_POST['wiek'], 
+                                    'stanowisko' =>  $_POST['stanowisko'], 
+                                    'data' => date()
+                                );
     }
 
-    include_once(ROOT."/controller/PostAnswerController.php");
+    include_once(ROOT."/controller/PostController.php");
 
     $post = new Post;
 

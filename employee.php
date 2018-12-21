@@ -3,10 +3,11 @@
     <?php require_once "head.php" ?>
     <?php require_once "view/navbar.view.php" ?>
 
-      <div class="App align-middle">
+
+      <div class="App"  >
                 <!-- <label  class="text-primary">{{ Typ + ' / ' + Stanowisko + ' / ' + Wiek }}</label>  -->
         <div class="container">
-          <div class="card text-center">
+          <div class="card text-center" style="margin: 20vh auto;">
               <div class="card-header">
                   <h2> Metryczka </h2>
               </div>
@@ -113,15 +114,9 @@
                       <button v-if="Stanowisko == 'Kierownik'" class="btn btn-primary btn-block btn-lg" value="Stanowisko" v-on:click="Stanowisko = 'Kierownik'">  kierownik </button>
                       <button v-else class="btn btn-outline-primary btn-block" value="Stanowisko" v-on:click="Stanowisko = 'Kierownik'">  kierownik </button>
                     </div>
-
                   </div>
-                 
                 </div>
-
                   <div class="card-footer  text-dark">
-                        
-
-        
 
                   <!-- Formularz z metodą post--> 
 

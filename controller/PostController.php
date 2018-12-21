@@ -2,9 +2,6 @@
 
     require "dbConnectController.php";
 
-    
-    
-    
     class Post extends dbConnect 
     {
 
@@ -12,10 +9,9 @@
 
         /**
          * Metod wysyłania metryczky do bazy danych
-         * 
-         * 
+         *  
          */
-        public function post_employee(){ 
+         public function post_employee(){ 
             global $servername, $dbname, $username, $password;
             
             try {
@@ -165,9 +161,28 @@
              */
                 function post_apps(){
             
-                global $servername, $dbname, $username, $password, $session_id; 
-                    try 
-                    {
+                    try {
+                        global $servername, $dbname, $username, $password, $session_id; 
+
+                         $_SESSION['apps_grad'] = array(
+                         "intranet" => $_POST['intranet'],
+                         "comarch" => $_POST['comarch'],
+                         "bpcs" => $_POST['bpcs'], 
+                         "qms" => $_POST['qms'],
+                         "sap" => $_POST['sap'],
+                         "asseco" => $_POST['asseco'],
+                         "sanden_vision" => $_POST['sanden_vision'],
+                         "facebook" => $_POST['facebook'],
+                         "smp_web_page" => $_POST['smp_web_page'],
+                         "baza_sugestii" => $_POST['baza_sugestii'],
+                         "sanden_month_news" => $_POST['sanden_month_news'],
+                         "zmt" => $_POST['zmt'],
+                         "parcel_warehouse" => $_POST['parcel_warehouse'],
+                         "lessons_learned" => $_POST['lessons_learned'],
+                         "own_title" => $_POST['own_title'],
+                         "own" => $_POST['own'],
+                         "total" => $_POST['total']);
+
                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
                         
                         $intranet = $_POST['intranet'];

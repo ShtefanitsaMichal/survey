@@ -8,7 +8,7 @@
         <div class="container">
           <div class="card text-center">
               <div class="card-header">
-                        Featured
+                  <h2> Metryczka </h2>
               </div>
                 <div class="card-body">
 
@@ -29,7 +29,7 @@
                     </div>
 
                     <div v-else class="col-6">
-                    
+
                     <button 
                             class="btn btn-outline-primary  btn-block" value="Direct" v-on:click="Typ = 'Direct'" 
                             data-toggle="tooltip"
@@ -125,7 +125,7 @@
 
                   <!-- Formularz z metodą post--> 
 
-                  <form action="post/post_employee.php" method="post">
+                  <form action="post/post_employee.1.php" method="post">
                     <input type="hidden" name="typ" v-model="Typ" > 
                     <input type="hidden" name="wiek" v-model="Wiek" > 
                     <input type="hidden" name="stanowisko" v-model="Stanowisko"> 

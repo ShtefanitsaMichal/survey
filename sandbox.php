@@ -1,5 +1,9 @@
-
 <?php 
+include "controller/dbConnectController.php";
+
+$ds = DIRECTORY_SEPARATOR;
+$base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
+
 
 session_start();
     
@@ -10,7 +14,6 @@ session_start();
         echo "<hr>" ;
     var_dump($_COOKIE) ;
 
-session_destroy(); 
 
 
 /* class SESSION_CHECK 
@@ -103,7 +106,7 @@ session_destroy();
         case "lessons_learned":
             echo"Baza doświadczeń ";
         break;
-        
+
         case "own_title":
             echo"Opcją własna";
         break;

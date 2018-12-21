@@ -19,7 +19,6 @@
           </ul>
         <span class="text-secondary "> <?php echo $session_id ?> </span> <br>
       <span class="text-secondary"> <?php echo 'source #' . $_SESSION['source_number'] ?></span>
-        <?php var_dump($_SESSION) ; ?>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">

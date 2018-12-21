@@ -1,14 +1,17 @@
 <?php 
   // Start the session
   session_start();
-  
+
     $session_id = session_id(); 
 ?>
 
 
-<?php 
-  $ds = DIRECTORY_SEPARATOR;
-  $base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
+<?php
+
+
+$ds = DIRECTORY_SEPARATOR;
+$base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
+define('ROOT', dirname(__FILE__));
 ?>
 
 <script>

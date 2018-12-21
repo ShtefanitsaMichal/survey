@@ -35,15 +35,17 @@
                 print_r($sql) . "<br>" . $e->getMessage();
             }
                 $conn = null;
-        }
+                
+                if (isset($_POST['send'])) 
+                { 
+                    post_source();
+                    echo "<script> window.location = '../source_rate.php'</script>";
+                }  
+                else { echo "error";}     
+            }
 
-        if (isset($_POST['send'])) 
-            { 
-                post_source();
-                echo "<script> window.location = '../source_rate.php'</script>";
-            }  
-        else { echo "error";}     
-    ?>
+            
+?>
 
 
     <?php ?>

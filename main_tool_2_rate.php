@@ -20,7 +20,7 @@
 
 <div class="card border-dark mb-3" style="max-width: 100%;">
   <div class="card-header">
-    Jak oceniasz efektywnoś komunikacji z danymi żrodłami w komunikacji z  <b><?php print(main_source_2()); ?></b>
+    <h5 class="text-center">Jak oceniasz efektywnoś komunikacji z danymi żrodłami w komunikacji z  <b><?php print(main_source_2()); ?></b> </h5>
   </div>
 
 <div class="card-body text-dark">

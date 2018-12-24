@@ -3,48 +3,48 @@
         <div class="row">
             <div class="col-4">
                 <label>1.Intranet (Santouch, help desk, etc)  </label>
-            </div>   
+            </div>
             <div class="col-7">
                 <input v-model.number="form.intranet" type="range" class="custom-range" name="sys_1" id="sys_1">  
             </div>
             <div class="col-1">
-                <p><b> {{form.intranet}} </b></p>
+                <p><b> {{   form.intranet   }} </b></p>
             </div>
         </div>    
         
         <div class="row">
             <div class="col-4">
                 <label>2.Comarch </label>
-            </div>   
+            </div>
             <div class="col-7">
                 <input v-model.number="form.comarch" type="range" class="custom-range" name="sys_1" id="sys_1">  
             </div>
             <div class="col-1">
-                 <p><b> {{form.comarch}} </b></p>
+                 <p><b> {{  form.comarch    }} </b></p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
                 <label>3.BPCS </label>
-            </div>   
+            </div>
             <div class="col-7">
                 <input v-model.number="form.bpcs" type="range" class="custom-range" name="sys_1" id="sys_1">  
             </div>
             <div class="col-1">
-                 <p><b> {{form.bpcs}} </b></p>
+                 <p><b> {{  form.bpcs   }} </b></p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-4">
                 <label>4.QMS </label>
-            </div>   
+            </div>
             <div class="col-7">
                 <input v-model.number="form.qms" type="range" class="custom-range" name="sys_1" id="sys_1">  
             </div>
             <div class="col-1">
-                 <p><b> {{form.qms}} </b></p>
+                 <p><b> {{  form.qms    }} </b></p>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
                 <input v-model.number="form.sap" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.sap}} </b></p>
+                 <p><b> {{  form.sap    }} </b></p>
             </div>
         </div>
         
@@ -68,7 +68,7 @@
                 <input v-model.number="form.asseco" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.asseco}} </b></p>
+                 <p><b> {{  form.asseco }} </b></p>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
                 <input v-model.number="form.sanden_vision" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.sanden_vision}} </b></p>
+                 <p><b> {{  form.sanden_vision }} </b></p>
             </div>
         </div>
 
@@ -92,7 +92,7 @@
                 <input v-model.number="form.facebook" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.facebook}} </b></p>
+                 <p><b> {{  form.facebook }} </b></p>
             </div>
         </div>
 
@@ -104,7 +104,7 @@
                 <input v-model.number="form.smp_web_page" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.smp_web_page}} </b></p>
+                 <p><b> {{  form.smp_web_page }} </b></p>
             </div>
         </div>
 
@@ -116,7 +116,7 @@
                 <input v-model.number="form.baza_sugestii" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.baza_sugestii}} </b></p>
+                 <p><b> {{  form.baza_sugestii }} </b></p>
             </div>
         </div>
 
@@ -128,7 +128,7 @@
                 <input v-model.number="form.sanden_month_news" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.sanden_month_news}} </b></p>
+                 <p><b> {{  form.sanden_month_news }} </b></p>
             </div>
         </div>
 
@@ -140,7 +140,7 @@
                 <input v-model.number="form.zmt" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.zmt}} </b></p>
+                 <p><b> {{  form.zmt }} </b></p>
             </div>
         </div>
 
@@ -152,7 +152,7 @@
                 <input v-model.number="form.parcel_warehouse" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.parcel_warehouse}} </b></p>
+                 <p><b> {{  form.parcel_warehouse }} </b></p>
             </div>
         </div>
 
@@ -164,7 +164,7 @@
                 <input v-model.number="form.lessons_learned" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.lessons_learned}} </b></p>
+                 <p><b> {{  form.lessons_learned }} </b></p>
             </div>
         </div>
 
@@ -176,7 +176,7 @@
                 <input v-model.number="form.own" type="range" class="custom-range" name="sys_1" id="sys_1">
             </div>
             <div class="col-1">
-                 <p><b> {{form.own}} </b></p>
+                 <p><b> {{  form.own }} </b></p>
             </div>
             
         </div> 
@@ -200,6 +200,14 @@
                     <input type="hidden" name="own_title" v-model="form.own_title">
                     <input type="hidden" name="total" v-model="total">
                  
+                    <div class="row">
+                        <div  v-if="total == 100" class="progress" style="height: 5px;">
+                        <div class="progress-bar bg-success" role="progressbar" :style="{width:+ total + '%'}" ></div>
+                    </div> 
+                    <div  v-else class="progress" style="height: 5px;">
+                        <div class="progress-bar bg-danger" role="progressbar" :style="{width:+ total + '%'}" ></div>
+                    </div> 
+                    </div>
                     <div class="row">
                         <div class="col-md-10">
                             <input v-if="total == 100" type="submit" value="Przejdź dalej" class="btn btn-outline-success" name="send">

@@ -25,7 +25,7 @@
 
 <div class="card-body text-dark">
 
-    <?php global $main_tool; ?>       
+  <?php global $main_tool; ?>       
   <div id="App">
     <div class="form-group ">
       <label class="control-label"  >

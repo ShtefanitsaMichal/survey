@@ -6,29 +6,44 @@
  
 <?php  global $FirstMainSource, $SecondMainSource; ?>
 
-<div class="ap"> 
+<div class="container" style="margin: 5vh auto;">
+    <div class="ap"> 
 
-    <!-- Które <php>systemy informatyczne<php> najczęściej wykorzystujesz w pracy ? -->
-    <div class="card border-secondary mb-3" style="max-width: 100%;">
-        <div class="card-header">
-           <div id="choose_source">
-                <h5 v-if="source === 'zarządem SMP' ">zarządem SMP </h5>
-                <h5 v-else-if="source == 'bezpośrednim przyłożonym'">bezpośrednim przyłożonym </h5>
-                <h5 v-else-if="source == 'swoim działem'">swoim działem </h5>
-                <h5 v-else-if="source == 'pracownikami innego działu SMP'">pracownikami innego działu SMP </h5>
-                <h5 v-else="source == 'systemy informatyczne'">Które systemy informatyczne najczęściej wykorzystujesz w pracy ? </h5> 
+        <!-- Które <php>systemy informatyczne<php> najczęściej wykorzystujesz w pracy ? -->
+        <div class="card border-secondary mb-3" style="max-width: 100%;">
+            <div class="card-header">
+               <div id="choose_source">
+                    <h5 v-if="source === 'zarządem SMP' ">zarządem SMP </h5>
+                    <h5 v-else-if="source == 'bezpośrednim przyłożonym'">bezpośrednim przyłożonym </h5>
+                    <h5 v-else-if="source == 'swoim działem'">swoim działem </h5>
+                    <h5 v-else-if="source == 'pracownikami innego działu SMP'">pracownikami innego działu SMP </h5>
+                    <h5 v-else="source == 'systemy informatyczne'">Które systemy informatyczne najczęściej wykorzystujesz w pracy ? </h5> 
+                </div>
             </div>
-        </div>
-    <div class="card-body text-secondary">
+        <div class="card-body text-secondary">
                         
-                <!-- Attention!!! current string must be the same like in get_main_source.view.php -> line-12  -->
-                <?php 
-                    if (main_source_1() == 'systemy informatyczne') 
-                        { require "view/get_apps.view.php" ; } 
-                    else 
-                        { require "view/get_tools.view.php" ; }  
-                ?>
-                <!------------------------END------------------------>
+    <!-- 
+    * 
+        Attention!!! current string must be the same like in get_main_source.view.php -> line-12  
+    * 
+    *
+    *
+    *
+    *-->
+
+        <?php 
+            if (main_source_1() == 'systemy informatyczne') 
+                { require "view/get_apps.view.php" ; } 
+            else 
+                { require "view/get_tools.view.php" ; }  
+        ?>
+    <!--
+    **
+    END
+    **
+    *
+    *
+    **-->
 
             </div>
         </div>

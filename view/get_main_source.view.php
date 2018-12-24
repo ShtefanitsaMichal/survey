@@ -57,10 +57,9 @@
             $odpowiedz_3_int[] = $value;
         }     
    
-    $conn = null					 
+    $conn = null
 ?>
 
-    <hr>
 
 <?php  
         global $main_source;

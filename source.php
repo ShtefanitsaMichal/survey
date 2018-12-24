@@ -4,8 +4,8 @@
 <?php require_once "view/navbar.view.php" ?>
 
 
-     <div id="el">
-    <div class="container" >
+    <div id="el">
+    <div class="container" style="margin: 20vh auto;" >
     <div class="card border-primary mb-3" >
         <div class="card-header">
             <h5>

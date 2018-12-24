@@ -1,18 +1,21 @@
 <?php 
 include "controller/dbConnectController.php";
 
+include "controller/GetController.php";
 $ds = DIRECTORY_SEPARATOR;
 $base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
 
 
-session_start();
+//session_start();
     
     $_COOKIE["SMP_imp_survey"] = session_id();
     $_SESSION["session_id"] = session_id();
             
     var_dump($_SESSION) ;
         echo "<hr>" ;
-    var_dump($_COOKIE) ;
+    
+    $get = new Get() ;
+    $get -> get_main_source();
 
 
 

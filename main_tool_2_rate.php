@@ -6,6 +6,8 @@
 <?php require_once "view/navbar.view.php" ?>
 <?php require_once "view/get_main_source.view.php" ?> 
 
+<?php //$main_source1 = new GET(); ?>
+
 <?php 
  if (main_source_2() == 'bazą danych') {
     require "view/get_main_apps.view.php";

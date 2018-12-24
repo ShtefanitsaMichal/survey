@@ -19,8 +19,6 @@
 
         /**
          * pobieranie odpowiedzi na 2 pytanie 
-         * 
-         * 
          */
         try 
         {
@@ -49,10 +47,9 @@
 
         /**
          * Pobieranie odpowiedzi na 3 pytanie 
-         * 
-         * 
          */
-        try {
+        try 
+        {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "SELECT * FROM source_rate WHERE `source_rate`.`session_id` = '$session_id' ORDER BY `source_rate`.`id` DESC" ;
@@ -72,17 +69,19 @@
                     $odpowiedz_3_int[] = $value;
                 }
             
-        } 
-            catch (PDOException $e) 
-        {
-            print_r($sql) . "<br>" . $e->getMessage(); 
-        }
-            $conn = null;
+                } 
+                    catch (PDOException $e) 
+                {
+                    print_r($sql) . "<br>" . $e->getMessage(); 
+                }
+                    $conn = null;
             
             
             $main_source = [];
             
-            //Procedura mnożenia odpowiedzi na pytania "source.php" i Pytania "rate_source.php"
+            /** 
+             * Procedura mnożenia odpowiedzi na pytania "source.php" i Pytania "rate_source.php"
+             */
             for ($i=0; $i < count($odpowiedz_2_int); $i++)         
             { 
                 $main_source[] = $odpowiedz_2_int[$i] * $odpowiedz_3_int[$i];
@@ -90,23 +89,26 @@
             
     }
 
-
-        function main_source_1()
+    function main_source_1()
             {
                 global $main_source, $FirstMainSource;
+                
                 $main_source1 = $main_source;
-
-                //Wyszukania na ktorej pozycji znajduję się maksymalnie znaczenie iloczynu 
+                /*
+                * Wyszukania na ktorej pozycji znajduję się maksymalnie znaczenie iloczynu
+                */
                 $max_int_key_1 = array_keys($main_source1, max($main_source1));
+                //var_dump($main_source1 . 'test');
                 $FirstMainSource = constant($max_int_key_1[0]);
                 
-                return $FirstMainSource;          
+                var_dump($FirstMainSource);       
             }
             
 
-        function main_source_2()
+    function main_source_2()
             {
                 global $main_source, $SecondMainSource; 
+
                 $main_source2 = $main_source;
                 $test =  array_keys($main_source2, max($main_source2));
                 $main_source2[$test[0]] = 0; 
@@ -115,9 +117,10 @@
                 $max_int_key_2 = array_keys($main_source2, max($main_source2));
                 $SecondMainSource = constant($max_int_key_2[0]);
 
-                return $SecondMainSource;
+                var_dump($SecondMainSource);
             }
 
+        
 
 
 };

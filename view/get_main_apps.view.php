@@ -1,3 +1,5 @@
+<?php  var_dump($test); ?>
+
 <?php include_once "./db_connection.php"; ?>
 <?php include_once "./head.php"; ?>
 
@@ -12,6 +14,7 @@
                 WHERE `main_apps`.`session_id` = '$session_id' 
                 ORDER BY `main_apps`.`id` DESC";
 
+       
 
         $get_all_data = $conn->prepare($sql);
         $get_all_data -> execute(array($sql));

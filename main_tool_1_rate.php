@@ -1,9 +1,9 @@
 <?php require_once 'head.php' ?>
-<?php $_SESSION['source_number'] = 1 ?>
+<?php //_SESSION['source_number'] = 1 ?>
 <?php require_once 'view/navbar.view.php' ?>
-<?php require_once 'functions.php' ?>
-<?php require_once 'view/get_main_source.view.php' ?> 
 
+<?php require_once 'head.php' ?> 
+<?php require_once __ROOT__.'/controller/GetController.php' ?> 
 
 <?php $main_source1 = new GET(); ?>
 
@@ -16,43 +16,47 @@
             require "view/get_main_apps.view.php";
             $main = $main_apps;
           } 
-            else 
+          else 
           { 
+           
             require "view/get_main_tools.view.php"; 
             $main = $main_tools; 
           ;}    
         ?>
         <?php global $main_tool; ?>
-
           <label v-if="source1 == 'systemy informatyczne'" class="control-label"><b>{{ source1 }} </b>?</label>
           <label v-else-if="source1 == 'zarządem SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
           <label v-else-if="source1 == 'swoim działem'" class="control-label"><b>{{ source1 }} </b>?</label>
           <label v-else-if="source1 == 'pracownikami innego działu SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
           <label v-else="source1 == 'bezpośrednim przyłożonym" class="control-label"><b>{{ source1 }} </b>?</label>
       </div>
+
+       <?php 
+                var_dump(key($main));
+                next($main);
+                var_dump(key($main));
+                next($main);
+                var_dump(key($main));
+                next($main);
+                var_dump(key($main));
+                next($main);
+                var_dump(key($main));
+                next($main);
+
+
+               
+        ?>
+
       <div class="card-body text-dark">
         <div class="form-group ">
-          <label class="control-label bold">
-          
-        </label>
+        <label class="control-label bold"></label>
           
         <div class="row">
           <div class="col-md-4">      
             <label class="control-label bold">  
-              <?php 
-                $opcja_1 = key($main);
-                  if($opcja_1 = 'own') 
-                {
-                  $opcja_1 = $main_apps['own_title'];
-                  echo $opcja_1;
-                } 
-                  else 
-                {
-                  echo change_name($opcja_1);
-                }
-                
-                next($main);
-              ?>
+
+             
+
             </label>
           </div>  
 

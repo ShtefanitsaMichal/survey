@@ -8,10 +8,10 @@
 
 <?php
 
+define('__ROOT__', dirname(__FILE__)); 
 
-$ds = DIRECTORY_SEPARATOR;
-$base_dir = realpath(dirname(__FILE__)  . $ds . '..') . $ds;
-define('ROOT', dirname(__FILE__));
+
+
 ?>
 
 <script>

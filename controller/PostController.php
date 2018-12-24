@@ -1,6 +1,7 @@
 <?php
 
-    require "dbConnectController.php";
+    require __ROOT__."/controller/dbConnectController.php";
+    require __ROOT__."/controller/GetController.php";
 
     class Post extends dbConnect 
     {
@@ -11,7 +12,7 @@
          * Metod wysyłania metryczky do bazy danych
          *  
          */
-         public function post_employee(){ 
+        public function post_employee(){ 
             global $servername, $dbname, $username, $password;
             
             try {
@@ -58,7 +59,7 @@
          * Ranking Żródel total powinien wynie
          * 
          */
-        public function post_source(){
+        function post_source(){
             global $servername, $dbname, $username, $password, $conn, $session_id;
 
             try {
@@ -150,161 +151,164 @@
             }
                 $conn = null;
             }
+     
 
 
 
-
+        
+        
             /**
-             * Metoda wysyłanie danych na server MySQL 
-             * Ranking Applikacyj 
-             * 
-             */
-                function post_apps(){
-                    try {
-                        global $servername, $dbname, $username, $password, $session_id; 
+         * Metoda wysyłanie danych na server MySQL 
+         * Ranking Applikacyj 
+         * 
+         */
+        function post_apps(){
+            try {
+                global $servername, $dbname, $username, $password, $session_id; 
 
-                         $_SESSION['apps_grad'] = array(
-                         "intranet" => $_POST['intranet'],
-                         "comarch" => $_POST['comarch'],
-                         "bpcs" => $_POST['bpcs'], 
-                         "qms" => $_POST['qms'],
-                         "sap" => $_POST['sap'],
-                         "asseco" => $_POST['asseco'],
-                         "sanden_vision" => $_POST['sanden_vision'],
-                         "facebook" => $_POST['facebook'],
-                         "smp_web_page" => $_POST['smp_web_page'],
-                         "baza_sugestii" => $_POST['baza_sugestii'],
-                         "sanden_month_news" => $_POST['sanden_month_news'],
-                         "zmt" => $_POST['zmt'],
-                         "parcel_warehouse" => $_POST['parcel_warehouse'],
-                         "lessons_learned" => $_POST['lessons_learned'],
-                         "own_title" => $_POST['own_title'],
-                         "own" => $_POST['own'],
-                         "total" => $_POST['total']);
+                 $_SESSION['apps_grad'] = array(
+                 "intranet" => $_POST['intranet'],
+                 "comarch" => $_POST['comarch'],
+                 "bpcs" => $_POST['bpcs'], 
+                 "qms" => $_POST['qms'],
+                 "sap" => $_POST['sap'],
+                 "asseco" => $_POST['asseco'],
+                 "sanden_vision" => $_POST['sanden_vision'],
+                 "facebook" => $_POST['facebook'],
+                 "smp_web_page" => $_POST['smp_web_page'],
+                 "baza_sugestii" => $_POST['baza_sugestii'],
+                 "sanden_month_news" => $_POST['sanden_month_news'],
+                 "zmt" => $_POST['zmt'],
+                 "parcel_warehouse" => $_POST['parcel_warehouse'],
+                 "lessons_learned" => $_POST['lessons_learned'],
+                 "own_title" => $_POST['own_title'],
+                 "own" => $_POST['own'],
+                 "total" => $_POST['total']);
 
-                        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
-                        
-                        $intranet = $_POST['intranet'];
-                        $comarch = $_POST['comarch'];  
-                        $bpcs = $_POST['bpcs'];
-                        $qms = $_POST['qms'];
-                        $sap = $_POST['sap'];
-                        $asseco = $_POST['asseco'];
-                        $sanden_vision = $_POST['sanden_vision'];
-                        $facebook = $_POST['facebook'];
-                        $smp_web_page = $_POST['smp_web_page'];
-                        $baza_sugestii = $_POST['baza_sugestii'];
-                        $sanden_month_news = $_POST['sanden_month_news'];
-                        $zmt = $_POST['zmt'];
-                        $parcel_warehouse = $_POST['parcel_warehouse'];
-                        $lessons_learned = $_POST['lessons_learned']; 
-                        $own_title = $_POST['own_title'];
-                        $own = $_POST['own'];
-                        $total = $_POST['total'];
+                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );
+                
+                $intranet = $_POST['intranet'];
+                $comarch = $_POST['comarch'];  
+                $bpcs = $_POST['bpcs'];
+                $qms = $_POST['qms'];
+                $sap = $_POST['sap'];
+                $asseco = $_POST['asseco'];
+                $sanden_vision = $_POST['sanden_vision'];
+                $facebook = $_POST['facebook'];
+                $smp_web_page = $_POST['smp_web_page'];
+                $baza_sugestii = $_POST['baza_sugestii'];
+                $sanden_month_news = $_POST['sanden_month_news'];
+                $zmt = $_POST['zmt'];
+                $parcel_warehouse = $_POST['parcel_warehouse'];
+                $lessons_learned = $_POST['lessons_learned']; 
+                $own_title = $_POST['own_title'];
+                $own = $_POST['own'];
+                $total = $_POST['total'];
 
            
-                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        $sql = $conn->prepare("INSERT INTO main_apps (`session_id` ,`intranet`, `comarch`, `bpcs`, `qms`, `sap`, `asseco`, `sanden_vision`, `facebook`, `smp_web_page`, `baza_sugestii`, `zmt`, `parcel_warehouse`, `lessons_learned`, `own_title` , `own`, `sanden_month_news`, `total` )  
-                                        VALUES ('$session_id' ,'$intranet', '$comarch', '$bpcs', '$qms', '$sap', '$asseco', '$sanden_vision', '$facebook', '$smp_web_page', '$baza_sugestii', '$zmt', '$parcel_warehouse', '$lessons_learned', '$own_title', '$own', '$sanden_month_news', '$total')");
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = $conn->prepare("INSERT INTO main_apps (`session_id` ,`intranet`, `comarch`, `bpcs`, `qms`, `sap`, `asseco`, `sanden_vision`, `facebook`, `smp_web_page`, `baza_sugestii`, `zmt`, `parcel_warehouse`, `lessons_learned`, `own_title` , `own`, `sanden_month_news`, `total` )  
+                                VALUES ('$session_id' ,'$intranet', '$comarch', '$bpcs', '$qms', '$sap', '$asseco', '$sanden_vision', '$facebook', '$smp_web_page', '$baza_sugestii', '$zmt', '$parcel_warehouse', '$lessons_learned', '$own_title', '$own', '$sanden_month_news', '$total')");
 
-                         $sql->execute( array(
-                         "session_id" => $session_id,    
-                         "intranet" => $intranet,
-                         "comarch" => $comarch,
-                         "bpcs" => $bpcs, 
-                         "qms" => $qms,
-                         "sap" => $sap,
-                         "asseco" => $asseco,
-                         "sanden_vision" => $sanden_vision,
-                         "facebook" => $facebook,
-                         "smp_web_page" => $smp_web_page,
-                         "baza_sugestii" => $baza_sugestii,
-                         "sanden_month_news" => $sanden_month_news,
-                         "zmt" => $zmt,
-                         "parcel_warehouse" => $parcel_warehouse,
-                         "lessons_learned" => $lessons_learned,
-                         "own_title" => $own_title,
-                         "own" => $own,
-                         "total" => $total )); 
-                    }
+                 $sql->execute( array(
+                 "session_id" => $session_id,    
+                 "intranet" => $intranet,
+                 "comarch" => $comarch,
+                 "bpcs" => $bpcs, 
+                 "qms" => $qms,
+                 "sap" => $sap,
+                 "asseco" => $asseco,
+                 "sanden_vision" => $sanden_vision,
+                 "facebook" => $facebook,
+                 "smp_web_page" => $smp_web_page,
+                 "baza_sugestii" => $baza_sugestii,
+                 "sanden_month_news" => $sanden_month_news,
+                 "zmt" => $zmt,
+                 "parcel_warehouse" => $parcel_warehouse,
+                 "lessons_learned" => $lessons_learned,
+                 "own_title" => $own_title,
+                 "own" => $own,
+                 "total" => $total )); 
+            }
 
                     catch(PDOException $e)
                     {
                         print_r($sql) . "<br>" . $e->getMessage();
                     }
                         $conn = null;
-                    }   
+                    } 
+            
 
                     /*
                     * Metoda wysyłanie danych na server MySQL 
                     * Ranking Applikacyj 
                     * 
                     */
+            function post_tools()
+            {   
+                //require __ROOT__."/controller/dbConnectController.php";
+                global $servername, $dbname, $username, $password, $session_id;
 
-                     public function post_tools(){
-                         global $servername, $dbname, $username, $password, $session_id;
-
-                            try {
-                                    
-                                    if($_SESSION['source_number'] == '1')
-                                {
-                                    $main_source = main_source_1();
-                                } 
-                                else 
-                                {
-                                    $main_source = main_source_2();
-                                }
-
-                            $phone = $_POST['phone'];  
-                            $write = $_POST['write'];
-                            $face_to_face = $_POST['face_to_face'];
-                            $dept_meet = $_POST['dept_meet'];
-                            $prod_meet = $_POST['prod_meet'];
-                            $proj_meet = $_POST['proj_meet'];
-                            $budget_meet = $_POST['budget_meet'];
-                            $smp_d = $_POST['smp_d'];
-                            $smp_w = $_POST['smp_w'];
-                            $cs = $_POST['cs'];
-                            $unformal_meet = $_POST['unformal_meet'];
-                            $own = $_POST['own'];
-                            $own_title = $_POST['own_title'];
-                            $total = $_POST['total'];
-                        
-                            // set the PDO error mode to exception
-                            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );    
-                            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                            $sql = $conn->prepare("INSERT INTO main_tools (`session_id`,`main_source`, `write`, `phone`, `face_to_face`, `dept_meet`, `prod_meet`, `proj_meet`, `budget_meet`, `smp_d`, `smp_w`,`cs`, `unformal_meet`, `own`, `own_title`, `total` )  
-                                                    VALUES ('$session_id','$main_source' , '$write', '$phone', '$face_to_face', '$dept_meet', '$prod_meet', '$proj_meet', '$budget_meet', '$smp_d', '$smp_w','$cs' ,'$unformal_meet', '$own', '$own_title', '$total')");
-
-                            $sql->execute(array(
-                                
-                                "session_id" => $session_id,
-                                "main_source" => $main_source,    
-                                "write" => $write,
-                                "phone" => $phone,
-                                "face_to_face" => $face_to_face, 
-                                "dept_meet" => $dept_meet,
-                                "prod_meet" => $prod_meet,
-                                "proj_meet" => $proj_meet,
-                                "budget_meet" => $budget_meet,
-                                "smp_d" => $smp_d,
-                                "smp_w" => $smp_w,
-                                "cs" => $cs,
-                                "unformal_meet" => $unformal_meet,
-                                "own_title" => $own_title,
-                                "own" => $own,
-                                "total" => $total,
-                                
-                            ));       
-                        
-                            }
-                                catch(PDOException $e)
-                            {
-                                print_r($sql) . "<br>" . $e->getMessage();
-                            }
-                                $conn = null;
+                 try {
+                         if($_SESSION['source_number'] == '1')
+                     {
+                         $main_source = new GET(); 
+                         $main_source -> main_source_1();
+                     } 
+                     else 
+                     {
+                         $main_source = main_source_2();
+                     }
+                         $phone = $_POST['phone'];  
+                         $write = $_POST['write'];
+                         $face_to_face = $_POST['face_to_face'];
+                         $dept_meet = $_POST['dept_meet'];
+                         $prod_meet = $_POST['prod_meet'];
+                         $proj_meet = $_POST['proj_meet'];
+                         $budget_meet = $_POST['budget_meet'];
+                         $smp_d = $_POST['smp_d'];
+                         $smp_w = $_POST['smp_w'];
+                         $cs = $_POST['cs'];
+                         $unformal_meet = $_POST['unformal_meet'];
+                         $own = $_POST['own'];
+                         $own_title = $_POST['own_title'];
+                         $total = $_POST['total'];
+                    
+                         // set the PDO error mode to exception
+                         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password );    
+                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                         $sql = $conn->prepare("INSERT INTO main_tools (`session_id`,`main_source`, `write`, `phone`, `face_to_face`, `dept_meet`, `prod_meet`, `proj_meet`, `budget_meet`, `smp_d`, `smp_w`,`cs`, `unformal_meet`, `own`, `own_title`, `total` )  
+                                                 VALUES ('$session_id','$main_source' , '$write', '$phone', '$face_to_face', '$dept_meet', '$prod_meet', '$proj_meet', '$budget_meet', '$smp_d', '$smp_w','$cs' ,'$unformal_meet', '$own', '$own_title', '$total')");
+                         $sql->execute(array(
+                             
+                             "session_id" => $session_id,
+                             "main_source" => $main_source,    
+                             "write" => $write,
+                             "phone" => $phone,
+                             "face_to_face" => $face_to_face, 
+                             "dept_meet" => $dept_meet,
+                             "prod_meet" => $prod_meet,
+                             "proj_meet" => $proj_meet,
+                             "budget_meet" => $budget_meet,
+                             "smp_d" => $smp_d,
+                             "smp_w" => $smp_w,
+                             "cs" => $cs,
+                             "unformal_meet" => $unformal_meet,
+                             "own_title" => $own_title,
+                             "own" => $own,
+                             "total" => $total,
+                             
+                         ));       
+                         }
+                         
+                             catch(PDOException $e)
+                         {
+                             print_r($sql) . "<br>" . $e->getMessage();
+                         }
+                             $conn = null;
 
 
-                                        }
+    }
+}
 
-};
+

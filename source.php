@@ -5,11 +5,8 @@
 
 
     <div id="el">
-<<<<<<< HEAD
+
     <div class="container" style="margin: 20vh auto;" >
-=======
-    <div class="container" >
->>>>>>> master
     <div class="card border-primary mb-3" >
         <div class="card-header">
             <h5>

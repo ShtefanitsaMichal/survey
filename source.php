@@ -5,7 +5,11 @@
 
 
     <div id="el">
+<<<<<<< HEAD
     <div class="container" style="margin: 20vh auto;" >
+=======
+    <div class="container" >
+>>>>>>> master
     <div class="card border-primary mb-3" >
         <div class="card-header">
             <h5>
@@ -100,6 +104,7 @@
                     <input type="hidden" name="baza_danych" v-model="form.baza_danych">
                     <input type="hidden" name="total" v-model="total">
                     <div class="row">
+
 
                         <div class="col-md-10">
                             <input v-if="total == 100" value="Przejdź dalej" type="submit" name="send"  class="btn btn-success btn-lg" >

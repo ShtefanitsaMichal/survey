@@ -120,14 +120,28 @@
 
                   <!-- Formularz z metodą post--> 
 
+<<<<<<< HEAD
+
+<<<<<<< HEAD
+                  <form action="post/post_employee.php" method="post">
+=======
                   <form action="post/post_employee.1.php" method="post">
+>>>>>>> smp2
                     <input type="hidden" name="typ" v-model="Typ" > 
                     <input type="hidden" name="wiek" v-model="Wiek" > 
                     <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
                     <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-success btn-lg btn-block"> </span>
                     <span v-else> <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-secondary btn-lg btn-block disabled"> </span>
                   </form>
-        
+       
+=======
+                      <input type="hidden" name="typ" v-model="Typ" > 
+                      <input type="hidden" name="wiek" v-model="Wiek" > 
+                      <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
+                    <hr>                      
+                      <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-outline-success"> </span>
+                    </form>
+>>>>>>> parent of 2c116ae... Merge pull request #3 from ShtefanitsaMichal/MVC
                 </div>  
               </div>
 

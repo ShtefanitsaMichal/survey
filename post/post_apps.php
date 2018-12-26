@@ -1,6 +1,6 @@
 <?php 
-         include("../head.php");
-         include_once(ROOT."/controller/PostController.php");
+         include("./head.php");
+         include_once(__ROOT__."/controller/PostController.php");
 ?>
 
 <?php        

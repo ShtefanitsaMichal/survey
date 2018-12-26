@@ -1,5 +1,26 @@
 <?php
-    $session_id = "i5ottfm33vof91cts0le12k467";
+    $session_id = $_SESSION['session_id'];
+
+    $SQL = array(
+                'main_tools' => "SELECT `phone`,`write`,`face_to_face`,`dept_meet`,`prod_meet`,`proj_meet`,`budget_meet`,`smp_d`,`smp_w`,`cs`,`unformal_meet`,`own` 
+                                FROM main_tools 
+                                WHERE `main_tools`.`session_id` = '$session_id'; 
+                                ORDER BY `main_tools`.`id` DESC" 
+                            );
+
+    class SQL{
+        public function main_tools(){
+
+
+
+            return "SELECT `phone`,`write`,`face_to_face`,`dept_meet`,`prod_meet`,`proj_meet`,`budget_meet`,`smp_d`,`smp_w`,`cs`,`unformal_meet`,`own` 
+                FROM main_tools 
+                WHERE `main_tools`.`session_id` = '$session_id'; 
+                ORDER BY `main_tools`.`id` DESC";
+
+        }
+    }
+    
     $answer = 'SELECT 
         employee.session_id AS ID,
         employee.typ AS typ, 
@@ -50,10 +71,13 @@
 ?>
 
 <?php
-    $question3 = 'SELECT employee.session_id AS ID, 
-    employee.typ AS typ, 
-    employee.wiek AS wiek, 
-    employee.stanowisko AS stanowisko, 
-    employee.date AS pracownik_data
-    FROM employee GROUP BY ID ORDER BY employee.date ASC'
+
+
+
+    // $question3 = 'SELECT employee.session_id AS ID, 
+    // employee.typ AS typ, 
+    // employee.wiek AS wiek, 
+    // employee.stanowisko AS stanowisko, 
+    // employee.date AS pracownik_data
+    // FROM employee GROUP BY ID ORDER BY employee.date ASC'
 ?>

@@ -5,7 +5,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-5">
-                        <label class="">1. pisemna – e-mail , sametime- chat</label>
+                        <label class="">1. pisemna  e-mail , - sametime- chat</label>
                     </div>   
                     <div class="col-6">
                         <input v-model.number="form.write" type="range" class="custom-range" name="write" id="write">
@@ -148,28 +148,48 @@
                     <div class="col-1">   
                         <p> {{ form.own }} </p>  
                     </div>
-                    
-                    <hr>
-                    <h1>{{total}}</h1>
-                    <hr>
-                    
-                    <form action="./post/post_tools.php" method="POST">
-                        <input type="hidden" name="write" v-model="form.write">
-                        <input type="hidden" name="phone" v-model="form.phone">
-                        <input type="hidden" name="face_to_face" v-model="form.face_to_face">
-                        <input type="hidden" name="dept_meet" v-model="form.dept_meet">
-                        <input type="hidden" name="prod_meet" v-model="form.prod_meet">
-                        <input type="hidden" name="proj_meet" v-model="form.proj_meet">
-                        <input type="hidden" name="budget_meet" v-model="form.budget_meet">
-                        <input type="hidden" name="smp_d" v-model="form.smp_d">
-                        <input type="hidden" name="smp_w" v-model="form.smp_w">
-                        <input type="hidden" name="cs" v-model="form.cs">
-                        <input type="hidden" name="unformal_meet" v-model="form.unformal_meet">
-                        <input type="hidden" name="own_title" v-model="form.own_title">
-                        <input type="hidden" name="own" v-model="form.own">
-                        <input type="hidden" name="total" v-model="total">
+                </div>
+                
+                <div  v-if="total == 100" class="progress" style="height: 5px;">
+                    <div class="progress-bar bg-success" role="progressbar" :style="{width:+ total + '%'}" ></div>
+                </div> 
+                
+                <div  v-else class="progress" style="height: 5px;">
+                    <div class="progress-bar bg-danger" role="progressbar" :style="{width:+ total + '%'}" ></div>
+                </div>
 
-                        <input type="submit" value="Przejdź dalej" name="send" class="btn btn-outline-success" > 
+                <br> 
+
+                    <form action="./post/post_tools.php" method="POST">
+                        <div class="row">
+                            <input type="hidden" name="write" v-model="form.write">
+                            <input type="hidden" name="phone" v-model="form.phone">
+                            <input type="hidden" name="face_to_face" v-model="form.face_to_face">
+                            <input type="hidden" name="dept_meet" v-model="form.dept_meet">
+                            <input type="hidden" name="prod_meet" v-model="form.prod_meet">
+                            <input type="hidden" name="proj_meet" v-model="form.proj_meet">
+                            <input type="hidden" name="budget_meet" v-model="form.budget_meet">
+                            <input type="hidden" name="smp_d" v-model="form.smp_d">
+                            <input type="hidden" name="smp_w" v-model="form.smp_w">
+                            <input type="hidden" name="cs" v-model="form.cs">
+                            <input type="hidden" name="unformal_meet" v-model="form.unformal_meet">
+                            <input type="hidden" name="own_title" v-model="form.own_title">
+                            <input type="hidden" name="own" v-model="form.own">
+                            <input type="hidden" name="total" v-model="total">
+                        </div>
+
+                    
+                    <div class="row">
+                        <div class="col-10">
+                            <input v-if="total == 100" type="submit" value="Przejdź dalej" class="btn btn-outline-success" name="send">
+                            <input v-else type="submit" value="Przejdź dalej" class="btn btn-outline-secondary disabled" name="send">
+                        </div> 
+                        <div class="col-2">
+                            <h3 v-if="total == 100" class="text-success">{{total + '%'}}</h3>
+                            <h3 v-else-if="total > 100" class="text-danger">{{total + '%'}}</h3>
+                            <h3 v-else="total < 100" class="text-danger">{{total + '%'}}</h3>
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>

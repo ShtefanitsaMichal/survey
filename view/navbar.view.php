@@ -18,8 +18,7 @@
 
           </ul>
         <span class="text-secondary "> <?php echo $session_id ?> </span> <br>
-      <span class="text-secondary"> <?php echo 'source #' . $_SESSION['source_number'] ?></span>
-        <?php var_dump($_SESSION) ; ?>
+      <span class="text-secondary"> <?php echo 'source #' . var_dump($_SESSION) ?></span>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
@@ -40,21 +39,4 @@
 </div>
 
 
-<nav aria-label="...">
-  
-</nav>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4 offset-md-4" >
-                   
-    </div>
-  </div>
-    
-
-
-  <!-- 
-    <div class="progress" style="height: 10px;">
-      <div class="progress-bar" role="progressbar" style="width: <?php //echo $page * 13 ?>%; " aria-valuenow="1" aria-valuemin="0" aria-valuemax="8"></div>
-    </div> 
-  -->
 

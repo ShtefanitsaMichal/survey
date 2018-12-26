@@ -7,7 +7,6 @@
         
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);   
 
-            var_dump($conn);
 ?>
 
 

@@ -1,14 +1,17 @@
 <?php 
   // Start the session
-    session_start();
+  session_start();
 
     $session_id = session_id(); 
-    echo "head connected"
 ?>
 
 
 <?php
-  define('__ROOT__', dirname(__FILE__)); 
+
+define('__ROOT__', dirname(__FILE__)); 
+
+
+
 ?>
 
 <script>

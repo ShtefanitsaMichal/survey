@@ -1,8 +1,8 @@
-<?php require_once 'head.php' ?>
-<?php //_SESSION['source_number'] = 1 ?>
-<?php require_once 'view/navbar.view.php' ?>
+<?php echo "main_tool_1_rate.php" ?>
 
-<?php require_once 'head.php' ?> 
+<?php require_once 'head.php' ?>
+
+<?php require_once 'view/navbar.view.php' ?>
 <?php require_once __ROOT__.'/controller/GetController.php' ?> 
 
 <?php $main_source1 = new GET(); ?>
@@ -11,18 +11,22 @@
   <div id="App">
     <div class="card border-dark mb-3" style="max-width: 100%;">
       <div class="card-header">
-        <?php  
+        <?php
+          global $main_apps, $main_tools; 
+          var_dump($main_source1 -> main_source_1()); //Zarząden SMP
           if ($main_source1 -> main_source_1() == 'systemy informatyczne') {
             require "view/get_main_apps.view.php";
             $main = $main_apps;
           } 
           else 
           { 
-           
             require "view/get_main_tools.view.php"; 
-            $main = $main_tools; 
-          ;}    
+            $main = $main_tools;
+          ;}
+          
+          var_dump($main); // NULL
         ?>
+        
         <?php global $main_tool; ?>
           <label v-if="source1 == 'systemy informatyczne'" class="control-label"><b>{{ source1 }} </b>?</label>
           <label v-else-if="source1 == 'zarządem SMP'" class="control-label"><b>{{ source1 }} </b>?</label>
@@ -31,17 +35,11 @@
           <label v-else="source1 == 'bezpośrednim przyłożonym" class="control-label"><b>{{ source1 }} </b>?</label>
       </div>
 
-       <?php 
-                var_dump(key($main));
-                next($main);
-                var_dump(key($main));
-                next($main);
-                var_dump(key($main));
-                next($main);
-                var_dump(key($main));
-                next($main);
-                var_dump(key($main));
-                next($main);
+       <?php
+ 
+          $opcja_1 = key($main);
+          echo change_name($opcja_1);
+          next($main);
 
 
                
@@ -281,8 +279,8 @@
                     opcja_3: '',
                     opcja_4: '',
                     opcja_5: '',
-                    source1: '<?php echo main_source_1(); ?>',
-                    source2: '<?php echo main_source_2(); ?>'
+                    source1: '<?php  main_source_1(); ?>',
+                    source2: '<?php  main_source_2(); ?>'
                   }  
         }) 
 </script>   

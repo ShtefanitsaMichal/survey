@@ -56,14 +56,7 @@
                     <div class="row" >
 
                         <?php
-                            
-                            echo "<ul> Pytanie 1 ";
-                            echo "<li><b> Typ: </b> " . $row['typ'] . "</li>";  
-                            echo "<li><b> Wiek: </b>" . $row['wiek'] . "</li>"; 
-                            echo "<li><b> Stanowisko: </b>:" . $row['stanowisko'] . "</li>";
-                            echo "<li> <b>Data:</b> " . $row['pracownik_data'] . "</li>";
-                            echo "</ul>";	
-                                //$row['index'] the index here is a field name
+                            echo ($_SESSION['session_id']);
                         ?></div>
                         </div>
                     </div>

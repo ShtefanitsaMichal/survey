@@ -120,13 +120,14 @@
 
                   <!-- Formularz z metodą post--> 
 
-                  <form action="post/post_employee.php" method="post">
+                  <form action="post/post_employee.1.php" method="post">
                     <input type="hidden" name="typ" v-model="Typ" > 
                     <input type="hidden" name="wiek" v-model="Wiek" > 
                     <input type="hidden" name="stanowisko" v-model="Stanowisko"> 
                     <span v-if="Stanowisko != '' && Wiek != '' && Typ != '' " > <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-success btn-lg btn-block"> </span>
                     <span v-else> <input  value="Pzejdź dalej" type="submit" name="send"   class="btn btn-secondary btn-lg btn-block disabled"> </span>
                   </form>
+        
                 </div>  
               </div>
 

@@ -1,23 +1,17 @@
 <?php 
-include "head.php";
-include "controller/dbConnectController.php";
-include "controller/GetController.php";
-
-//session_start();
+require_once ('controller/dbConnect.php');
+try {
+	$db = DB::getInstance();
+    DB::setCharsetEncoding();
     
-$_COOKIE["SMP_imp_survey"] = session_id();
-$_SESSION["session_id"] = session_id();
-            
-    var_dump($_SESSION) ;
-        echo "<hr>" ;
-    
-    $get = new Get() ;
-    $get -> get_main_source();
 
+	$sqlExample = "SELECT * FROM employee WHERE typ != ''";
+	$stm = $db->prepare($sqlExample);
+	$stm->execute();
 
-
-
-
+} catch (Exception $e) {
+	print $e->getMessage(); 
+}
 
 //kolejnośc systemów informatycznych / Aplikacje ;
 //0. IBM Lotus Notes / Sametime ;
@@ -44,8 +38,6 @@ $_SESSION["session_id"] = session_id();
 //20. Inventory range
 //21. System udostępniania plików 
 //22. Sadec / Intrastat */
-
-
 
 /* Marcin gajdziński
 Zarząd  - W jaki sposób komunikujesz się z "Zarządem SMP"

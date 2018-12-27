@@ -1,19 +1,18 @@
 <?php
-        /*
-        *   Data base datas for connection
-        */
     
             $servername = "localhost";
-            $username = "root";
-            $password = "root";
+            $username = "m.sztefanica";
+            $password = "UphCF4YJj8FAkukh";
             $dbname = "smp_communication_survey";
-
-        /***
-         *
-         * PDO db connection
-         *
-         */
         
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);   
 
 ?>
+
+
+
+  
+	
+  
+  
+  

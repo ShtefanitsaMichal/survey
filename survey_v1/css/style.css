@@ -1,0 +1,121 @@
+.bold {
+    font-weight: bold;
+    color: black;
+}
+
+.table th {
+    vertical-align: bottom;
+    border-bottom: 2px solid rgba(217, 255, 78, 0.192);
+    font-size: 15px;
+}
+
+body {
+    background-color: white;
+}
+
+.h4, h4 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: black;
+    text-shadow: 0 0 10px #faf5f5
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #007bff;
+    transition: width .1s ease;
+}
+
+.progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 3rem;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+}
+
+
+/* Boostrap Buttons Styling */
+
+.btn-default {
+  color: rgba(108, 88, 179, 0.75);
+  border: 2px solid rgba(108, 89, 179, 0.75);
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-default:hover {
+  color: #FFF;
+  background: rgba(108, 88, 179, 0.75);
+  border: 2px solid rgba(108, 89, 179, 0.75);
+}
+
+.btn-primary {
+  border: 2px solid rgba(58, 133, 191, 0.75);
+  border-radius: 20px;  
+  transition: all 0.3s ease 0s;
+}
+
+.btn-primary:hover {
+  color: #FFF;
+  background: rgba(58, 133, 191, 0.75);
+  border: 2px solid rgba(58, 133, 191, 0.75);
+}
+
+.btn-success {
+  border: 2px solid rgba(103, 192, 103, 0.75);
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-success:hover {
+  color: #FFF;
+  background: rgb(103, 192, 103, 0.75);
+  border: 2px solid rgb(103, 192, 103, 0.75);
+}
+
+.btn-info {
+  border: 2px solid rgba(91, 192, 222, 0.75);
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-info:hover {
+  color: #FFF;
+  background: rgba(91, 192, 222, 0.75);
+  border: 2px solid rgba(91, 192, 222, 0.75);
+}
+
+.btn-warning {
+  border: 2px solid rgba(240, 173, 78, 0.75);
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-warning:hover {
+  color: #FFF;
+  background: rgb(240, 173, 78, 0.75);
+  border: 2px solid rgba(240, 173, 78, 0.75);
+}
+
+.btn-danger {
+  border: 2px solid rgba(217, 83, 78, 0.75);
+  border-radius: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-danger:hover {
+  color: #FFF;
+  background: rgba(217, 83, 78, 0.75);
+  border: 2px solid rgba(217, 83, 78, 0.75);
+}

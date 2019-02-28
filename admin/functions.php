@@ -19,7 +19,6 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         $get_all_users -> execute( array( $sql ) );
         $all_row = $get_all_users->fetch( PDO::FETCH_ASSOC ); 
         $all_users = $all_row;
-
         return intval($all_users['users']);
     }
 
@@ -27,7 +26,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db, $typ, $wiek, $stanowisko;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'direct' From `employee` where typ like '%'";
+        $sql = "select count(*) as 'direct' From `employee` where typ='direct' 
+                and   wiek          like '" . $_GET['wiek'] . "'
+                and   stanowisko    like '" . $_GET['stanowisko'] . "'";
 
         $get_all_direct = $db->prepare( $sql );
         $get_all_direct -> execute( array( $sql ) );
@@ -41,7 +42,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'indirect' From `employee` where typ='indirect'";
+        $sql = "select count(*) as 'indirect' From `employee` where typ='indirect'
+                and   wiek          like '" . $_GET['wiek'] . "'
+                and   stanowisko    like '" . $_GET['stanowisko'] . "'";
 
         $get_all_indirect = $db->prepare( $sql );
         $get_all_indirect -> execute( array( $sql ) );
@@ -55,7 +58,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'lt30' From `employee` where wiek='< 30'";
+        $sql = "select count(*) as 'lt30' From `employee` where wiek='< 30'
+                and   typ like '" . $_GET['typ'] . "'
+                and   stanowisko like '" . $_GET['stanowisko'] . "'";
 
         $get_lt30 = $db->prepare( $sql );
         $get_lt30 -> execute( array( $sql ) );
@@ -69,8 +74,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'gt30' From `employee` where wiek='> 30'";
-
+        $sql = "select count(*) as 'gt30' From `employee` where wiek='> 30'
+                and   typ like '" . $_GET['typ'] . "'
+                and   stanowisko like '" . $_GET['stanowisko'] . "'";
         $get_gt30 = $db->prepare( $sql );
         $get_gt30 -> execute( array( $sql ) );
         $all_row = $get_gt30->fetch( PDO::FETCH_ASSOC ); 
@@ -83,7 +89,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'gt40' From `employee` where wiek='> 40'";
+        $sql = "select count(*) as 'gt40' From `employee` where wiek='> 40'
+                and   typ like '" . $_GET['typ'] . "'
+                and   stanowisko like '" . $_GET['stanowisko'] . "'";
 
         $get_gt40 = $db->prepare( $sql );
         $get_gt40 -> execute( array( $sql ) );
@@ -97,7 +105,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'specialist' From `employee` where stanowisko='Specjalista'";
+        $sql = "select count(*) as 'specialist' From `employee` where stanowisko='Specjalista'
+                                    and  typ like '" . $_GET['typ'] . "'
+                                    and  wiek like '" . $_GET['wiek'] . "'";
 
         $get_specialist = $db->prepare( $sql );
         $get_specialist -> execute( array( $sql ) );
@@ -111,7 +121,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'pracownik' From `employee` where stanowisko='Pracownik'";
+        $sql = "select count(*) as 'pracownik' From `employee` where stanowisko='Pracownik'
+                                    and  typ like '" . $_GET['typ'] . "'
+                                    and  wiek like '" . $_GET['wiek'] . "'";
 
         $get_pracownik = $db->prepare( $sql );
         $get_pracownik -> execute( array( $sql ) );
@@ -125,7 +137,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'supervisor' From `employee` where stanowisko='supervisor'";
+        $sql = "select count(*) as 'supervisor' From `employee` where stanowisko='supervisor'
+                                    and  typ like '" . $_GET['typ'] . "'
+                                    and  wiek like '" . $_GET['wiek'] . "'";
 
         $supervisor = $db->prepare( $sql );
         $supervisor -> execute( array( $sql ) );
@@ -139,7 +153,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'director' From `employee` where stanowisko='Kierownik'";
+        $sql = "select count(*) as 'director' From `employee` where stanowisko='Kierownik'
+                                    and  typ like '" . $_GET['typ'] . "'
+                                    and  wiek like '" . $_GET['wiek'] . "'";
 
         $director = $db->prepare( $sql );
         $director -> execute( array( $sql ) );
@@ -158,8 +174,12 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
 			                        AVG(dzial) as 'dzial', 
 			                        AVG(inny_dzial) as 'inny_dzial', 
 			                        AVG(baza_danych) as 'baza_danych' 
-                            
-			                        FROM `source`;";
+                                    FROM `source`
+                left join employee
+                ON source.session_id = employee.session_id
+                where typ           like '" . $_GET['typ'] . "' 
+                and   wiek          like '" . $_GET['wiek'] . "'
+                and   stanowisko    like '" . $_GET['stanowisko'] . "'";
 
         $avg_source = $db->prepare( $sql );
         $avg_source -> execute( array( $sql ) );
@@ -178,8 +198,12 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
 			                        AVG(dzial) as 'dzial', 
 			                        AVG(inny_dzial) as 'inny_dzial', 
 			                        AVG(baza_danych) as 'baza_danych' 
-                            
-			                        FROM `source_rate`;";
+                                    FROM `source_rate`
+                                    left join employee
+                ON source_rate.session_id = employee.session_id
+                where typ           like '" . $_GET['typ'] . "' 
+                and   wiek          like '" . $_GET['wiek'] . "'
+                and   stanowisko    like '" . $_GET['stanowisko'] . "'";
 
         $avg_source_rate = $db->prepare( $sql );
         $avg_source_rate -> execute( array( $sql ) );
@@ -198,7 +222,13 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         $sql = "SELECT avg(`$tool`) as `value`
-                FROM main_tools where `main_source` like '$source'";
+                FROM main_tools
+                left join employee
+                ON main_tools.session_id = employee.session_id
+                where `main_source` like '$source'
+                and   typ           like '" . $_GET['typ'] . "' 
+                and   wiek          like '" . $_GET['wiek'] . "'
+                and   stanowisko    like '" . $_GET['stanowisko'] . "'";
 
         $avg_tools = $db->prepare( $sql );
         $avg_tools -> execute( array( $sql ) );
@@ -244,7 +274,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
             from employee
             left join main_apps
             ON employee.session_id = main_apps.session_id
-            where employee.typ like '%' AND employee.wiek like '%' AND employee.stanowisko like '%'";
+            where typ like '" . $_GET['typ'] . "' 
+            and   wiek like '" . $_GET['wiek'] . "'
+            and   stanowisko like '" . $_GET['stanowisko'] . "'";
         
         
 
@@ -260,9 +292,9 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
     
     
     /**
-     * $source = ['app' or 'tool'] string 
+     * $table = ['app' or 'tool'] string 
      * $x = int from 1 to 5
-     * $tool = use concret tool or app string'system informatyczny'
+     * $tool = use concreet tool or app string'system informatyczny'
      * $source = source // integer // [0 = zarzad, 1 = przełozony, 2 = dział, 3 = inny_dział, 4 = System in formatyczny]
      */
     function avg_tools_rate($table, $x, $tool, $source){
@@ -283,6 +315,8 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
 
         return (($apps_rate['value']));
     }
+
+    
 
     /**
      */

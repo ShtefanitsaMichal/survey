@@ -13,7 +13,7 @@
     <tr v-for="(value, key, index) in AvgApps">
       <th scope="row">{{ index + 1 }}</th>
       <td>{{ key }}</td>
-      <td>{{ value.Db_name }}</td>
+      <td>{{ value.Rank }}</td>
       <td v-for="ocena in value.Ocena">{{  }}</td>
     </tr>
   </tbody>

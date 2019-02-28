@@ -1,12 +1,19 @@
 <!-- Admin panel model  -->
 <?php
 
+if (!isset($_GET['typ']) || $_GET['typ'] == ''){$_GET['typ'] = '%';}
+if (!isset($_GET['wiek']) || $_GET['wiek'] == ''){$_GET['wiek'] = '%';}
+if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'] = '%';}
 
     function get_all_users(){
-        global $db;
+        global $db, $typ, $wiek, $stanowisko;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'users' From `employee` ";
+        $sql = "select count(*) as 'users' From `employee`  
+                where typ like '" . $_GET['typ'] . "' 
+                and   wiek like '" . $_GET['wiek'] . "'
+                and   stanowisko like '" . $_GET['stanowisko'] . "'";
+       
 
         $get_all_users = $db->prepare( $sql );
         $get_all_users -> execute( array( $sql ) );
@@ -17,10 +24,10 @@
     }
 
      function get_all_direct(){
-        global $db;
+        global $db, $typ, $wiek, $stanowisko;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "select count(*) as 'direct' From `employee` where typ='direct'";
+        $sql = "select count(*) as 'direct' From `employee` where typ like '%'";
 
         $get_all_direct = $db->prepare( $sql );
         $get_all_direct -> execute( array( $sql ) );
@@ -207,8 +214,7 @@
         global $db;
         $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $sql = "SELECT
-
+        $sql = "select Distinct(employee.session_id) as employee,
                 avg(`ibm_lotus`) as `ibm_lotus`,
                 avg(`excel`) as `excel`,
                 avg(`access`) as `access`,
@@ -235,8 +241,10 @@
                 avg(`baza_sugestii`) as `baza_sugestii`,
                 avg(`month_news`) as `month_news`,
                 avg(`own`) as `own`
-                
-                FROM main_apps";
+            from employee
+            left join main_apps
+            ON employee.session_id = main_apps.session_id
+            where employee.typ like '%' AND employee.wiek like '%' AND employee.stanowisko like '%'";
         
         
 

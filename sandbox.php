@@ -84,46 +84,59 @@
 ?>
 
 <div class="App">
-   
-    <label for="">Example select</label>
-    <select v-model="Selected_type">
-        <option v-for="option in set_type" v-bind:value="option.value">
-            {{ option.text }}
-        </option>
-    </select>
-    =>
-     <select v-model="Selected_wiek">
-        <option v-for="option in set_wiek" v-bind:value="option.value">
-            {{ option.text }}
-        </option>
-    </select>
-    =>
-    <select v-model="Selected_stanowisko">
-        <option v-for="option in set_stanowisko" v-bind:value="option.value">
-            {{ option.text }}
-        </option>
-    </select>
+    <div class="col-md-2 my-2">
+        <label for="">Example select</label>
+        <select class="custom-select mr-sm-2" v-model="Selected_source">
+            <option v-for="(option, key, index) in set_source" v-model:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
 
-
-    <h1>{{stanowisko_all.length}}</h1>
-
+        <select class="custom-select mr-sm-2" v-model="Selected_type">
+            <option v-for="(option, key, index) in set_type" v-model:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
     
-
-    <br>
+        <select class="custom-select mr-sm-2" v-model="Selected_wiek">
+            <option v-for="(option, key, index) in set_wiek" v-model:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+    
+        <select class="custom-select mr-sm-2" v-model="Selected_stanowisko">
+            <option v-for="(option, key, index) in set_stanowisko" v-model:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+    </div> 
+    <h1>{{Selected_stanowisko.length}}</h1>
+   
 </div>
 
 <script>
-        new Vue({
+        var summary = new Vue({
         el: '.App',
         data: {
-            Selected_type: '',
+            Selected_source: '1',
+            Selected_type: '-',
             Selected_wiek: '',
             Selected_stanowisko: '',
-            set_type: [{text: 'Direct', value: 'Direct'},{text: 'Indirect', value: 'Indirect'}],
-            set_wiek: [{text: '< 30', value: '< 30'},{text: '> 30', value: '> 30'}, {text: '> 40', value: '> 40'}],
-            set_stanowisko: [{text: 'Pracownik', value: 'Pracownik'},{text: 'Specjalista', value: 'Specjalista'}, {text: 'Supervisor', value: 'Supervisor'}, {text: 'Kierownik', value: 'Kierownik'}],
+            set_source: [   {text: '1', value: '1'},
+                            {text: '2', value: '2'}],
+            set_type:   [   {text: '-', value: ''},
+                            {text: 'Direct', value: 'Direct'},
+                            {text: 'Indirect', value: 'Indirect'}],
+            set_wiek:   [   {text: '-', value: ''},
+                            {text: '< 30', value: '< 30'},
+                            {text: '> 30', value: '> 30'},
+                            {text: '> 40', value: '> 40'}],
+            set_stanowisko: [{text: '-', value: ''},
+                            {text: 'Pracownik', value: 'Pracownik'},
+                            {text: 'Specjalista', value: 'Specjalista'},
+                            {text: 'Supervisor', value: 'Supervisor'},
+                            {text: 'Kierownik', value: 'Kierownik'}],
             ankiety: [
-                
                     <?php foreach ($metryczka as $value) { ?>
                         <?php echo '{' ?>
                             id:                 '<?php echo $value['employee']; ?>',
@@ -187,12 +200,13 @@
             ],
             },
         computed: {
-            count_all: function() {
-                const count_all =  this.ankiety.length
-                return count_all;
+            Source_all() {
+                return this.ankiety.filter(value => value.source_num === this.Selected_source) 
             },
             Type_all() {
-                return this.ankiety.filter(value => value.typ === this.Selected_type)
+                if (Selected_type = '-') {return this.Source_all} else {
+                return this.Source_all.filter(value => value.typ === this.Selected_type);
+                }
             },
             age_all() {
                 return this.Type_all.filter(value => value.wiek === this.Selected_wiek)
@@ -200,6 +214,8 @@
             stanowisko_all() {
                 return this.age_all.filter(value => value.stanowisko === this.Selected_stanowisko)
             },
+
+
         },
         
     })

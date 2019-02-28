@@ -1,9 +1,9 @@
 <?php 
 
     $servername = "localhost";
-    $username = "m.sztefanica";
-    $password = "UphCF4YJj8FAkukh";
-    $dbname = "smp_communication_survey";
+    $username = "";
+    $password = "";
+    $dbname = "";
     
     class dbConnect{
         

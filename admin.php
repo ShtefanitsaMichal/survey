@@ -8,21 +8,64 @@
     DB::setCharsetEncoding();
 ?>
 
-<?php var_dump(source_expectation('zarzad')) ?>
 
 <div class="App">
     <?php require(__ROOT__."/admin/nav_bar.php"); ?>
+<div class="col-6">
+<form action="?" method="get ">
+  <div class="row">
 
+    <div class="col-3">
+     <select class="custom-select custom-select-sm mb-3" name="typ">
+      <option selected value="<?php echo $_GET['typ']; ?>"><?php echo $_GET['typ']; ?></option>
+      <option value="Direct">Direct</option>
+      <option value="Indirect">Indirect</option>
+      <option value="">-</option>
+    </select>
+    </div>
+
+    <div class="col-3">
+      <select class="custom-select custom-select-sm mb-3" name="wiek">
+        <option value="<?php echo $_GET['wiek']; ?>"selected><?php echo $_GET['wiek']; ?></option>
+        <option value="< 30">Poniżej 30 lat</option>
+        <option value="> 30">Powyżej 30 lat</option>
+        <option value="> 40">Powyżej 40 lat</option>
+        <option value="">-</option>
+      </select>
+    </div>
+
+    <div class="col-3">
+     <select class="custom-select custom-select-sm mb-30" name="stanowisko">
+        <option value="<?php echo $_GET['stanowisko']; ?>" selected><?php echo $_GET['stanowisko']; ?></option>
+        <option value="Pracownik">Pracownik</option>
+        <option value="Specjalista">Specjalista</option>
+        <option value="Supervisor">Supervisor</option>
+        <option value="Kierownik">Kierownik</option>
+        <option value="">-</option>
+      </select>
+    </div>
+
+    <div class="col-3">
+      <button class="btn btn-outline-success btn-sm" type="submit" value="">Sprawdź</button>
+    </div>
+   
+</form>
+</div>
+
+<h5 class="display-5"> Wszyskich ankiet: <b>{{ Metryczka.all_users }}</b></h5>
+<hr>
+
+</div>
     <div class="container-fluid ">
 
     <div class="row">
-        <h2 class="display-5">Wszyskich ankiet: <span >{{ Metryczka.all_users }}</span></h2>
+        
     </div>
 
     <div class="card-group">
          <div class="card">
             <div class="card-header">
-                Pozycja Pracowników 
+                Pozycja Pracowników w podziale na:<br> Stanowisko:  <?php echo $_GET['stanowisko']; ?> oraz Wiek: <?php echo $_GET['wiek']; ?>
             </div>
             <div class="card-body">
                 <canvas id="empType" style="max-width: 100%;"></canvas>
@@ -30,7 +73,7 @@
         </div>
         <div class="card">
             <div class="card-header">
-                Stanowiska Pracowników 
+                Stanowiska Pracowników w podziale na:<br> Typ:  <?php echo $_GET['typ']; ?> oraz Wiek: <?php echo $_GET['wiek']; ?>
             </div>
             <div class="card-body">
                 <canvas id="myChart" style="max-width: 100%;"></canvas>
@@ -38,15 +81,13 @@
         </div>
         <div class="card">
             <div class="card-header">
-                Wiek pracowników 
+                Wiek pracowników w podziale na:<br> Typ:  <?php echo $_GET['typ']; ?> oraz stanowisko: <?php echo $_GET['stanowisko']; ?>
             </div>
             <div class="card-body">
                 <canvas id="empAge" style="max-width: 100%;"></canvas>
             </div>
         </div>
     </div>
-
- 
 
     <div class="row">
         <div class="col-md-6">
@@ -57,6 +98,7 @@
                 </button>
             </div>
         </div>
+
         <div class="col-md-6">
             <div class="alert alert-light alert-dismissible fade show" role="alert">
                  <canvas id="barChart"></canvas>
@@ -191,7 +233,7 @@
                 },
 
                 AvgApps: {
-                    IBMLotus:       { Db_name: '<?php echo round( get_avg_apps('ibm_lotus'),2)?>', 
+                    IBMLotus:       { Rank: '<?php echo round( get_avg_apps('ibm_lotus'),2)?>', 
                                       Name: 'IBM Lotus Notes',
                                       Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 ,'ibm_lotus', 4),2) ?>',
@@ -200,7 +242,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 ,'ibm_lotus', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 ,'ibm_lotus', 4),2) ?>'
                                       }},
-                    Excel:          { Db_name: '<?php echo round( get_avg_apps('excel'),2)?>', 
+                    Excel:          { Rank: '<?php echo round( get_avg_apps('excel'),2)?>', 
                                     Name: 'MS Excel',    
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'excel', 4),2) ?>',
@@ -209,7 +251,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'excel', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'excel', 4),2) ?>'
                                       }},
-                    Access:         { Db_name: '<?php echo round( get_avg_apps('access'),2)?>',   
+                    Access:         { Rank: '<?php echo round( get_avg_apps('access'),2)?>',   
                                     Name: 'MS Access',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'access', 4),2) ?>',
@@ -218,7 +260,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'access', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'access', 4),2) ?>'
                                       }},
-                    Bpcs:           { Db_name: '<?php echo round( get_avg_apps('bpcs'),2)?>',   
+                    Bpcs:           { Rank: '<?php echo round( get_avg_apps('bpcs'),2)?>',   
                                     Name: 'BPCS',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'bpcs', 4),2) ?>',
@@ -227,7 +269,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'bpcs', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'bpcs', 4),2) ?>'
                                       }},
-                    Intranet:       { Db_name: '<?php echo round( get_avg_apps('intranet'),2)?>',   
+                    Intranet:       { Rank: '<?php echo round( get_avg_apps('intranet'),2)?>',   
                                     Name: 'Intranet',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'intranet', 4),2) ?>',
@@ -236,7 +278,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'intranet', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'intranet', 4),2) ?>'
                                       }},
-                    Comarch:        { Db_name: '<?php echo round( get_avg_apps('comarch'),2)?>',    
+                    Comarch:        { Rank: '<?php echo round( get_avg_apps('comarch'),2)?>',    
                                     Name: 'Comarch',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'comarch', 4),2) ?>',
@@ -245,7 +287,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'comarch', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'comarch', 4),2) ?>'
                                       }},
-                    ZMT:            { Db_name: '<?php echo round( get_avg_apps('zmt'),2)?>',    
+                    ZMT:            { Rank: '<?php echo round( get_avg_apps('zmt'),2)?>',    
                                     Name: 'ZMT',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'zmt', 4),2) ?>',
@@ -254,7 +296,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'zmt', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'zmt', 4),2) ?>'
                                       }},
-                    Asseco:         { Db_name: '<?php echo round( get_avg_apps('asseco'),2)?>', 
+                    Asseco:         { Rank: '<?php echo round( get_avg_apps('asseco'),2)?>', 
                                     Name: 'Asseco', 
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'asseco', 4),2) ?>',
@@ -263,7 +305,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'asseco', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'asseco', 4),2) ?>'
                                       }},
-                    QMS:            { Db_name: '<?php echo round( get_avg_apps('qms'),2)?>',    
+                    QMS:            { Rank: '<?php echo round( get_avg_apps('qms'),2)?>',    
                                     Name: 'QMS',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'qms', 4),2) ?>',
@@ -272,7 +314,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'qms', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'qms', 4),2) ?>'
                                       }},
-                    Visualisation:  { Db_name: '<?php echo round( get_avg_apps('visualisation'),2)?>',  
+                    Visualisation:  { Rank: '<?php echo round( get_avg_apps('visualisation'),2)?>',  
                                     Name: 'Wizualizacja',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'visualisation', 4),2) ?>',
@@ -281,7 +323,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'visualisation', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'visualisation', 4),2) ?>'
                                       }},
-                    SandenVision:   { Db_name: '<?php echo round( get_avg_apps('sanden_vision'),2)?>',  
+                    SandenVision:   { Rank: '<?php echo round( get_avg_apps('sanden_vision'),2)?>',  
                                     Name: 'Sanden Vision',  
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'sanden_vision', 4),2) ?>',
@@ -290,7 +332,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'sanden_vision', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'sanden_vision', 4),2) ?>'
                                       }},
-                    WebPage:        { Db_name: '<?php echo round( get_avg_apps('smp_web_page'),2)?>',   
+                    WebPage:        { Rank: '<?php echo round( get_avg_apps('smp_web_page'),2)?>',   
                                     Name: 'Strona internetowa', 
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'smp_web_page', 4),2) ?>',
@@ -299,7 +341,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'smp_web_page', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'smp_web_page', 4),2) ?>'
                                       }},
-                    Facebook:       { Db_name: '<?php echo round( get_avg_apps('facebook'),2)?>',   
+                    Facebook:       { Rank: '<?php echo round( get_avg_apps('facebook'),2)?>',   
                                     Name: 'Facebook',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'facebook', 4),2) ?>',
@@ -308,7 +350,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'facebook', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'facebook', 4),2) ?>'
                                       }},
-                    WfMag:          { Db_name: '<?php echo round( get_avg_apps('wf_mag'),2)?>', 
+                    WfMag:          { Rank: '<?php echo round( get_avg_apps('wf_mag'),2)?>', 
                                     Name: 'WF-MAG',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'wf_mag', 4),2) ?>',
@@ -317,7 +359,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'wf_mag', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'wf_mag', 4),2) ?>'
                                       }},
-                    SAP:            { Db_name: '<?php echo round( get_avg_apps('sap'),2)?>',    
+                    SAP:            { Rank: '<?php echo round( get_avg_apps('sap'),2)?>',    
                                     Name: 'SAP',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'sap', 4),2) ?>',
@@ -326,7 +368,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'sap', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'sap', 4),2) ?>'
                                       }},
-                    QDA:            { Db_name: '<?php echo round( get_avg_apps('qda'),2)?>',    
+                    QDA:            { Rank: '<?php echo round( get_avg_apps('qda'),2)?>',    
                                     Name: 'QDA',
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'qda', 4),2) ?>',
@@ -335,7 +377,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'qda', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'qda', 4),2) ?>'
                                       }},
-                    Warehouse:      { Db_name: '<?php echo round( get_avg_apps('parcel_warehouse'),2)?>',   
+                    Warehouse:      { Rank: '<?php echo round( get_avg_apps('parcel_warehouse'),2)?>',   
                                     Name: 'Magazyn Paczek', 
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'parcel_warehouse', 4),2) ?>',
@@ -344,7 +386,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'parcel_warehouse', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'parcel_warehouse', 4),2) ?>'
                                       }},
-                    LessonsLearned: { Db_name: '<?php echo round( get_avg_apps('lessons_learned'),2)?>',    
+                    LessonsLearned: { Rank: '<?php echo round( get_avg_apps('lessons_learned'),2)?>',    
                                     Name: 'Baza doświadczeń',   
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'lessons_learned', 4),2) ?>',
@@ -353,7 +395,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'lessons_learned', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'lessons_learned', 4),2) ?>'
                                       }},
-                    DExperiance:    { Db_name: '<?php echo round( get_avg_apps('dexperiance'),2)?>',    
+                    DExperiance:    { Rank: '<?php echo round( get_avg_apps('dexperiance'),2)?>',    
                                     Name: '3D Experiance',  
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'dexperiance', 4),2) ?>',
@@ -362,7 +404,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'dexperiance', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'dexperiance', 4),2) ?>'
                                       }},
-                    Helpdesk:       { Db_name: '<?php echo round( get_avg_apps('helpdesk'),2)?>',   
+                    Helpdesk:       { Rank: '<?php echo round( get_avg_apps('helpdesk'),2)?>',   
                                     Name: 'Helpdesk',   
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'helpdesk', 4),2) ?>',
@@ -371,7 +413,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'helpdesk', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'helpdesk', 4),2) ?>'
                                       }},
-                    InventoryRange: { Db_name: '<?php echo round( get_avg_apps('inventory_range'),2)?>',    
+                    InventoryRange: { Rank: '<?php echo round( get_avg_apps('inventory_range'),2)?>',    
                                     Name: 'Inventory range',    
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'inventory_range', 4),2) ?>',
@@ -380,7 +422,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'inventory_range', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'inventory_range', 4),2) ?>'
                                       }},
-                    Pydio:          { Db_name: '<?php echo round( get_avg_apps('pydio'),2)?>',  
+                    Pydio:          { Rank: '<?php echo round( get_avg_apps('pydio'),2)?>',  
                                     Name: 'Pydio',  
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'pydio', 4),2) ?>',
@@ -389,7 +431,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'pydio', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'pydio', 4),2) ?>'
                                       }},
-                    Sadec:          { Db_name: '<?php echo round( get_avg_apps('sadec'),2)?>',  
+                    Sadec:          { Rank: '<?php echo round( get_avg_apps('sadec'),2)?>',  
                                     Name: 'Sadec / intrastat',  
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'sadec', 4),2) ?>',
@@ -398,7 +440,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'sadec', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'sadec', 4),2) ?>'
                                       }},
-                    BazaSugestii:   { Db_name: '<?php echo round( get_avg_apps('baza_sugestii'),2)?>',  
+                    BazaSugestii:   { Rank: '<?php echo round( get_avg_apps('baza_sugestii'),2)?>',  
                                     Name: 'Baza sugestii',  
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'baza_sugestii', 4),2) ?>',
@@ -407,7 +449,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'baza_sugestii', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'baza_sugestii', 4),2) ?>'
                                       }},
-                    MonthNews:      { Db_name: '<?php echo round( get_avg_apps('month_news'),2)?>', 
+                    MonthNews:      { Rank: '<?php echo round( get_avg_apps('month_news'),2)?>', 
                                     Name: 'Sanden Month News',  
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'month_news', 4),2) ?>',
@@ -416,7 +458,7 @@
                                         4:'<?php echo round( avg_tools_rate('app',4 , 'month_news', 4),2) ?>',
                                         5:'<?php echo round( avg_tools_rate('app',5 , 'month_news', 4),2) ?>'
                                       }},
-                    Own:            { Db_name: '<?php echo round( get_avg_apps('own'),2)?>',    
+                    Own:            { Rank: '<?php echo round( get_avg_apps('own'),2)?>',    
                                     Name: 'Odpowiedz własna',    
                                     Ocena: {
                                         1:'<?php echo round( avg_tools_rate('app',1 , 'own', 4),2) ?>',

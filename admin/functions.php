@@ -330,10 +330,33 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
        
         $source_expectation = $db->prepare( $sql );
         $source_expectation -> execute( array( $sql ) );
-        $all_row = $source_expectation->fetch( PDO::FETCH_ASSOC ); 
+        $all_row = $source_expectation->fetchAll(PDO::FETCH_ASSOC); 
         $source_expectation = $all_row;
 
         return (($source_expectation['zarzad']));
+    }
+
+
+    function tools_oceny($number, $tool, $source) {
+            global $db;
+            $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql1 = "select Distinct(employee.session_id) as employee, 
+                        AVG(main_tools_rate.opcja_".$number.") as t".$number."_grade,
+                        main_tools_rate.opcja_".$number."_title as t".$number."_grade_title
+                        from employee
+                        left join main_tools_rate
+                        ON employee.session_id = main_tools_rate.session_id 
+                        where main_tools_rate.opcja_".$number." <> 0 
+                        and main_tools_rate.opcja_".$number."_title like '".$tool."'
+                        and main_tools_rate.source = ".$source."
+                        and typ like '" . $_GET['typ'] . "' 
+                        and wiek like '" . $_GET['wiek'] . "'
+                        and stanowisko like '" . $_GET['stanowisko'] . "'";
+
+            $get = $db->prepare($sql1);
+            $get -> execute(array($sql1));
+            $all_row = $get->fetchAll(PDO::FETCH_ASSOC);  
+            return $all_row[0]['t'.$number.'_grade'];
     }
 
 ?>

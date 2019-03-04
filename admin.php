@@ -16,12 +16,12 @@
   <div class="row">
 
     <div class="col-3">
-     <select class="custom-select custom-select-sm mb-3" name="typ">
-      <option selected value="<?php echo $_GET['typ']; ?>"><?php echo $_GET['typ']; ?></option>
-      <option value="Direct">Direct</option>
-      <option value="Indirect">Indirect</option>
-      <option value="">-</option>
-    </select>
+      <select class="custom-select custom-select-sm mb-3" name="typ">
+        <option selected value="<?php echo $_GET['typ']; ?>"><?php echo $_GET['typ']; ?></option>
+        <option value="Direct">Direct</option>
+        <option value="Indirect">Indirect</option>
+        <option value="">-</option>
+      </select>
     </div>
 
     <div class="col-3">
@@ -162,10 +162,10 @@
                             },
                         
                     FaceToFace: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'face_to_face', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'face_to_face', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'face_to_face', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'face_to_face', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'face_to_face', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'face_to_face', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'face_to_face', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'face_to_face', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'face_to_face', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'face_to_face', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'face_to_face', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'face_to_face', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'face_to_face', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'face_to_face', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'face_to_face', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'face_to_face', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'face_to_face', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'face_to_face', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'face_to_face', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'face_to_face', 3),1) ?>'}}
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa osobista",0); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa osobista",0); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa osobista",0); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa osobista",0); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa osobista",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa osobista",1); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa osobista",1); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa osobista",1); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa osobista",1); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa osobista",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa osobista",2); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa osobista",2); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa osobista",2); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa osobista",2); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa osobista",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'face_to_face','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa osobista",3); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa osobista",3); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa osobista",3); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa osobista",3); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa osobista",3); ?>'}}
                             },
 
                     DeptMeet: {

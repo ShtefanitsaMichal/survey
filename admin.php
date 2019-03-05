@@ -148,17 +148,17 @@
                 },
                 AvgTools:  {
                     Phone:  {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'phone','0'),1); ?>', Ocena: { 1:'<?php echo round( avg_tools_rate('tool',1 ,'phone', 0),1) ?>', 2:'<?php echo round( avg_tools_rate('tool',2 ,'phone', 0),1) ?>', 3:'<?php echo round( avg_tools_rate('tool',3 ,'phone', 0),1) ?>', 4:'<?php echo round( avg_tools_rate('tool',4 ,'phone', 0),1) ?>', 5:'<?php echo round( avg_tools_rate('tool',5 ,'phone', 0),1) ?>'} },
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'phone','1'),1); ?>', Ocena: { 1:'<?php echo round( avg_tools_rate('tool',1 ,'phone', 1),1) ?>', 2:'<?php echo round( avg_tools_rate('tool',2 ,'phone', 1),1) ?>', 3:'<?php echo round( avg_tools_rate('tool',3 ,'phone', 1),1) ?>', 4:'<?php echo round( avg_tools_rate('tool',4 ,'phone', 1),1) ?>', 5:'<?php echo round( avg_tools_rate('tool',5 ,'phone', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'phone','2'),1); ?>', Ocena: { 1:'<?php echo round( avg_tools_rate('tool',1 ,'phone', 2),1) ?>', 2:'<?php echo round( avg_tools_rate('tool',2 ,'phone', 2),1) ?>', 3:'<?php echo round( avg_tools_rate('tool',3 ,'phone', 2),1) ?>', 4:'<?php echo round( avg_tools_rate('tool',4 ,'phone', 2),1) ?>', 5:'<?php echo round( avg_tools_rate('tool',5 ,'phone', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'phone','3'),1); ?>', Ocena: { 1:'<?php echo round( avg_tools_rate('tool',1 ,'phone', 3),1) ?>', 2:'<?php echo round( avg_tools_rate('tool',2 ,'phone', 3),1) ?>', 3:'<?php echo round( avg_tools_rate('tool',3 ,'phone', 3),1) ?>', 4:'<?php echo round( avg_tools_rate('tool',4 ,'phone', 3),1) ?>', 5:'<?php echo round( avg_tools_rate('tool',5 ,'phone', 3),1) ?>'}}
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'phone','0'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa telefoniczna",0); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa osobista",0); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa telefoniczna",0); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa telefoniczna",0); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa telefoniczna",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'phone','1'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa telefoniczna",1); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa telefoniczna",1); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa telefoniczna",1); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa telefoniczna",1); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa telefoniczna",1); ?>'}},
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'phone','2'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa telefoniczna",2); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa telefoniczna",2); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa telefoniczna",2); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa telefoniczna",2); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa telefoniczna",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'phone','3'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Rozmowa telefoniczna",3); ?>', 2: '<?php echo tools_oceny(2,"Rozmowa telefoniczna",3); ?>', 3: '<?php echo tools_oceny(3,"Rozmowa telefoniczna",3); ?>', 4: '<?php echo tools_oceny(4,"Rozmowa telefoniczna",3); ?>', 5: '<?php echo tools_oceny(5,"Rozmowa telefoniczna",3); ?>'}}
                             },
                         
                     Email: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'write','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'write', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'write', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'write', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'write', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'write', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'write','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'write', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'write', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'write', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'write', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'write', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'write','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'write', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'write', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'write', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'write', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'write', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'write','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'write', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'write', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'write', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'write', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'write', 3),1) ?>'}}
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'write','0'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Kontakt za pomocą poczty elektronicznej",0); ?>', 2: '<?php echo tools_oceny(2,"Kontakt za pomocą poczty elektronicznej",0); ?>', 3: '<?php echo tools_oceny(3,"Kontakt za pomocą poczty elektronicznej",0); ?>', 4: '<?php echo tools_oceny(4,"Kontakt za pomocą poczty elektronicznej",0); ?>', 5: '<?php echo tools_oceny(5,"Kontakt za pomocą poczty elektronicznej",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'write','1'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Kontakt za pomocą poczty elektronicznej",1); ?>', 2: '<?php echo tools_oceny(2,"Kontakt za pomocą poczty elektronicznej",1); ?>', 3: '<?php echo tools_oceny(3,"Kontakt za pomocą poczty elektronicznej",1); ?>', 4: '<?php echo tools_oceny(4,"Kontakt za pomocą poczty elektronicznej",1); ?>', 5: '<?php echo tools_oceny(5,"Kontakt za pomocą poczty elektronicznej",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'write','2'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Kontakt za pomocą poczty elektronicznej",2); ?>', 2: '<?php echo tools_oceny(2,"Kontakt za pomocą poczty elektronicznej",2); ?>', 3: '<?php echo tools_oceny(3,"Kontakt za pomocą poczty elektronicznej",2); ?>', 4: '<?php echo tools_oceny(4,"Kontakt za pomocą poczty elektronicznej",2); ?>', 5: '<?php echo tools_oceny(5,"Kontakt za pomocą poczty elektronicznej",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'write','3'),1); ?>',  Ocena:  { 1: '<?php echo tools_oceny(1,"Kontakt za pomocą poczty elektronicznej",3); ?>', 2: '<?php echo tools_oceny(2,"Kontakt za pomocą poczty elektronicznej",3); ?>', 3: '<?php echo tools_oceny(3,"Kontakt za pomocą poczty elektronicznej",3); ?>', 4: '<?php echo tools_oceny(4,"Kontakt za pomocą poczty elektronicznej",3); ?>', 5: '<?php echo tools_oceny(5,"Kontakt za pomocą poczty elektronicznej",3); ?>'}}
                             },
                         
                     FaceToFace: {
@@ -169,66 +169,66 @@
                             },
 
                     DeptMeet: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'dept_meet', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'dept_meet', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'dept_meet', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'dept_meet', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'dept_meet', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'dept_meet', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'dept_meet', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'dept_meet', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'dept_meet', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'dept_meet', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'dept_meet', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'dept_meet', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'dept_meet', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'dept_meet', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'dept_meet', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'dept_meet', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'dept_meet', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'dept_meet', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'dept_meet', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'dept_meet', 3),1) ?>'}}
-                            },
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'dept_meet','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",3); ?>'}}
+                        },
 
                     ProdMeet: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'prod_meet', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'prod_meet', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'prod_meet', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'prod_meet', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'prod_meet', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'prod_meet', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'prod_meet', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'prod_meet', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'prod_meet', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'prod_meet', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'prod_meet', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'prod_meet', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'prod_meet', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'prod_meet', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'prod_meet', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'prod_meet', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'prod_meet', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'prod_meet', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'prod_meet', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'prod_meet', 3),1) ?>'}}
-                            },
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie produkcyjne",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie produkcyjne",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie produkcyjne",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie produkcyjne",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie produkcyjne",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie produkcyjne",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie produkcyjne",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie produkcyjne",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie produkcyjne",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie produkcyjne",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie produkcyjne",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie produkcyjne",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie produkcyjne",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie produkcyjne",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie produkcyjne",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'prod_meet','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie produkcyjne",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie produkcyjne",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie produkcyjne",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie produkcyjne",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie produkcyjne",3); ?>'}}
+                        },
 
                     ProjMeet: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'proj_meet', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'proj_meet', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'proj_meet', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'proj_meet', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'proj_meet', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'proj_meet', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'proj_meet', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'proj_meet', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'proj_meet', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'proj_meet', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'proj_meet', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'proj_meet', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'proj_meet', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'proj_meet', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'proj_meet', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'proj_meet', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'proj_meet', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'proj_meet', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'proj_meet', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'proj_meet', 3),1) ?>'}}
-                            },
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie projektowe",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie projektowe",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie projektowe",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie projektowe",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie projektowe",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie projektowe",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie projektowe",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie projektowe",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie projektowe",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie projektowe",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie projektowe",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie projektowe",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie projektowe",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie projektowe",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie projektowe",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'proj_meet','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie projektowe",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie projektowe",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie projektowe",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie projektowe",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie projektowe",3); ?>'}}
+                        },
 
                     BudgetMeet: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'budget_meet', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'budget_meet', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'budget_meet', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'budget_meet', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'budget_meet', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'budget_meet', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'budget_meet', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'budget_meet', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'budget_meet', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'budget_meet', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'budget_meet', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'budget_meet', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'budget_meet', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'budget_meet', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'budget_meet', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'budget_meet', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'budget_meet', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'budget_meet', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'budget_meet', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'budget_meet', 3),1) ?>'}}
-                                },
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie budżetowe",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie budżetowe",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie budżetowe",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie budżetowe",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie budżetowe",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie budżetowe",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie budżetowe",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie budżetowe",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie budżetowe",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie budżetowe",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie budżetowe",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie budżetowe",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie budżetowe",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie budżetowe",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie budżetowe",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'budget_meet','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie budżetowe",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie budżetowe",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie budżetowe",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie budżetowe",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie budżetowe",3); ?>'}}
+                        },
 
                     SmpD: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'smp_d','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_d', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_d', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_d', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_d', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_d', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'smp_d','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_d', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_d', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_d', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_d', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_d', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'smp_d','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_d', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_d', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_d', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_d', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_d', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'smp_d','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_d', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_d', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_d', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_d', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_d', 3),1) ?>'}}
-                                },
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'smp_d','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie dyrektorów (SMP-D)",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie dyrektorów (SMP-D)",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie dyrektorów (SMP-D)",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie dyrektorów (SMP-D)",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie dyrektorów (SMP-D)",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'smp_d','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie dyrektorów (SMP-D)",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie dyrektorów (SMP-D)",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie dyrektorów (SMP-D)",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie dyrektorów (SMP-D)",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie dyrektorów (SMP-D)",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'smp_d','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie dyrektorów (SMP-D)",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie dyrektorów (SMP-D)",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie dyrektorów (SMP-D)",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie dyrektorów (SMP-D)",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie dyrektorów (SMP-D)",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'smp_d','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie dyrektorów (SMP-D)",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie dyrektorów (SMP-D)",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie dyrektorów (SMP-D)",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie dyrektorów (SMP-D)",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie dyrektorów (SMP-D)",3); ?>'}}
+                        },
                         
                     SmpW: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'smp_w','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_w', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_w', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_w', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_w', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_w', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'smp_w','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_w', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_w', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_w', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_w', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_w', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'smp_w','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_w', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_w', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_w', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_w', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_w', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'smp_w','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'smp_w', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'smp_w', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'smp_w', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'smp_w', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'smp_w', 3),1) ?>'}}
-                            },
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'smp_w','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie załogi (SMP-W)",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie załogi (SMP-W)",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie załogi (SMP-W)",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie załogi (SMP-W)",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie załogi (SMP-W)",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'smp_w','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie załogi (SMP-W)",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie załogi (SMP-W)",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie załogi (SMP-W)",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie załogi (SMP-W)",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie załogi (SMP-W)",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'smp_w','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie załogi (SMP-W)",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie załogi (SMP-W)",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie załogi (SMP-W)",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie załogi (SMP-W)",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie załogi (SMP-W)",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'smp_w','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie załogi (SMP-W)",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie załogi (SMP-W)",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie załogi (SMP-W)",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie załogi (SMP-W)",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie załogi (SMP-W)",3); ?>'}}
+                        },
                         
                     CS: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'cs','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'cs', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'cs', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'cs', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'cs', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'cs', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'cs','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'cs', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'cs', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'cs', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'cs', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'cs', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'cs','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'cs', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'cs', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'cs', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'cs', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'cs', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'cs','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'cs', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'cs', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'cs', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'cs', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'cs', 3),1) ?>'}}
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'cs','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Challenge Sheet",0); ?>', 2: '<?php echo tools_oceny(2,"Challenge Sheet",0); ?>', 3: '<?php echo tools_oceny(3,"Challenge Sheet",0); ?>', 4: '<?php echo tools_oceny(4,"Challenge Sheet",0); ?>', 5: '<?php echo tools_oceny(5,"Challenge Sheet",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'cs','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Challenge Sheet",1); ?>', 2: '<?php echo tools_oceny(2,"Challenge Sheet",1); ?>', 3: '<?php echo tools_oceny(3,"Challenge Sheet",1); ?>', 4: '<?php echo tools_oceny(4,"Challenge Sheet",1); ?>', 5: '<?php echo tools_oceny(5,"Challenge Sheet",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'cs','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Challenge Sheet",2); ?>', 2: '<?php echo tools_oceny(2,"Challenge Sheet",2); ?>', 3: '<?php echo tools_oceny(3,"Challenge Sheet",2); ?>', 4: '<?php echo tools_oceny(4,"Challenge Sheet",2); ?>', 5: '<?php echo tools_oceny(5,"Challenge Sheet",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'cs','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Challenge Sheet",3); ?>', 2: '<?php echo tools_oceny(2,"Challenge Sheet",3); ?>', 3: '<?php echo tools_oceny(3,"Challenge Sheet",3); ?>', 4: '<?php echo tools_oceny(4,"Challenge Sheet",3); ?>', 5: '<?php echo tools_oceny(5,"Challenge Sheet",3); ?>'}}
                             },
                         
                     UnformalMeet: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'unformal_meet', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'unformal_meet', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'unformal_meet', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'unformal_meet', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'unformal_meet', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'unformal_meet', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'unformal_meet', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'unformal_meet', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'unformal_meet', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'unformal_meet', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'unformal_meet', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'unformal_meet', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'unformal_meet', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'unformal_meet', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'unformal_meet', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'unformal_meet', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'unformal_meet', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'unformal_meet', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'unformal_meet', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'unformal_meet', 3),1) ?>'}}
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie nieformalne",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie nieformalne",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie nieformalne",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie nieformalne",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie nieformalne",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie nieformalne",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie nieformalne",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie nieformalne",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie nieformalne",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie nieformalne",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie nieformalne",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie nieformalne",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie nieformalne",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie nieformalne",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie nieformalne",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'unformal_meet','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkanie nieformalne",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkanie nieformalne",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkanie nieformalne",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkanie nieformalne",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkanie nieformalne",3); ?>'}}
                             },
                         
                     Own: {
-                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'own','0'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'own', 0),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'own', 0),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'own', 0),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'own', 0),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'own', 0),1) ?>'}},
-                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'own','1'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'own', 1),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'own', 1),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'own', 1),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'own', 1),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'own', 1),1) ?>'}}, 
-                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'own','2'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'own', 2),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'own', 2),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'own', 2),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'own', 2),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'own', 2),1) ?>'}},
-                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'own','3'),1); ?>', Ocena:  { 1: '<?php echo round( avg_tools_rate('tool',1 ,'own', 3),1) ?>', 2: '<?php echo round( avg_tools_rate('tool',2 ,'own', 3),1) ?>', 3: '<?php echo round( avg_tools_rate('tool',3 ,'own', 3),1) ?>', 4: '<?php echo round( avg_tools_rate('tool',4 ,'own', 3),1) ?>', 5: '<?php echo round( avg_tools_rate('tool',5 ,'own', 3),1) ?>'}}
+                        Zarzad:     { Ranking: '<?php echo round( get_avg_tools( 'own','0'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",0); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",0); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",0); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",0); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",0); ?>'}},
+                        Przelozony: { Ranking: '<?php echo round( get_avg_tools( 'own','1'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",1); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",1); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",1); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",1); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",1); ?>'}}, 
+                        Dzial:      { Ranking: '<?php echo round( get_avg_tools( 'own','2'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",2); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",2); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",2); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",2); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",2); ?>'}},
+                        InnyDzial:  { Ranking: '<?php echo round( get_avg_tools( 'own','3'),1); ?>', Ocena:  { 1: '<?php echo tools_oceny(1,"Spotkania działowe",3); ?>', 2: '<?php echo tools_oceny(2,"Spotkania działowe",3); ?>', 3: '<?php echo tools_oceny(3,"Spotkania działowe",3); ?>', 4: '<?php echo tools_oceny(4,"Spotkania działowe",3); ?>', 5: '<?php echo tools_oceny(5,"Spotkania działowe",3); ?>'}}
                             },
                 },
 
@@ -236,236 +236,236 @@
                     IBMLotus:       { Rank: '<?php echo round( get_avg_apps('ibm_lotus'),2)?>', 
                                       Name: 'IBM Lotus Notes',
                                       Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 ,'ibm_lotus', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 ,'ibm_lotus', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 ,'ibm_lotus', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 ,'ibm_lotus', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 ,'ibm_lotus', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"IBM Lotus Notes"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"IBM Lotus Notes"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"IBM Lotus Notes"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"IBM Lotus Notes"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"IBM Lotus Notes"),2) ?>'
                                       }},
                     Excel:          { Rank: '<?php echo round( get_avg_apps('excel'),2)?>', 
                                     Name: 'MS Excel',    
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'excel', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'excel', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'excel', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'excel', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'excel', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"MS Excel"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"MS Excel"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"MS Excel"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"MS Excel"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"MS Excel"),2) ?>'
                                       }},
                     Access:         { Rank: '<?php echo round( get_avg_apps('access'),2)?>',   
                                     Name: 'MS Access',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'access', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'access', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'access', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'access', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'access', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"MS Access"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"MS Access"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"MS Access"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"MS Access"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"MS Access"),2) ?>'
                                       }},
                     Bpcs:           { Rank: '<?php echo round( get_avg_apps('bpcs'),2)?>',   
                                     Name: 'BPCS',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'bpcs', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'bpcs', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'bpcs', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'bpcs', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'bpcs', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"BPCS"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"BPCS"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"BPCS"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"BPCS"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"BPCS"),2) ?>'
                                       }},
                     Intranet:       { Rank: '<?php echo round( get_avg_apps('intranet'),2)?>',   
                                     Name: 'Intranet',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'intranet', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'intranet', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'intranet', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'intranet', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'intranet', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Portal intranet"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Portal intranet"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Portal intranet"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Portal intranet"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Portal intranet"),2) ?>'
                                       }},
                     Comarch:        { Rank: '<?php echo round( get_avg_apps('comarch'),2)?>',    
                                     Name: 'Comarch',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'comarch', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'comarch', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'comarch', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'comarch', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'comarch', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Comarch ECM"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Comarch ECM"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Comarch ECM"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Comarch ECM"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Comarch ECM"),2) ?>'
                                       }},
                     ZMT:            { Rank: '<?php echo round( get_avg_apps('zmt'),2)?>',    
                                     Name: 'ZMT',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'zmt', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'zmt', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'zmt', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'zmt', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'zmt', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"ZMT"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"ZMT"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"ZMT"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"ZMT"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"ZMT"),2) ?>'
                                       }},
                     Asseco:         { Rank: '<?php echo round( get_avg_apps('asseco'),2)?>', 
                                     Name: 'Asseco', 
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'asseco', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'asseco', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'asseco', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'asseco', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'asseco', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Asseco (Portal przełożonego)"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Asseco (Portal przełożonego)"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Asseco (Portal przełożonego)"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Asseco (Portal przełożonego)"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Asseco (Portal przełożonego)"),2) ?>'
                                       }},
                     QMS:            { Rank: '<?php echo round( get_avg_apps('qms'),2)?>',    
                                     Name: 'QMS',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'qms', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'qms', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'qms', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'qms', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'qms', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"QMS"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"QMS"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"QMS"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"QMS"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"QMS"),2) ?>'
                                       }},
                     Visualisation:  { Rank: '<?php echo round( get_avg_apps('visualisation'),2)?>',  
                                     Name: 'Wizualizacja',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'visualisation', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'visualisation', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'visualisation', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'visualisation', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'visualisation', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Wizualizacja"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Wizualizacja"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Wizualizacja"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Wizualizacja"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Wizualizacja"),2) ?>'
                                       }},
                     SandenVision:   { Rank: '<?php echo round( get_avg_apps('sanden_vision'),2)?>',  
                                     Name: 'Sanden Vision',  
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'sanden_vision', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'sanden_vision', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'sanden_vision', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'sanden_vision', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'sanden_vision', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Sanden vision"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Sanden vision"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Sanden vision"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Sanden vision"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Sanden vision"),2) ?>'
                                       }},
                     WebPage:        { Rank: '<?php echo round( get_avg_apps('smp_web_page'),2)?>',   
                                     Name: 'Strona internetowa', 
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'smp_web_page', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'smp_web_page', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'smp_web_page', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'smp_web_page', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'smp_web_page', 4),2) ?>'
+                                       1:'<?php echo round( apps_oceny(1,"Strona internetowa SMP"),2) ?>',
+                                       2:'<?php echo round( apps_oceny(2,"Strona internetowa SMP"),2) ?>',
+                                       3:'<?php echo round( apps_oceny(3,"Strona internetowa SMP"),2) ?>',
+                                       4:'<?php echo round( apps_oceny(4,"Strona internetowa SMP"),2) ?>',
+                                       5:'<?php echo round( apps_oceny(5,"Strona internetowa SMP"),2) ?>'
                                       }},
                     Facebook:       { Rank: '<?php echo round( get_avg_apps('facebook'),2)?>',   
                                     Name: 'Facebook',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'facebook', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'facebook', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'facebook', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'facebook', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'facebook', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Strona na Facebook"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Strona na Facebook"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Strona na Facebook"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Strona na Facebook"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Strona na Facebook"),2) ?>'
                                       }},
                     WfMag:          { Rank: '<?php echo round( get_avg_apps('wf_mag'),2)?>', 
                                     Name: 'WF-MAG',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'wf_mag', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'wf_mag', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'wf_mag', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'wf_mag', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'wf_mag', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"WF-MAG"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"WF-MAG"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"WF-MAG"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"WF-MAG"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"WF-MAG"),2) ?>'
                                       }},
                     SAP:            { Rank: '<?php echo round( get_avg_apps('sap'),2)?>',    
                                     Name: 'SAP',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'sap', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'sap', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'sap', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'sap', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'sap', 4),2) ?>'
+                                       1:'<?php echo round( apps_oceny(1,"SAP"),2) ?>',
+                                       2:'<?php echo round( apps_oceny(2,"SAP"),2) ?>',
+                                       3:'<?php echo round( apps_oceny(3,"SAP"),2) ?>',
+                                       4:'<?php echo round( apps_oceny(4,"SAP"),2) ?>',
+                                       5:'<?php echo round( apps_oceny(5,"SAP"),2) ?>'
                                       }},
                     QDA:            { Rank: '<?php echo round( get_avg_apps('qda'),2)?>',    
                                     Name: 'QDA',
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'qda', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'qda', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'qda', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'qda', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'qda', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"QDA"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"QDA"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"QDA"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"QDA"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"QDA"),2) ?>'
                                       }},
                     Warehouse:      { Rank: '<?php echo round( get_avg_apps('parcel_warehouse'),2)?>',   
                                     Name: 'Magazyn Paczek', 
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'parcel_warehouse', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'parcel_warehouse', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'parcel_warehouse', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'parcel_warehouse', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'parcel_warehouse', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Magazyn paczek"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Magazyn paczek"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Magazyn paczek"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Magazyn paczek"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Magazyn paczek"),2) ?>'
                                       }},
                     LessonsLearned: { Rank: '<?php echo round( get_avg_apps('lessons_learned'),2)?>',    
                                     Name: 'Baza doświadczeń',   
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'lessons_learned', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'lessons_learned', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'lessons_learned', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'lessons_learned', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'lessons_learned', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Baza doświadczeń Lessons Learned"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Baza doświadczeń Lessons Learned"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Baza doświadczeń Lessons Learned"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Baza doświadczeń Lessons Learned"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Baza doświadczeń Lessons Learned"),2) ?>'
                                       }},
                     DExperiance:    { Rank: '<?php echo round( get_avg_apps('dexperiance'),2)?>',    
                                     Name: '3D Experiance',  
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'dexperiance', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'dexperiance', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'dexperiance', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'dexperiance', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'dexperiance', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"3D Experiance"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"3D Experiance"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"3D Experiance"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"3D Experiance"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"3D Experiance"),2) ?>'
                                       }},
                     Helpdesk:       { Rank: '<?php echo round( get_avg_apps('helpdesk'),2)?>',   
                                     Name: 'Helpdesk',   
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'helpdesk', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'helpdesk', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'helpdesk', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'helpdesk', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'helpdesk', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Helpdesk"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Helpdesk"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Helpdesk"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Helpdesk"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Helpdesk"),2) ?>'
                                       }},
                     InventoryRange: { Rank: '<?php echo round( get_avg_apps('inventory_range'),2)?>',    
                                     Name: 'Inventory range',    
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'inventory_range', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'inventory_range', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'inventory_range', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'inventory_range', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'inventory_range', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Inventory range"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Inventory range"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Inventory range"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Inventory range"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Inventory range"),2) ?>'
                                       }},
                     Pydio:          { Rank: '<?php echo round( get_avg_apps('pydio'),2)?>',  
                                     Name: 'Pydio',  
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'pydio', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'pydio', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'pydio', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'pydio', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'pydio', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"System wymiany plików"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"System wymiany plików"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"System wymiany plików"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"System wymiany plików"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"System wymiany plików"),2) ?>'
                                       }},
                     Sadec:          { Rank: '<?php echo round( get_avg_apps('sadec'),2)?>',  
                                     Name: 'Sadec / intrastat',  
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'sadec', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'sadec', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'sadec', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'sadec', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'sadec', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Sadec / Intrastat"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Sadec / Intrastat"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Sadec / Intrastat"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Sadec / Intrastat"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Sadec / Intrastat"),2) ?>'
                                       }},
                     BazaSugestii:   { Rank: '<?php echo round( get_avg_apps('baza_sugestii'),2)?>',  
                                     Name: 'Baza sugestii',  
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'baza_sugestii', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'baza_sugestii', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'baza_sugestii', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'baza_sugestii', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'baza_sugestii', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Baza sugestii"),2) ?>', 
+                                        2:'<?php echo round( apps_oceny(2,"Baza sugestii"),2) ?>', 
+                                        3:'<?php echo round( apps_oceny(3,"Baza sugestii"),2) ?>', 
+                                        4:'<?php echo round( apps_oceny(4,"Baza sugestii"),2) ?>', 
+                                        5:'<?php echo round( apps_oceny(5,"Baza sugestii"),2) ?>'  
                                       }},
                     MonthNews:      { Rank: '<?php echo round( get_avg_apps('month_news'),2)?>', 
                                     Name: 'Sanden Month News',  
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'month_news', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'month_news', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'month_news', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'month_news', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'month_news', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Sanden Month News"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Sanden Month News"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Sanden Month News"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Sanden Month News"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Sanden Month News"),2) ?>'
                                       }},
                     Own:            { Rank: '<?php echo round( get_avg_apps('own'),2)?>',    
                                     Name: 'Odpowiedz własna',    
                                     Ocena: {
-                                        1:'<?php echo round( avg_tools_rate('app',1 , 'own', 4),2) ?>',
-                                        2:'<?php echo round( avg_tools_rate('app',2 , 'own', 4),2) ?>',
-                                        3:'<?php echo round( avg_tools_rate('app',3 , 'own', 4),2) ?>',
-                                        4:'<?php echo round( avg_tools_rate('app',4 , 'own', 4),2) ?>',
-                                        5:'<?php echo round( avg_tools_rate('app',5 , 'own', 4),2) ?>'
+                                        1:'<?php echo round( apps_oceny(1,"Odpowiedz własna"),2) ?>',
+                                        2:'<?php echo round( apps_oceny(2,"Odpowiedz własna"),2) ?>',
+                                        3:'<?php echo round( apps_oceny(3,"Odpowiedz własna"),2) ?>',
+                                        4:'<?php echo round( apps_oceny(4,"Odpowiedz własna"),2) ?>',
+                                        5:'<?php echo round( apps_oceny(5,"Odpowiedz własna"),2) ?>'
                                       }}
                 },
 

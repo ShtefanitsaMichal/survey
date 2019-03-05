@@ -359,4 +359,26 @@ if (!isset($_GET['stanowisko']) || $_GET['stanowisko'] == ''){$_GET['stanowisko'
             return $all_row[0]['t'.$number.'_grade'];
     }
 
+     function apps_oceny($number, $app) {
+            global $db;
+            $db -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql1 = "select Distinct(employee.session_id) as employee, 
+                        AVG(main_apps_rate.opcja_".$number.") as a".$number."_grade,
+                        main_apps_rate.opcja_".$number."_title as a".$number."_grade_title
+                        from employee
+                        left join main_apps_rate
+                        ON employee.session_id = main_apps_rate.session_id 
+                        where main_apps_rate.opcja_".$number." <> 0 
+                        and main_apps_rate.opcja_".$number."_title like '".$app."'
+                        and main_apps_rate.source = 4
+                        and typ like '" . $_GET['typ'] . "' 
+                        and wiek like '" . $_GET['wiek'] . "'
+                        and stanowisko like '" . $_GET['stanowisko'] . "'";
+
+            $get = $db->prepare($sql1);
+            $get -> execute(array($sql1));
+            $all_row = $get->fetchAll(PDO::FETCH_ASSOC);  
+            return $all_row[0]['a'.$number.'_grade'];
+    }
+
 ?>
